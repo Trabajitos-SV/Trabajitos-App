@@ -25,4 +25,9 @@
         android:name="com.example.trabajitosinc.UserPageFragment"
         android:label="fragment_user_page"
         tools:layout="@layout/fragment_user_page" />
+    <fragment
+        android:id="@+id/welcomeFragment"
+        android:name="com.example.trabajitosinc.WelcomeFragment"
+        android:label="fragment_welcome"
+        tools:layout="@layout/fragment_welcome" />
 </navigation>
