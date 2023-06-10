@@ -19,7 +19,11 @@
         android:id="@+id/navigation_categories"
         android:name="com.example.trabajitosinc.ui.category.CategoriesFragment"
         android:label="fragment_categories"
-        tools:layout="@layout/fragment_categories" />
+        tools:layout="@layout/fragment_categories" >
+        <action
+            android:id="@+id/action_navigation_categories_to_selectedCategoryFragment"
+            app:destination="@id/selectedCategoryFragment" />
+    </fragment>
     <fragment
         android:id="@+id/navigation_user"
         android:name="com.example.trabajitosinc.ui.UserPageFragment"
@@ -30,4 +34,9 @@
         android:name="com.example.trabajitosinc.ui.WelcomeFragment"
         android:label="fragment_welcome"
         tools:layout="@layout/fragment_welcome" />
+    <fragment
+        android:id="@+id/selectedCategoryFragment"
+        android:name="com.example.trabajitosinc.SelectedCategoryFragment"
+        android:label="fragment_selected_category"
+        tools:layout="@layout/fragment_selected_category" />
 </navigation>

@@ -52,7 +52,7 @@ class CategoriesFragment : Fragment() {
     private fun showSelectedItem(category: CategoryModel){
         categoryViewModel.setSelected(category)
         Log.d("APP_TAG", category.name)
-        //findNavController().navigate(R.id.action_navigation_categories_to_selectedCategoryFragment)
+        findNavController().navigate(R.id.action_navigation_categories_to_selectedCategoryFragment)
     }
 
     private fun displayCategories() {
