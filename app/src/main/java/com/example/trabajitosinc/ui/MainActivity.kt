@@ -1,9 +1,10 @@
-package com.example.trabajitosinc
+package com.example.trabajitosinc.ui
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import androidx.navigation.findNavController
 import androidx.navigation.ui.setupWithNavController
+import com.example.trabajitosinc.R
 import com.example.trabajitosinc.databinding.ActivityMainBinding
 import com.google.android.material.bottomnavigation.BottomNavigationView
 

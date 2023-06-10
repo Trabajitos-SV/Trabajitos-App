@@ -1,26 +1,25 @@
-package com.example.trabajitosinc
+package com.example.trabajitosinc.ui
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import com.example.trabajitosinc.databinding.FragmentWelcomeBinding
+import com.example.trabajitosinc.databinding.FragmentLoginBinding
 
 
-class WelcomeFragment : Fragment() {
+class LoginFragment : Fragment() {
 
 
-    private lateinit var binding: FragmentWelcomeBinding
+    private lateinit var binding : FragmentLoginBinding
 
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View? {
-        binding = FragmentWelcomeBinding.inflate(inflater, container, false)
+    ): View {
+        binding = FragmentLoginBinding.inflate(inflater, container, false)
         return binding.root
     }
-
 
 }
