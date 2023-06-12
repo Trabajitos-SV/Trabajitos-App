@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/navigation_home">
+
+    <fragment
+        android:id="@+id/navigation_home"
+        android:name="com.example.trabajitosinc.ui.HomeFragment"
+        android:label="fragment_home"
+        tools:layout="@layout/fragment_home" />
+    <fragment
+        android:id="@+id/navigation_history"
+        android:name="com.example.trabajitosinc.ui.history.HistoryFragment"
+        android:label="fragment_history"
+        tools:layout="@layout/fragment_history" />
+    <fragment
+        android:id="@+id/navigation_categories"
+        android:name="com.example.trabajitosinc.ui.category.CategoriesFragment"
+        android:label="fragment_categories"
+        tools:layout="@layout/fragment_categories" >
+        <action
+            android:id="@+id/action_navigation_categories_to_selectedCategoryFragment"
+            app:destination="@id/selectedCategoryFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/navigation_user"
+        android:name="com.example.trabajitosinc.ui.UserPageFragment"
+        android:label="fragment_user_page"
+        tools:layout="@layout/fragment_user_page" >
+        <action
+            android:id="@+id/action_navigation_user_to_editProfileFragment"
+            app:destination="@id/editProfileFragment" />
+        <action
+            android:id="@+id/action_navigation_user_to_createPortfolioFragment"
+            app:destination="@id/createPortfolioFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/welcomeFragment"
+        android:name="com.example.trabajitosinc.ui.WelcomeFragment"
+        android:label="fragment_welcome"
+        tools:layout="@layout/fragment_welcome" />
+    <fragment
+        android:id="@+id/selectedCategoryFragment"
+        android:name="com.example.trabajitosinc.SelectedCategoryFragment"
+        android:label="fragment_selected_category"
+        tools:layout="@layout/fragment_selected_category" />
+    <fragment
+        android:id="@+id/editProfileFragment"
+        android:name="com.example.trabajitosinc.ui.EditProfileFragment"
+        android:label="fragment_edit_profile"
+        tools:layout="@layout/fragment_edit_profile" >
+        <action
+            android:id="@+id/action_editProfileFragment_to_navigation_user4"
+            app:destination="@id/navigation_user" />
+    </fragment>
+    <fragment
+        android:id="@+id/createPortfolioFragment"
+        android:name="com.example.trabajitosinc.ui.CreatePortfolioFragment"
+        android:label="fragment_create_portfolio"
+        tools:layout="@layout/fragment_create_portfolio" >
+        <action
+            android:id="@+id/action_createPortfolioFragment_to_navigation_user"
+            app:destination="@id/navigation_user" />
+    </fragment>
+</navigation>
