@@ -28,7 +28,14 @@
         android:id="@+id/navigation_user"
         android:name="com.example.trabajitosinc.ui.UserPageFragment"
         android:label="fragment_user_page"
-        tools:layout="@layout/fragment_user_page" />
+        tools:layout="@layout/fragment_user_page" >
+        <action
+            android:id="@+id/action_navigation_user_to_editProfileFragment"
+            app:destination="@id/editProfileFragment" />
+        <action
+            android:id="@+id/action_navigation_user_to_createPortfolioFragment"
+            app:destination="@id/createPortfolioFragment" />
+    </fragment>
     <fragment
         android:id="@+id/welcomeFragment"
         android:name="com.example.trabajitosinc.ui.WelcomeFragment"
@@ -39,4 +46,22 @@
         android:name="com.example.trabajitosinc.SelectedCategoryFragment"
         android:label="fragment_selected_category"
         tools:layout="@layout/fragment_selected_category" />
+    <fragment
+        android:id="@+id/editProfileFragment"
+        android:name="com.example.trabajitosinc.ui.EditProfileFragment"
+        android:label="fragment_edit_profile"
+        tools:layout="@layout/fragment_edit_profile" >
+        <action
+            android:id="@+id/action_editProfileFragment_to_navigation_user4"
+            app:destination="@id/navigation_user" />
+    </fragment>
+    <fragment
+        android:id="@+id/createPortfolioFragment"
+        android:name="com.example.trabajitosinc.ui.CreatePortfolioFragment"
+        android:label="fragment_create_portfolio"
+        tools:layout="@layout/fragment_create_portfolio" >
+        <action
+            android:id="@+id/action_createPortfolioFragment_to_navigation_user"
+            app:destination="@id/navigation_user" />
+    </fragment>
 </navigation>

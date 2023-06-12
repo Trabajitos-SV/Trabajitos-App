@@ -6,6 +6,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.ArrayAdapter
+import androidx.navigation.fragment.findNavController
 import com.example.trabajitosinc.R
 import com.example.trabajitosinc.databinding.FragmentCreatePortfolioBinding
 
@@ -28,6 +29,15 @@ class CreatePortfolioFragment : Fragment() {
 
         return binding.root
 
+    }
+
+
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+
+        binding.backRowButton.setOnClickListener {
+            findNavController().navigate(R.id.action_createPortfolioFragment_to_navigation_user)
+        }
     }
 
 }
