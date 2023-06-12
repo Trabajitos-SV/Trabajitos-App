@@ -9,12 +9,16 @@ val categories = mutableListOf(
     CategoryModel("Electrician", R.drawable.electrician_icon),
     CategoryModel("Housekeeper", R.drawable.housekeeper_icon),
     CategoryModel("Plumbing", R.drawable.plumbing_icon),
+    CategoryModel("Welding", R.drawable.welding_icon),
+    CategoryModel("Plumbing", R.drawable.plumbing_icon),
+    CategoryModel("Welding", R.drawable.welding_icon),
+    CategoryModel("Plumbing", R.drawable.plumbing_icon),
     CategoryModel("Welding", R.drawable.welding_icon)
 
 )
 
 val users = mutableListOf(
-    UserModel("Jose","Nestor@uca.com",25252525,"Uca", R.drawable.carpentry_icon) ,
+    UserModel("Jose","Nestor@uca.com",25252525,"Uca", R.drawable.plumbing_icon) ,
     UserModel("Jose","Nestor@uca.com",25252525,"Uca", R.drawable.electrician_icon) ,
     UserModel("Jose","Nestor@uca.com",25252525,"Uca", R.drawable.housekeeper_icon),
     UserModel("Jose","Nestor@uca.com",25252525,"Uca", R.drawable.welding_icon)
