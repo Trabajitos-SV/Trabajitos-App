@@ -32,6 +32,10 @@ class UserPageFragment : Fragment() {
         binding.myPortfolioButton.setOnClickListener {
             findNavController().navigate(R.id.action_navigation_user_to_createPortfolioFragment)
         }
+
+        binding.imageProfile.setOnClickListener {
+            findNavController().navigate(R.id.action_navigation_user_to_userInfoFragment)
+        }
     }
 
 }
