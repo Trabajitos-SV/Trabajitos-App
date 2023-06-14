@@ -46,7 +46,7 @@
         tools:layout="@layout/fragment_welcome" />
     <fragment
         android:id="@+id/selectedCategoryFragment"
-        android:name="com.example.trabajitosinc.SelectedCategoryFragment"
+        android:name="com.example.trabajitosinc.ui.category.SelectedCategoryFragment"
         android:label="fragment_selected_category"
         tools:layout="@layout/fragment_selected_category" />
     <fragment
