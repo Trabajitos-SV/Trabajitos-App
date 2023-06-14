@@ -3,7 +3,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/nav_graph"
-    app:startDestination="@id/navigation_home">
+    app:startDestination="@id/selectedCategoryFragment">
 
     <fragment
         android:id="@+id/navigation_home"
@@ -38,12 +38,10 @@
         <action
             android:id="@+id/action_navigation_user_to_userInfoFragment"
             app:destination="@id/userInfoFragment" />
+        <action
+            android:id="@+id/action_navigation_user_to_loginActivity"
+            app:destination="@id/loginActivity" />
     </fragment>
-    <fragment
-        android:id="@+id/welcomeFragment"
-        android:name="com.example.trabajitosinc.ui.WelcomeFragment"
-        android:label="fragment_welcome"
-        tools:layout="@layout/fragment_welcome" />
     <fragment
         android:id="@+id/selectedCategoryFragment"
         android:name="com.example.trabajitosinc.ui.category.SelectedCategoryFragment"
@@ -75,4 +73,9 @@
             android:id="@+id/action_userInfoFragment_to_navigation_user"
             app:destination="@id/navigation_user" />
     </fragment>
+    <activity
+        android:id="@+id/loginActivity"
+        android:name="com.example.trabajitosinc.ui.ui.login.LoginActivity"
+        android:label="activity_login"
+        tools:layout="@layout/activity_login" />
 </navigation>
