@@ -15,6 +15,10 @@ import androidx.core.content.ContextCompat
 import androidx.fragment.app.activityViewModels
 import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
+import androidx.viewpager.widget.ViewPager
+import androidx.viewpager2.adapter.FragmentStateAdapter
+import androidx.viewpager2.widget.ViewPager2
+import com.example.trabajitosinc.HistoryRecyclerView
 import com.example.trabajitosinc.R
 import com.example.trabajitosinc.data.models.CategoryModel
 import com.example.trabajitosinc.data.models.TrabajitoModel
@@ -23,6 +27,28 @@ import com.example.trabajitosinc.ui.history.recyclerview.TrabajitoRecyclerViewAd
 import com.example.trabajitosinc.ui.viewmodel.HistoryViewModel
 
 class HistoryFragment : Fragment() {
+
+    private lateinit var demoCollectionAdapter: DemoCollectioAdapter
+
+    //private lateinit var viewPager: ViewPager2
+
+    class DemoCollectioAdapter(fragment: Fragment): FragmentStateAdapter(fragment) {
+        override fun getItemCount(): Int = 2
+
+        override fun createFragment(position: Int): Fragment {
+            val fragment = HistoryRecyclerView()
+
+            fragment.arguments = Bundle().apply {
+                putInt(ARG_OBJECT, position)
+            }
+
+            return fragment
+        }
+    }
+
+    companion object{
+        private const val ARG_OBJECT = "object"
+    }
 
     private lateinit var binding: FragmentHistoryBinding
 
@@ -43,7 +69,15 @@ class HistoryFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        setRecyclerView(view)
+        //setRecyclerView(view)
+
+        bind()
+
+    }
+
+    private fun bind() {
+        demoCollectionAdapter = DemoCollectioAdapter(this)
+        binding.historyPager.adapter = demoCollectionAdapter
     }
 
     private fun showSelectedItem(trabajito: TrabajitoModel){
@@ -67,5 +101,6 @@ class HistoryFragment : Fragment() {
         binding.myTrabajitosList.adapter =adapter
         displayTrrabajito()
     }
+
 
 }
