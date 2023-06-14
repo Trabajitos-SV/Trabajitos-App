@@ -49,7 +49,7 @@ class HistoryFragment : Fragment() {
     private fun showSelectedItem(trabajito: TrabajitoModel){
         historyViewmodel.setSelected(trabajito)
         Log.d("APP_TAG", trabajito.workerName)
-        //find nav
+        findNavController().navigate(R.id.action_navigation_history_to_trabajitoFragment)
     }
 
     private fun displayTrrabajito(){

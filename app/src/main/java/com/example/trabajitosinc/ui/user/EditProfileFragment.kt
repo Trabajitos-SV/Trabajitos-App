@@ -1,4 +1,4 @@
-package com.example.trabajitosinc.ui
+package com.example.trabajitosinc.ui.user
 
 import android.annotation.SuppressLint
 import android.os.Bundle
