@@ -17,6 +17,8 @@ class HistoryRecyclerView : Fragment() {
         return inflater.inflate(R.layout.fragment_history_recycler_view, container, false)
     }
 
+
+
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
     }

@@ -25,6 +25,7 @@ import com.example.trabajitosinc.data.models.TrabajitoModel
 import com.example.trabajitosinc.databinding.FragmentHistoryBinding
 import com.example.trabajitosinc.ui.history.recyclerview.TrabajitoRecyclerViewAdapter
 import com.example.trabajitosinc.ui.viewmodel.HistoryViewModel
+import com.google.android.material.tabs.TabLayoutMediator
 
 class HistoryFragment : Fragment() {
 
@@ -72,6 +73,17 @@ class HistoryFragment : Fragment() {
         //setRecyclerView(view)
 
         bind()
+
+        TabLayoutMediator(binding.historyTabs, binding.historyPager){ tab, position ->
+            when (position){
+                0 -> {
+                    tab.text = "My works"
+                }
+                1 -> {
+                    tab.text="My requests"
+                }
+            }
+        }.attach()
 
     }
 
