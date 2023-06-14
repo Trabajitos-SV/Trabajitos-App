@@ -1,4 +1,4 @@
-package com.example.trabajitosinc.ui.ui.login
+package com.example.trabajitosinc.ui
 
 import android.app.Activity
 import androidx.lifecycle.Observer

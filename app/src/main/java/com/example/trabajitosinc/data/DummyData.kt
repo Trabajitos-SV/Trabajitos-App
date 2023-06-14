@@ -61,10 +61,10 @@ val trabajitos = mutableListOf(
 )
 
 val users = mutableListOf(
-    UserModel("Jose","Nestor@uca.com",25252525,"Uca", R.drawable.plumbing_icon) ,
-    UserModel("Jose","Nestor@uca.com",25252525,"Uca", R.drawable.electrician_icon) ,
-    UserModel("Jose","Nestor@uca.com",25252525,"Uca", R.drawable.housekeeper_icon),
-    UserModel("Jose","Nestor@uca.com",25252525,"Uca", R.drawable.welding_icon)
+    UserModel("1","Jose","Nestor@uca.com",25252525,"Uca", R.drawable.plumbing_icon) ,
+    UserModel("2","Jose","Nestor@uca.com",25252525,"Uca", R.drawable.electrician_icon) ,
+    UserModel("3","Jose","Nestor@uca.com",25252525,"Uca", R.drawable.housekeeper_icon),
+    UserModel("4","Jose","Nestor@uca.com",25252525,"Uca", R.drawable.welding_icon)
 
 
     )

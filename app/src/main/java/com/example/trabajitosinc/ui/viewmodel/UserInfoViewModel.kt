@@ -18,6 +18,7 @@ class UserInfoViewModel(private val repository : UserRepository) : ViewModel(){
 
     fun getUsers() = repository.getUsers()
 
+
     fun clearData(){
         name.value = ""
         email.value = ""
