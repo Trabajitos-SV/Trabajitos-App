@@ -35,6 +35,9 @@
         <action
             android:id="@+id/action_navigation_user_to_createPortfolioFragment"
             app:destination="@id/createPortfolioFragment" />
+        <action
+            android:id="@+id/action_navigation_user_to_userInfoFragment"
+            app:destination="@id/userInfoFragment" />
     </fragment>
     <fragment
         android:id="@+id/welcomeFragment"
@@ -62,6 +65,14 @@
         tools:layout="@layout/fragment_create_portfolio" >
         <action
             android:id="@+id/action_createPortfolioFragment_to_navigation_user"
+            app:destination="@id/navigation_user" />
+    </fragment>
+    <fragment
+        android:id="@+id/userInfoFragment"
+        android:name="com.example.trabajitosinc.ui.user.UserInfoFragment"
+        android:label="UserInfoFragment" >
+        <action
+            android:id="@+id/action_userInfoFragment_to_navigation_user"
             app:destination="@id/navigation_user" />
     </fragment>
 </navigation>

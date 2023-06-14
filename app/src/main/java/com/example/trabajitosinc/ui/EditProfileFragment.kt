@@ -18,14 +18,14 @@ class EditProfileFragment : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-      binding = FragmentEditProfileBinding.inflate(inflater, container, false)
+        binding = FragmentEditProfileBinding.inflate(inflater, container, false)
         return binding.root
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        binding.backRowButton.setOnClickListener {
+        binding.backArrow.setOnClickListener {
             findNavController().navigate(R.id.action_editProfileFragment_to_navigation_user4)
         }
     }

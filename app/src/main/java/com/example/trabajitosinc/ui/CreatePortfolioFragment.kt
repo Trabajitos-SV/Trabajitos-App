@@ -35,7 +35,7 @@ class CreatePortfolioFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        binding.backRowButton.setOnClickListener {
+        binding.backArrow.setOnClickListener {
             findNavController().navigate(R.id.action_createPortfolioFragment_to_navigation_user)
         }
     }
