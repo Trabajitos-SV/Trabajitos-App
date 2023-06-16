@@ -44,11 +44,6 @@
             app:destination="@id/userInfoFragment" />
     </fragment>
     <fragment
-        android:id="@+id/welcomeFragment"
-        android:name="com.example.trabajitosinc.ui.WelcomeFragment"
-        android:label="fragment_welcome"
-        tools:layout="@layout/fragment_welcome" />
-    <fragment
         android:id="@+id/selectedCategoryFragment"
         android:name="com.example.trabajitosinc.ui.category.SelectedCategoryFragment"
         android:label="fragment_selected_category"
