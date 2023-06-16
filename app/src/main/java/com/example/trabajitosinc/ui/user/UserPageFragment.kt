@@ -1,4 +1,4 @@
-package com.example.trabajitosinc.ui
+package com.example.trabajitosinc.ui.user
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment
@@ -38,7 +38,7 @@ class UserPageFragment : Fragment() {
         }
 
         binding.logoutButton.setOnClickListener {
-            findNavController().navigate(R.id.action_navigation_user_to_loginActivity)
+            //findNavController().navigate(R.id.action_navigation_user_to_loginActivity)
         }
     }
 

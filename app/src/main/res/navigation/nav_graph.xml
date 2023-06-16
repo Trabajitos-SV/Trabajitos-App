@@ -3,7 +3,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/nav_graph"
-    app:startDestination="@id/selectedCategoryFragment">
+    app:startDestination="@id/navigation_home">
 
     <fragment
         android:id="@+id/navigation_home"
@@ -14,7 +14,11 @@
         android:id="@+id/navigation_history"
         android:name="com.example.trabajitosinc.ui.history.HistoryFragment"
         android:label="fragment_history"
-        tools:layout="@layout/fragment_history" />
+        tools:layout="@layout/fragment_history" >
+        <action
+            android:id="@+id/action_navigation_history_to_trabajitoFragment"
+            app:destination="@id/trabajitoFragment" />
+    </fragment>
     <fragment
         android:id="@+id/navigation_categories"
         android:name="com.example.trabajitosinc.ui.category.CategoriesFragment"
@@ -26,7 +30,7 @@
     </fragment>
     <fragment
         android:id="@+id/navigation_user"
-        android:name="com.example.trabajitosinc.ui.UserPageFragment"
+        android:name="com.example.trabajitosinc.ui.user.UserPageFragment"
         android:label="fragment_user_page"
         tools:layout="@layout/fragment_user_page" >
         <action
@@ -38,9 +42,6 @@
         <action
             android:id="@+id/action_navigation_user_to_userInfoFragment"
             app:destination="@id/userInfoFragment" />
-        <action
-            android:id="@+id/action_navigation_user_to_loginActivity"
-            app:destination="@id/loginActivity" />
     </fragment>
     <fragment
         android:id="@+id/selectedCategoryFragment"
@@ -49,7 +50,7 @@
         tools:layout="@layout/fragment_selected_category" />
     <fragment
         android:id="@+id/editProfileFragment"
-        android:name="com.example.trabajitosinc.ui.EditProfileFragment"
+        android:name="com.example.trabajitosinc.ui.user.EditProfileFragment"
         android:label="fragment_edit_profile"
         tools:layout="@layout/fragment_edit_profile" >
         <action
@@ -58,7 +59,7 @@
     </fragment>
     <fragment
         android:id="@+id/createPortfolioFragment"
-        android:name="com.example.trabajitosinc.ui.CreatePortfolioFragment"
+        android:name="com.example.trabajitosinc.ui.user.CreatePortfolioFragment"
         android:label="fragment_create_portfolio"
         tools:layout="@layout/fragment_create_portfolio" >
         <action
@@ -73,9 +74,9 @@
             android:id="@+id/action_userInfoFragment_to_navigation_user"
             app:destination="@id/navigation_user" />
     </fragment>
-    <activity
-        android:id="@+id/loginActivity"
-        android:name="com.example.trabajitosinc.ui.LoginActivity"
-        android:label="activity_login"
-        tools:layout="@layout/activity_login" />
+    <fragment
+        android:id="@+id/trabajitoFragment"
+        android:name="com.example.trabajitosinc.ui.history.TrabajitoFragment"
+        android:label="fragment_trabajito"
+        tools:layout="@layout/fragment_trabajito" />
 </navigation>

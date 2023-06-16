@@ -11,4 +11,7 @@
     <string name="invalid_username">Not a valid username</string>
     <string name="invalid_password">Password must be >5 characters</string>
     <string name="login_failed">"Login failed"</string>
+    <string name="lorem_long">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam interdum bibendum rutrum. Aliquam in volutpat lorem. Sed maximus lectus vel massa tempor, eu dignissim nisi luctus. Duis auctor consectetur elit, sed gravida mi vehicula etc</string>
+    <string name="lorem_bill">Lorem Ipsum Corp.\n\n123 Lorem Ipsum St,\nIpsum City, 12345\n\nPhone: 123-456-7890\n\nInvoice No: 12345\nDate: June 13, 2023\n\nBill To:\nJohn Doe\n456 Ipsum Ave,\nIpsum City, 54321\n\nItem    Qty  Price   Total\n--------------------------\nLorem   2    $50    $100\nIpsum   1    $80    $80\nDolor   3    $20    $60\n\nSubtotal:           $240\nTax (10%):           $24\n--------------------------\nTotal:              $264\n\nPayment Due: June 30, 2023\n\nThank you!</string>
+
 </resources>
