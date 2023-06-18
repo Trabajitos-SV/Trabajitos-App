@@ -56,7 +56,6 @@
                 android:text="Welcome to Tabajitos"
                 android:textColor="@color/black"
                 android:textSize="24sp"
-                android:textStyle="bold"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.503"
                 app:layout_constraintStart_toStartOf="parent"

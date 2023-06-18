@@ -72,7 +72,4 @@ class RegisterViewModel (private val repository : CredentialsRepository ) : View
         }
     }
 
-
-
-
 }
