@@ -81,6 +81,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:textSize="14sp"
+                    android:inputType="textEmailAddress"
                     android:text="@={viewmodel.email}" />
 
             </com.google.android.material.textfield.TextInputLayout>
@@ -121,6 +122,7 @@
                 android:layout_marginTop="16dp"
                 android:backgroundTint="@color/blue_app"
                 android:text="Login"
+                android:onClick="@{() -> viewmodel.onLogin()}"
                 android:textColor="@color/white"
                 android:textSize="22sp"
                 android:textStyle="bold"

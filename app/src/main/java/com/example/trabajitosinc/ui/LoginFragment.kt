@@ -11,6 +11,7 @@ import androidx.navigation.findNavController
 import androidx.navigation.fragment.findNavController
 import com.example.trabajitosinc.R
 import com.example.trabajitosinc.RetrofitApplication
+import com.example.trabajitosinc.TrabajitosApplication
 import com.example.trabajitosinc.databinding.FragmentLoginBinding
 import com.example.trabajitosinc.ui.login.LoginUiStatus
 import com.example.trabajitosinc.ui.login.viewmodel.LoginViewModel
@@ -25,10 +26,8 @@ class LoginFragment : Fragment() {
 
 
     val app by lazy {
-        requireActivity().application as RetrofitApplication
+        requireActivity().application as TrabajitosApplication
     }
-
-
 
 
     private lateinit var binding : FragmentLoginBinding
@@ -50,13 +49,13 @@ class LoginFragment : Fragment() {
         }
 
         binding.loginButton.setOnClickListener {
-            findNavController().navigate(R.id.action_loginFragment_to_mainActivity)
+            it.findNavController().navigate(R.id.action_loginFragment_to_mainActivity)
         }
 
-        /*
+
         setViewModel()
+
         observeStatus()
-        */
 
     }
 
