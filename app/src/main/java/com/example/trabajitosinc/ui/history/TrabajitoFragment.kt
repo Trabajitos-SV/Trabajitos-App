@@ -6,8 +6,11 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import com.example.trabajitosinc.R
+import com.example.trabajitosinc.databinding.FragmentTrabajitoBinding
 
 class TrabajitoFragment : Fragment() {
+
+    private lateinit var binding: FragmentTrabajitoBinding
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -17,8 +20,8 @@ class TrabajitoFragment : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_trabajito, container, false)
+        binding = FragmentTrabajitoBinding.inflate(inflater, container, false)
+        return binding.root
     }
 
 }

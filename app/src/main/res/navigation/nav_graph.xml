@@ -79,4 +79,8 @@
         android:name="com.example.trabajitosinc.ui.history.TrabajitoFragment"
         android:label="fragment_trabajito"
         tools:layout="@layout/fragment_trabajito" />
+    <fragment
+        android:id="@+id/historyRecyclerViewContainer"
+        android:name="com.example.trabajitosinc.ui.history.HistoryRecyclerViewContainer"
+        android:label="HistoryRecyclerViewContainer" />
 </navigation>

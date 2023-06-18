@@ -27,6 +27,8 @@ class HistoryViewModel(private val repository: HistoryRepository): ViewModel() {
 
     fun getTrabajitos() = repository.getTrabajitos()
 
+    fun getCompletedTrabajitos() = repository.getCompletedTrabajitos()
+
     fun clearData(){
         workerId.value = ""
         requesterId.value = ""
