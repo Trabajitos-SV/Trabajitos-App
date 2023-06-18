@@ -37,7 +37,7 @@
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="298dp"
-            android:layout_height="420dp"
+            android:layout_height="wrap_content"
             android:layout_marginBottom="50dp"
             android:background="@drawable/bg_rounded_corners"
             app:layout_constraintBottom_toBottomOf="parent"
@@ -46,98 +46,39 @@
             app:layout_constraintStart_toStartOf="parent">
 
 
-            <TextView
-                android:id="@+id/text_welcome"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="98dp"
-                android:text="Welcome to Trabajitos"
-                android:textColor="@color/black"
-                android:textSize="24sp"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.503"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent" />
-
-            <com.google.android.material.textfield.TextInputLayout
-                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
-                android:id="@+id/email_input"
-                android:layout_width="250dp"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="24dp"
-                android:hint="Email address"
-                app:endIconMode="custom"
-                app:endIconDrawable="@drawable/email_icon"
-                app:boxCornerRadiusTopEnd="12dp"
-                app:boxCornerRadiusBottomEnd="12dp"
-                app:boxCornerRadiusTopStart="12dp"
-                app:boxCornerRadiusBottomStart="12dp"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/text_welcome">
-
-
-                <com.google.android.material.textfield.TextInputEditText
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:textSize="14sp"
-                    android:text="@={viewmodel.email}" />
-
-            </com.google.android.material.textfield.TextInputLayout>
-
-
-            <com.google.android.material.textfield.TextInputLayout
-                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
-                android:id="@+id/password_input"
-                android:layout_width="250dp"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="16dp"
-                android:hint="Password"
-                app:endIconDrawable="@drawable/locked_icon"
-                app:endIconMode="password_toggle"
-                app:boxCornerRadiusTopEnd="12dp"
-                app:boxCornerRadiusBottomEnd="12dp"
-                app:boxCornerRadiusTopStart="12dp"
-                app:boxCornerRadiusBottomStart="12dp"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/email_input">
-
-                <com.google.android.material.textfield.TextInputEditText
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:textSize="14sp"
-                    android:inputType="textPassword"
-                    android:text="@={viewmodel.password}" />
-
-            </com.google.android.material.textfield.TextInputLayout>
-
-
-            <Button
-                android:id="@+id/login_button"
-                style="@style/Widget.Material3.Button.ElevatedButton"
+            <com.google.android.material.tabs.TabLayout
+                android:id="@+id/loginTabLayout"
                 android:layout_width="275dp"
-                android:layout_height="60dp"
-                android:layout_marginTop="16dp"
-                android:backgroundTint="@color/blue_app"
-                android:text="Login"
-                android:textColor="@color/white"
-                android:textSize="22sp"
-                android:textStyle="bold"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.521"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/password_input" />
-
-            <TextView
-                android:id="@+id/text_forgot_password"
-                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="16dp"
-                android:text="Forgot Password"
+                android:layout_gravity="center"
+                android:layout_marginTop="24dp"
+                android:background="@drawable/tab_login"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/login_button" />
+                app:layout_constraintTop_toTopOf="parent"
+                app:tabGravity="center"
+
+                app:tabIndicator="@drawable/tab_indicator_login"
+                app:tabIndicatorAnimationMode="linear"
+                app:tabIndicatorColor="@null"
+                app:tabIndicatorFullWidth="true"
+                app:tabIndicatorGravity="stretch"
+                app:tabMode="fixed"
+                app:tabSelectedTextColor="@color/white">
+
+            </com.google.android.material.tabs.TabLayout>
+
+
+            <androidx.viewpager2.widget.ViewPager2
+                android:id="@+id/login_pager"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/loginTabLayout">
+
+            </androidx.viewpager2.widget.ViewPager2>
 
 
         </androidx.constraintlayout.widget.ConstraintLayout>

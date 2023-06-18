@@ -2,11 +2,12 @@ package com.example.trabajitosinc.ui.login.viewmodel
 
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
-import androidx.lifecycle.ViewModelProvider
+import androidx.lifecycle.ViewModelProvider.AndroidViewModelFactory.Companion.APPLICATION_KEY
 import androidx.lifecycle.viewModelScope
 import androidx.lifecycle.viewmodel.initializer
 import androidx.lifecycle.viewmodel.viewModelFactory
 import com.example.trabajitosinc.RetrofitApplication
+import com.example.trabajitosinc.TrabajitosApplication
 import com.example.trabajitosinc.network.ApiResponse
 import com.example.trabajitosinc.repository.CredentialsRepository
 import com.example.trabajitosinc.ui.login.LoginUiStatus
@@ -60,11 +61,10 @@ class LoginViewModel (private val repository: CredentialsRepository) : ViewModel
     fun clearStatus() {
         _status.value = LoginUiStatus.Resume
     }
-
     companion object {
         val Factory = viewModelFactory {
             initializer {
-                val app = this[ViewModelProvider.AndroidViewModelFactory.APPLICATION_KEY] as RetrofitApplication
+                val app = this[APPLICATION_KEY] as TrabajitosApplication
                 LoginViewModel(app.credentialsRepository)
             }
         }

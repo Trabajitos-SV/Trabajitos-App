@@ -56,7 +56,6 @@
                 android:text="Welcome to Tabajitos"
                 android:textColor="@color/black"
                 android:textSize="24sp"
-                android:textStyle="bold"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.503"
                 app:layout_constraintStart_toStartOf="parent"
@@ -78,7 +77,8 @@
                 <com.google.android.material.textfield.TextInputEditText
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text=""
+                    android:inputType="text"
+                    android:text="@={viewmodel.name}"
                     android:textSize="14sp" />
 
             </com.google.android.material.textfield.TextInputLayout>
@@ -98,6 +98,7 @@
                 <com.google.android.material.textfield.TextInputEditText
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:inputType="phone"
                     android:text=""
                     android:textSize="14sp" />
 
@@ -119,7 +120,8 @@
                 <com.google.android.material.textfield.TextInputEditText
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text=""
+                    android:inputType="textEmailAddress"
+                    android:text="@={viewmodel.email}"
                     android:textSize="14sp" />
 
             </com.google.android.material.textfield.TextInputLayout>
@@ -140,7 +142,8 @@
                 <com.google.android.material.textfield.TextInputEditText
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text=""
+                    android:inputType="textPassword"
+                    android:text="@={viewmodel.password}"
                     android:textSize="14sp" />
 
             </com.google.android.material.textfield.TextInputLayout>
@@ -153,6 +156,7 @@
                 android:layout_marginTop="16dp"
                 android:backgroundTint="@color/blue_app"
                 android:text="Register"
+                android:onClick="@{() -> viewmodel.onRegister()}"
                 android:textColor="@color/white"
                 android:textSize="20sp"
                 android:textStyle="bold"

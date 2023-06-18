@@ -23,9 +23,9 @@ class CredentialsRepository(private val api: AuthService) {
         }
     }
 
-    suspend fun register(name: String ,email: String, phone : String, password: String): ApiResponse<String>{
+    suspend fun register(name: String ,email: String, password: String): ApiResponse<String>{
         try {
-            val response = api.register(RegisterRequest(name, email, phone, password))
+            val response = api.register(RegisterRequest(name, email,  password))
             return ApiResponse.Success(response.message)
         }catch (e: HttpException){
             if (e.code() == 400){
