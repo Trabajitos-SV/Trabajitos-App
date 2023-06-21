@@ -1,114 +1,187 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:orientation="vertical"
-    tools:context=".ui.history.TrabajitoFragment"
-    android:paddingTop="16dp"
-    android:background="@color/background_color">
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
 
-
-    <FrameLayout
-        android:layout_width="200dp"
-        android:layout_height="40dp"
-        android:background="@drawable/page_title_shape"
-        android:layout_marginBottom="@dimen/small_padding">
-
-
-
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:text="History"
-            android:textColor="@color/white"
-            android:textStyle="bold"
-            android:gravity="center"
-            android:textSize="20sp"/>
-
-    </FrameLayout>
-
-    <ScrollView
+    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="match_parent"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:orientation="vertical"
+        tools:context=".ui.history.TrabajitoFragment"
+        android:paddingTop="16dp"
+        android:background="@color/background_color">
 
-        <LinearLayout
+
+        <FrameLayout
+            android:layout_width="200dp"
+            android:layout_height="40dp"
+            android:background="@drawable/page_title_shape"
+            android:layout_marginBottom="@dimen/small_padding">
+
+
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:text="History"
+                android:textColor="@color/white"
+                android:textStyle="bold"
+                android:gravity="center"
+                android:textSize="20sp"/>
+
+        </FrameLayout>
+
+        <ScrollView
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:orientation="vertical">
+            android:layout_height="match_parent">
 
-            <androidx.cardview.widget.CardView
-                android:layout_width="350dp"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center"
-                android:layout_margin="@dimen/small_padding"
-                app:cardCornerRadius="8dp">
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
 
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:orientation="horizontal"
-                    android:layout_margin="@dimen/mid_padding">
-
-                    <ImageView
-                        android:layout_width="130dp"
-                        android:layout_height="100dp"
-                        android:src="@drawable/no_image"/>
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/worker_info_card"
+                    android:layout_width="350dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_margin="@dimen/small_padding"
+                    app:cardCornerRadius="8dp">
 
                     <LinearLayout
-                        android:layout_width="190dp"
-                        android:layout_height="100dp"
-                        android:orientation="vertical"
-                        android:gravity="center_vertical">
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:orientation="horizontal"
+                        android:layout_margin="@dimen/mid_padding">
 
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:text="Worker_name"
-                            android:textStyle="bold"
-                            android:textColor="@color/black"
-                            android:textSize="16sp"/>
+                        <ImageView
+                            android:id="@+id/worker_image_trabajito"
+                            android:layout_width="130dp"
+                            android:layout_height="100dp"
+                            android:src="@drawable/no_image"/>
 
                         <LinearLayout
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:orientation="horizontal">
+                            android:layout_width="190dp"
+                            android:layout_height="100dp"
+                            android:orientation="vertical"
+                            android:gravity="center_vertical">
+
+                            <TextView
+                                android:id="@+id/worker_name_trabajito"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="Worker_name"
+                                android:textStyle="bold"
+                                android:textColor="@color/black"
+                                android:textSize="16sp"/>
+
+                            <LinearLayout
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:orientation="horizontal">
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="Location: "
+                                    android:textStyle="bold"
+                                    android:textColor="@color/black"
+                                    android:textSize="16sp"/>
+
+                                <TextView
+                                    android:id="@+id/worker_location_trabajito"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="Location"
+                                    android:textColor="@color/black"
+                                    android:textSize="16sp"/>
+
+                            </LinearLayout>
+
+                            <LinearLayout
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:orientation="horizontal">
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="Phone number: "
+                                    android:textStyle="bold"
+                                    android:textColor="@color/black"
+                                    android:textSize="16sp"/>
+
+                                <TextView
+                                    android:id="@+id/worker_phone_trabajito"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="12345678"
+                                    android:textColor="@color/black"
+                                    android:textSize="16sp"/>
+
+                            </LinearLayout>
+
+                        </LinearLayout>
+
+                    </LinearLayout>
+
+                </androidx.cardview.widget.CardView>
+
+                <androidx.cardview.widget.CardView
+                    android:layout_width="350dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    app:cardCornerRadius="8dp"
+                    android:layout_margin="@dimen/small_padding">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:orientation="horizontal"
+                        android:layout_margin="@dimen/small_padding">
+
+                        <LinearLayout
+                            android:layout_width="175dp"
+                            android:layout_height="match_parent"
+                            android:orientation="vertical"
+                            android:gravity="center">
 
                             <TextView
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                android:text="Location: "
+                                android:text="Start day"
                                 android:textStyle="bold"
                                 android:textColor="@color/black"
                                 android:textSize="16sp"/>
 
                             <TextView
+                                android:id="@+id/start_date_trabajito"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                android:text="Location"
+                                android:text="00/00/00"
                                 android:textColor="@color/black"
                                 android:textSize="16sp"/>
 
                         </LinearLayout>
 
                         <LinearLayout
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:orientation="horizontal">
+                            android:layout_width="175dp"
+                            android:layout_height="match_parent"
+                            android:orientation="vertical"
+                            android:gravity="center">
 
                             <TextView
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                android:text="Phone number: "
+                                android:text="End day"
                                 android:textStyle="bold"
                                 android:textColor="@color/black"
                                 android:textSize="16sp"/>
-
                             <TextView
+                                android:id="@+id/end_date_trabajito"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                android:text="12345678"
+                                android:text="00/00/00"
                                 android:textColor="@color/black"
                                 android:textSize="16sp"/>
 
@@ -116,148 +189,97 @@
 
                     </LinearLayout>
 
-                </LinearLayout>
+                </androidx.cardview.widget.CardView>
 
-            </androidx.cardview.widget.CardView>
-
-            <androidx.cardview.widget.CardView
-                android:layout_width="350dp"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center"
-                app:cardCornerRadius="8dp"
-                android:layout_margin="@dimen/small_padding">
-
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:orientation="horizontal"
-                    android:layout_margin="@dimen/small_padding">
+                <androidx.cardview.widget.CardView
+                    android:layout_width="350dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_margin="@dimen/small_padding"
+                    app:cardCornerRadius="8dp">
 
                     <LinearLayout
-                        android:layout_width="175dp"
+                        android:layout_width="match_parent"
                         android:layout_height="match_parent"
                         android:orientation="vertical"
-                        android:gravity="center">
+                        android:layout_margin="@dimen/small_padding">
 
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:text="Start day"
+                            android:text="Task description"
                             android:textStyle="bold"
                             android:textColor="@color/black"
-                            android:textSize="16sp"/>
+                            android:textSize="16sp"
+                            android:layout_margin="@dimen/small_padding"/>
 
                         <TextView
+                            android:id="@+id/task_description_trabajito"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:text="00/00/00"
-                            android:textColor="@color/black"
-                            android:textSize="16sp"/>
+                            android:text="@string/lorem_long"
+                            android:textSize="16sp"
+                            android:layout_margin="@dimen/small_padding"/>
 
                     </LinearLayout>
 
+                </androidx.cardview.widget.CardView>
+
+                <androidx.cardview.widget.CardView
+                    android:layout_width="350dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_margin="@dimen/small_padding"
+                    app:cardCornerRadius="8dp">
+
                     <LinearLayout
-                        android:layout_width="175dp"
+                        android:layout_width="match_parent"
                         android:layout_height="match_parent"
-                        android:orientation="vertical"
-                        android:gravity="center">
+                        android:orientation="vertical">
 
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:text="Start day"
+                            android:text="Billing section"
                             android:textStyle="bold"
                             android:textColor="@color/black"
-                            android:textSize="16sp"/>
+                            android:textSize="16sp"
+                            android:layout_margin="@dimen/small_padding"/>
+
                         <TextView
+                            android:id="@+id/bill_info_trabajito"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:text="00/00/00"
-                            android:textColor="@color/black"
-                            android:textSize="16sp"/>
+                            android:text="@string/lorem_bill"
+                            android:textSize="16sp"
+                            android:layout_margin="@dimen/small_padding"/>
 
                     </LinearLayout>
 
-                </LinearLayout>
+                </androidx.cardview.widget.CardView>
 
-            </androidx.cardview.widget.CardView>
+                <Button
+                    android:id="@+id/confirm_button_trabajito"
+                    android:layout_width="350dp"
+                    android:layout_height="50dp"
+                    android:layout_gravity="center"
+                    android:layout_margin="@dimen/small_padding"
+                    android:text="Confirm"
+                    android:backgroundTint="@color/trabajitos_blue"/>
 
-            <androidx.cardview.widget.CardView
-                android:layout_width="350dp"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center"
-                android:layout_margin="@dimen/small_padding"
-                app:cardCornerRadius="8dp">
+                <Button
+                    android:id="@+id/end_job_trabajito"
+                    android:layout_width="350dp"
+                    android:layout_height="50dp"
+                    android:layout_gravity="center"
+                    android:layout_margin="@dimen/small_padding"
+                    android:text="end job"
+                    android:backgroundTint="@android:color/holo_red_light"/>
 
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:orientation="vertical"
-                    android:layout_margin="@dimen/small_padding">
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="Task description"
-                        android:textStyle="bold"
-                        android:textColor="@color/black"
-                        android:textSize="16sp"
-                        android:layout_margin="@dimen/small_padding"/>
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="@string/lorem_long"
-                        android:textSize="16sp"
-                        android:layout_margin="@dimen/small_padding"/>
-
-                </LinearLayout>
-
-            </androidx.cardview.widget.CardView>
-
-            <androidx.cardview.widget.CardView
-                android:layout_width="350dp"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center"
-                android:layout_margin="@dimen/small_padding"
-                app:cardCornerRadius="8dp">
-
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:orientation="vertical">
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="Billing section"
-                        android:textStyle="bold"
-                        android:textColor="@color/black"
-                        android:textSize="16sp"
-                        android:layout_margin="@dimen/small_padding"/>
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="@string/lorem_bill"
-                        android:textSize="16sp"
-                        android:layout_margin="@dimen/small_padding"/>
-
-                </LinearLayout>
-
-            </androidx.cardview.widget.CardView>
-
-            <Button
-                android:layout_width="350dp"
-                android:layout_height="50dp"
-                android:layout_gravity="center"
-                android:layout_margin="@dimen/small_padding"
-                android:text="end job"
-                android:backgroundTint="@android:color/holo_red_light"/>
-
-        </LinearLayout>
+            </LinearLayout>
 
 
-    </ScrollView>
+        </ScrollView>
 
-</LinearLayout>
+    </LinearLayout>
+</layout>
