@@ -3,6 +3,7 @@ package com.example.trabajitosinc.ui.viewmodel
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider
+import androidx.lifecycle.ViewModelProvider.AndroidViewModelFactory.Companion.APPLICATION_KEY
 import androidx.lifecycle.viewmodel.initializer
 import androidx.lifecycle.viewmodel.viewModelFactory
 import com.example.trabajitosinc.TrabajitosApplication
@@ -19,7 +20,7 @@ class UserInfoViewModel(private val repository : UserRepository) : ViewModel(){
     fun getUsers() = repository.getUsers()
 
 
-    fun clearData(){
+    fun clearUserData(){
         name.value = ""
         email.value = ""
         number.value = ""
@@ -28,7 +29,7 @@ class UserInfoViewModel(private val repository : UserRepository) : ViewModel(){
     }
 
     fun setSelectedUser(user : UserModel){
-        clearData()
+        clearUserData()
         name.value = user.name
         email.value = user.email
         number.value = user.number.toString()
@@ -40,7 +41,7 @@ class UserInfoViewModel(private val repository : UserRepository) : ViewModel(){
     companion object{
         val Factory = viewModelFactory {
             initializer {
-                val app = this[ViewModelProvider.AndroidViewModelFactory.APPLICATION_KEY] as TrabajitosApplication
+                val app = this[APPLICATION_KEY] as TrabajitosApplication
                 UserInfoViewModel(app.userRepository)
             }
         }
