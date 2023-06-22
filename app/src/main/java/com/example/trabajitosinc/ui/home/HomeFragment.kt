@@ -14,7 +14,9 @@ import com.example.trabajitosinc.R
 import com.example.trabajitosinc.data.models.CategoryModel
 import com.example.trabajitosinc.data.models.UserModel
 import com.example.trabajitosinc.databinding.FragmentHomeBinding
+import com.example.trabajitosinc.databinding.ItemSuggestedAssociatesBinding
 import com.example.trabajitosinc.ui.home.CategoriesHomeRecyclerView.CategoriesHomeRecyclerViewAdapter
+import com.example.trabajitosinc.ui.home.SuggestedRecyclerView.SuggestedRecyclerViewAdapter
 import com.example.trabajitosinc.ui.home.TopPerformanceRecyclerView.TopPerformanceRecyclerViewAdapter
 
 class HomeFragment : Fragment() {
@@ -27,6 +29,7 @@ class HomeFragment : Fragment() {
     private lateinit var binding : FragmentHomeBinding
     private lateinit var adapter : CategoriesHomeRecyclerViewAdapter
     private lateinit var adapterTopPerformance : TopPerformanceRecyclerViewAdapter
+    private lateinit var adapterSuggestedAssociates : SuggestedRecyclerViewAdapter
 
 
 
@@ -41,10 +44,15 @@ class HomeFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
+        binding.arrowForwardCategoriesButton.setOnClickListener {
+            findNavController().navigate(R.id.action_navigation_home_to_navigation_categories)
+        }
+
         setRecyclerViewCategories(view)
 
         setRecyclerViewTopPerformance(view)
 
+        setRecyclerViewSuggestedAssociates(view)
 
     }
 
@@ -101,7 +109,30 @@ class HomeFragment : Fragment() {
     }
 
 
+    private fun showSelectedItemSuggestedAssociates(user: UserModel){
+        homeViewModel.setSelectedUser(user)
+        Log.d("APP_TAG", user.name)
+        findNavController().navigate(R.id.action_navigation_categories_to_selectedCategoryFragment)
+    }
+
+    private fun displayUserSuggested() {
+        adapterSuggestedAssociates.setData(homeViewModel.getUsers())
+        adapterSuggestedAssociates.notifyDataSetChanged()
+
+    }
+
+    fun setRecyclerViewSuggestedAssociates(view: View){
+
+        binding.suggestedAssociates.layoutManager = LinearLayoutManager(requireContext(), LinearLayoutManager.HORIZONTAL, false)
 
 
+        adapterSuggestedAssociates = SuggestedRecyclerViewAdapter {
+            showSelectedItemSuggestedAssociates(it)
+        }
+
+        binding.suggestedAssociates.adapter = adapterSuggestedAssociates
+        displayUserSuggested()
+
+    }
 
 }
