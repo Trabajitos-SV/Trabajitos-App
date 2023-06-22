@@ -31,6 +31,9 @@
         <action
             android:id="@+id/action_welcomeFragment_to_signInFragment"
             app:destination="@id/signInFragment" />
+        <action
+            android:id="@+id/action_welcomeFragment_to_mainActivity"
+            app:destination="@id/mainActivity" />
     </fragment>
     <fragment
         android:id="@+id/signInFragment"

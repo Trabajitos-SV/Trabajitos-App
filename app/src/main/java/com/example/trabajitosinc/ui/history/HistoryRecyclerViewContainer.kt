@@ -60,8 +60,9 @@ class HistoryRecyclerViewContainer : Fragment() {
 
     private fun showSelectedItem(trabajito: TrabajitoModel){
         historyViewModel.setSelected(trabajito)
-        //Log.d("APP_TAG", trabajito.workerName)
-        findNavController().navigate(R.id.action_navigation_history_to_trabajitoFragment)
+
+        val direction = HistoryFragmentDirections.actionNavigationHistoryToTrabajitoFragment(trabajito)
+        findNavController().navigate(direction)
     }
 
     private fun displayTrrabajito(page: Int){
