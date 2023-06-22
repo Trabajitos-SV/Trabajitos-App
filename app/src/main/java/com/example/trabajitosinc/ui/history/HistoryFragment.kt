@@ -43,8 +43,6 @@ class HistoryFragment : Fragment() {
 
     private lateinit var binding: FragmentHistoryBinding
 
-    //private lateinit var adapter: TrabajitoRecyclerViewAdapter
-
     private val historyViewmodel: HistoryViewModel by activityViewModels {
         HistoryViewModel.Factory
     }

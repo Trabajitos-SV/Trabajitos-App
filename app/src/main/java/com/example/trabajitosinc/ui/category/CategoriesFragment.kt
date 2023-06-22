@@ -50,8 +50,9 @@ class CategoriesFragment : Fragment() {
 
     private fun showSelectedItem(category: CategoryModel){
         categoryViewModel.setSelected(category)
-        Log.d("APP_TAG", category.name)
-        findNavController().navigate(R.id.action_navigation_categories_to_selectedCategoryFragment)
+
+        val direction = CategoriesFragmentDirections.actionNavigationCategoriesToSelectedCategoryFragment(category)
+        findNavController().navigate(direction)
     }
 
     private fun displayCategories() {

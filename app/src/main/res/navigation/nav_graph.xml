@@ -47,7 +47,11 @@
         android:id="@+id/selectedCategoryFragment"
         android:name="com.example.trabajitosinc.ui.category.SelectedCategoryFragment"
         android:label="fragment_selected_category"
-        tools:layout="@layout/fragment_selected_category" />
+        tools:layout="@layout/fragment_selected_category" >
+        <argument
+            android:name="category"
+            app:argType="com.example.trabajitosinc.data.models.CategoryModel" />
+    </fragment>
     <fragment
         android:id="@+id/editProfileFragment"
         android:name="com.example.trabajitosinc.ui.user.EditProfileFragment"
