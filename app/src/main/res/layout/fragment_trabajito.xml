@@ -141,7 +141,7 @@
                         android:layout_margin="@dimen/small_padding">
 
                         <LinearLayout
-                            android:layout_width="175dp"
+                            android:layout_width="168dp"
                             android:layout_height="match_parent"
                             android:orientation="vertical"
                             android:gravity="center">
@@ -164,8 +164,35 @@
 
                         </LinearLayout>
 
+                        <com.google.android.material.textfield.TextInputLayout
+                            android:layout_gravity="fill_vertical"
+                            android:visibility="gone"
+                            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                            android:id="@+id/end_date_input"
+                            android:layout_width="168dp"
+                            android:layout_height="match_parent"
+                            android:hint="End Date"
+                            app:boxStrokeWidth="0dp"
+                            app:boxBackgroundColor="@color/white"
+                            app:boxCornerRadiusTopEnd="12dp"
+                            app:boxCornerRadiusBottomEnd="12dp"
+                            app:boxCornerRadiusTopStart="12dp"
+                            app:boxCornerRadiusBottomStart="12dp"
+                            app:boxStrokeColor="@color/white"
+                            app:hintTextColor="@color/black"
+                            >
+
+                            <com.google.android.material.textfield.TextInputEditText
+                                android:id="@+id/end_date_text"
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:textSize="16sp"
+                                android:textColor="@color/black"
+                                android:gravity="center_horizontal" />
+                        </com.google.android.material.textfield.TextInputLayout>
+
                         <LinearLayout
-                            android:layout_width="175dp"
+                            android:layout_width="168dp"
                             android:layout_height="match_parent"
                             android:orientation="vertical"
                             android:gravity="center">
@@ -190,6 +217,8 @@
                     </LinearLayout>
 
                 </androidx.cardview.widget.CardView>
+
+                
 
                 <androidx.cardview.widget.CardView
                     android:layout_width="350dp"
@@ -246,6 +275,33 @@
                             android:textColor="@color/black"
                             android:textSize="16sp"
                             android:layout_margin="@dimen/small_padding"/>
+
+                        <com.google.android.material.textfield.TextInputLayout
+                            android:layout_gravity="fill_vertical"
+                            android:visibility="gone"
+                            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                            android:id="@+id/Billing_field"
+                            android:layout_width="match_parent"
+                            android:layout_height="150dp"
+                            android:hint="Describe the bill of the job"
+                            app:boxStrokeWidth="0dp"
+                            app:boxBackgroundColor="@color/white"
+                            app:boxCornerRadiusTopEnd="12dp"
+                            app:boxCornerRadiusBottomEnd="12dp"
+                            app:boxCornerRadiusTopStart="12dp"
+                            app:boxCornerRadiusBottomStart="12dp"
+                            app:boxStrokeColor="@color/white"
+                            app:hintTextColor="@color/black">
+
+                            <com.google.android.material.textfield.TextInputEditText
+                                android:id="@+id/billing_input"
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:textSize="16sp"
+                                android:textColor="@color/black"
+                                android:gravity="top"/>
+                        </com.google.android.material.textfield.TextInputLayout>
+
 
                         <TextView
                             android:id="@+id/bill_info_trabajito"

@@ -46,11 +46,23 @@ class TrabajitoFragment : Fragment() {
         binding.billInfoTrabajito.setText(currentTrabajito.bill)
         setNulls()
         binding.confirmButtonTrabajito.setOnClickListener{
-            it.findNavController().popBackStack()
+            if (validateEndDate()){
+                it.findNavController().popBackStack()
+            }
         }
         binding.endJobTrabajito.setOnClickListener{
-            it.findNavController().popBackStack()
+            if (validateBill()){
+                it.findNavController().popBackStack()
+            }
         }
+    }
+
+    private fun validateBill(): Boolean {
+        return !binding.billingInput.text.isNullOrBlank()
+    }
+
+    private fun validateEndDate():Boolean {
+        return !binding.endDateText.text.isNullOrBlank()
     }
 
     private fun setNulls() {
@@ -63,9 +75,13 @@ class TrabajitoFragment : Fragment() {
                 binding.endJobTrabajito.visibility = View.GONE
                 binding.billCardTrabajito.visibility = View.GONE
                 binding.endDateTrabajito.setText("Pending")
+                binding.endDateInput.visibility = View.VISIBLE
+                binding.endJobTrabajito.visibility = View.GONE
             }
             currentTrabajito.TrabajitoStatus == "In Progress" -> {
                 binding.confirmButtonTrabajito.visibility = View.GONE
+                binding.BillingField.visibility = View.VISIBLE
+                binding.billInfoTrabajito.visibility = View.GONE
             }
         }
     }
