@@ -43,7 +43,7 @@ class LoginPagerContentFragment : Fragment() {
 
 
         binding.textForgotPassword.setOnClickListener {
-            findNavController().navigate(R.id.action_loginFragment_to_emailFragment)
+            findNavController().navigate(R.id.action_loginFragment_to_mainActivity)
         }
 
         binding.loginButton.setOnClickListener {
