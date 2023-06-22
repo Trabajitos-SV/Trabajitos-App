@@ -1,27 +1,17 @@
 package com.example.trabajitosinc.ui.category
 
 import android.os.Bundle
-import android.util.Log
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.activityViewModels
-import androidx.lifecycle.MutableLiveData
-import androidx.lifecycle.ViewModel
-import androidx.lifecycle.ViewModelProvider
-import androidx.lifecycle.viewmodel.initializer
-import androidx.lifecycle.viewmodel.viewModelFactory
 import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.GridLayoutManager
-import com.example.trabajitosinc.R
-import com.example.trabajitosinc.TrabajitosApplication
 import com.example.trabajitosinc.data.models.CategoryModel
 import com.example.trabajitosinc.databinding.FragmentCategoriesBinding
-import com.example.trabajitosinc.repositories.CategoryRepository
-import com.example.trabajitosinc.ui.category.recyclerview.CategoryRecyclerViewAdapter
+import com.example.trabajitosinc.ui.category.recyclerview.categories.CategoryRecyclerViewAdapter
 import com.example.trabajitosinc.ui.viewmodel.CategoryViewModel
-import java.lang.NumberFormatException
 
 class CategoriesFragment : Fragment() {
 
