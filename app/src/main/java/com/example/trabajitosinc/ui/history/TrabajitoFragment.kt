@@ -37,15 +37,36 @@ class TrabajitoFragment : Fragment() {
     }
 
     private fun setInfo() {
+        binding.workerNameTrabajito.setText(currentTrabajito.workerName)
+        binding.workerLocationTrabajito.setText(currentTrabajito.workerLocation)
+        binding.workerPhoneTrabajito.setText(currentTrabajito.phone)
         binding.startDateTrabajito.setText(currentTrabajito.startDate)
         binding.endDateTrabajito.setText(currentTrabajito.endDate)
         binding.taskDescriptionTrabajito.setText(currentTrabajito.taskDescription)
         binding.billInfoTrabajito.setText(currentTrabajito.bill)
+        setNulls()
         binding.confirmButtonTrabajito.setOnClickListener{
             it.findNavController().popBackStack()
         }
         binding.endJobTrabajito.setOnClickListener{
             it.findNavController().popBackStack()
+        }
+    }
+
+    private fun setNulls() {
+        when{
+            currentTrabajito.TrabajitoStatus == "Completed" ->{
+                binding.confirmButtonTrabajito.visibility = View.GONE
+                binding.endJobTrabajito.visibility = View.GONE
+            }
+            currentTrabajito.TrabajitoStatus == "Pending" -> {
+                binding.endJobTrabajito.visibility = View.GONE
+                binding.billCardTrabajito.visibility = View.GONE
+                binding.endDateTrabajito.setText("Pending")
+            }
+            currentTrabajito.TrabajitoStatus == "In Progress" -> {
+                binding.confirmButtonTrabajito.visibility = View.GONE
+            }
         }
     }
 
