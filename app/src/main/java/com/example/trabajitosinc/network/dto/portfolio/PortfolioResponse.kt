@@ -1,0 +1,82 @@
+package com.example.trabajitosinc.network.dto.portfolio
+
+import com.example.trabajitosinc.data.models.ReviewsModel
+import com.example.trabajitosinc.data.models.UserModel
+import com.google.gson.annotations.SerializedName
+
+data class PortfolioResponse (
+    @SerializedName("_id") val id : String,
+    val title : String,
+    val description : String,
+    val images : String,
+    val user: List<UserModel>,
+    val category: String,
+)
+
+// Para el metodo findById y findAll es la misma ruta, solo cambia el metodo
+// Falta crear el metodo Create, delete, update Portfolio
+// Falta crear la Review metodo Create.
+
+
+//Find my Portfolio
+data class FindMyPortfolioResponse (
+    @SerializedName("_id") val id: String,
+    val title : String,
+    val description : String,
+    val images : String,
+    val user: List<UserModel>,
+    val category: String,
+    val reviews: List<ReviewsModel>
+)
+
+//FindById Portfolio
+data class FindByIdPortfolioResponse (
+    @SerializedName("_id") val id: String,
+    val title : String,
+    val description : String,
+    val images : String,
+    val user: List<UserModel>,
+    val category: String
+)
+
+//Find All Portfolio
+data class FindAllPortfolioResponse (
+    @SerializedName("_id") val id: String,
+    val title : String,
+    val description : String,
+    val images : String,
+    val user: List<UserModel>,
+    val category: String,
+    val reviews: List<ReviewsModel>
+)
+
+//Create Portfolio
+data class CreatePortfolioRequest(
+    val title : String,
+    val description : String,
+    val images : String,
+    val user: List<UserModel>,
+    val category: String,
+    val reviews: List<ReviewsModel>
+)
+
+//Delete Portfolio *FALTA HACERLO*
+data class DeletePortfolioRequest(
+    val title : String,
+    val description : String,
+    val images : String,
+    val user: List<UserModel>,
+    val category: String,
+    val reviews: List<ReviewsModel>
+)
+
+
+//Update Portfolio
+data class UpdatePortfolioRequest(
+    val title : String,
+    val description : String,
+    val images : String,
+    val user: List<UserModel>,
+    val category: String,
+    val reviews: List<ReviewsModel>
+)
