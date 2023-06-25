@@ -1,6 +1,7 @@
 package com.example.trabajitosinc.network.service
 
 import com.example.trabajitosinc.network.dto.portfolio.PortfolioResponse
+import retrofit2.http.DELETE
 import retrofit2.http.GET
 import retrofit2.http.PATCH
 import retrofit2.http.POST
@@ -19,5 +20,9 @@ interface PortfolioService {
     @PATCH("portfolio/updateMyPortfolio/:id")
     suspend fun updateMyPortfolio(): PortfolioResponse
 
+    @DELETE("portfolio/deleteMyPortfolio/:id")
+    suspend fun deleteMyPortfolio(): PortfolioResponse
 
+    @POST("portfolio/review/:id")
+    suspend fun createReview(): PortfolioResponse
 }
