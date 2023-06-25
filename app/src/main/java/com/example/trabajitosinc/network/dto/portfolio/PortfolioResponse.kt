@@ -80,3 +80,13 @@ data class UpdatePortfolioRequest(
     val category: String,
     val reviews: List<ReviewsModel>
 )
+
+//Create Review
+data class CreateReviewRequest(
+    val description: String,
+    val qualification: Int,
+    @SerializedName("id_user") val userRequest: List<UserModel>,
+    val default: Boolean,
+    @SerializedName("_id") val userHired: List<UserModel>
+
+)
