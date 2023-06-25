@@ -48,7 +48,6 @@ class UserInfoFragment : Fragment() {
         binding.viewmodel = userInfoViewModel
 
 
-
     }
 
 
