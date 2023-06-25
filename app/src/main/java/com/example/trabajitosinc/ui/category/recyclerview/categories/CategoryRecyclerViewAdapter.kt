@@ -1,4 +1,4 @@
-package com.example.trabajitosinc.ui.category.recyclerview
+package com.example.trabajitosinc.ui.category.recyclerview.categories
 
 import android.view.LayoutInflater
 import android.view.ViewGroup

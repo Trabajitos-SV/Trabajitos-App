@@ -4,6 +4,7 @@ import android.app.Application
 import android.content.Context
 import android.content.SharedPreferences
 import com.example.trabajitosinc.data.categories
+import com.example.trabajitosinc.data.complexUsers
 
 import com.example.trabajitosinc.data.users
 import com.example.trabajitosinc.repositories.UserRepository
@@ -11,6 +12,7 @@ import com.example.trabajitosinc.data.trabajitos
 import com.example.trabajitosinc.network.retrofit.RetrofitInstance
 import com.example.trabajitosinc.repositories.CategoryRepository
 import com.example.trabajitosinc.repositories.HistoryRepository
+import com.example.trabajitosinc.repositories.UserComplexRepository
 import com.example.trabajitosinc.repository.CredentialsRepository
 
 class TrabajitosApplication: Application() {
@@ -21,6 +23,9 @@ class TrabajitosApplication: Application() {
         CategoryRepository(categories)
     }
 
+    val userComplexRepository: UserComplexRepository by lazy {
+        UserComplexRepository(complexUsers)
+    }
 
     val userRepository: UserRepository by lazy {
         UserRepository(users)

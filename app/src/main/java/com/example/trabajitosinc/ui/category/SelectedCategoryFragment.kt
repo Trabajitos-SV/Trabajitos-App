@@ -6,30 +6,66 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.activityViewModels
+import androidx.navigation.fragment.navArgs
+import androidx.recyclerview.widget.LinearLayoutManager
+import com.example.trabajitosinc.data.models.CategoryModel
+import com.example.trabajitosinc.data.models.UserComplexModel
 import com.example.trabajitosinc.databinding.FragmentSelectedCategoryBinding
-import com.example.trabajitosinc.ui.viewmodel.CategoryViewModel
+import com.example.trabajitosinc.ui.category.recyclerview.users.ComplexUserRecyclerViewAdapter
+import com.example.trabajitosinc.ui.viewmodel.SelectedCategoryViewModel
 
 class SelectedCategoryFragment : Fragment() {
 
     private lateinit var binding: FragmentSelectedCategoryBinding
+    private lateinit var adapter: ComplexUserRecyclerViewAdapter
 
-    private val categoryViewModel: CategoryViewModel by activityViewModels {
-        CategoryViewModel.Factory
+    private val selectedCategoryViewModel: SelectedCategoryViewModel by activityViewModels {
+        SelectedCategoryViewModel.Factory
     }
 
+    private val args: SelectedCategoryFragmentArgs by navArgs()
+    private lateinit var selectedCategory: CategoryModel
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View? {
+    ): View {
         binding = FragmentSelectedCategoryBinding.inflate(inflater, container, false)
         return binding.root
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        binding.viewmodel = categoryViewModel
-        binding.lifecycleOwner = viewLifecycleOwner
+        selectedCategory = args.category!!
+
+        binding.selectedCategoryTittle.text = selectedCategory.name
+        binding.imageView2.setImageResource(selectedCategory.image)
+
+        setRecyclerView(view)
+
+    }
+
+    private fun showSelectedItem(user: UserComplexModel){
+        selectedCategoryViewModel.setSelected(user)
+
+        //Todo: navigation
+
+    }
+
+    private fun displayWorkers() {
+        adapter.setData(selectedCategoryViewModel.getComplexUsers())
+        adapter.notifyDataSetChanged()
+    }
+
+    fun setRecyclerView(view: View){
+        binding.workersRecyclerView.layoutManager = LinearLayoutManager(view.context)
+
+        adapter = ComplexUserRecyclerViewAdapter{
+            showSelectedItem(it)
+        }
+
+        binding.workersRecyclerView.adapter = adapter
+        displayWorkers()
     }
 
 }

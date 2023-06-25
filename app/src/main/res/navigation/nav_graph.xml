@@ -51,7 +51,11 @@
         android:id="@+id/selectedCategoryFragment"
         android:name="com.example.trabajitosinc.ui.category.SelectedCategoryFragment"
         android:label="fragment_selected_category"
-        tools:layout="@layout/fragment_selected_category" />
+        tools:layout="@layout/fragment_selected_category" >
+        <argument
+            android:name="category"
+            app:argType="com.example.trabajitosinc.data.models.CategoryModel" />
+    </fragment>
     <fragment
         android:id="@+id/editProfileFragment"
         android:name="com.example.trabajitosinc.ui.user.EditProfileFragment"
@@ -82,5 +86,14 @@
         android:id="@+id/trabajitoFragment"
         android:name="com.example.trabajitosinc.ui.history.TrabajitoFragment"
         android:label="fragment_trabajito"
-        tools:layout="@layout/fragment_trabajito" />
+        tools:layout="@layout/fragment_trabajito" >
+        <argument
+            android:name="trabajito"
+            app:argType="com.example.trabajitosinc.data.models.TrabajitoModel"
+            app:nullable="false" />
+    </fragment>
+    <fragment
+        android:id="@+id/historyRecyclerViewContainer"
+        android:name="com.example.trabajitosinc.ui.history.HistoryRecyclerViewContainer"
+        android:label="HistoryRecyclerViewContainer" />
 </navigation>

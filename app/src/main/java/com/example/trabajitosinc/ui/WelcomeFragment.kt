@@ -35,6 +35,10 @@ class WelcomeFragment : Fragment() {
             findNavController().navigate(R.id.action_welcomeFragment_to_signInFragment)
         }
 
+        binding.signInButton.setOnClickListener{
+            findNavController().navigate(R.id.action_welcomeFragment_to_mainActivity)
+        }
+
     }
 
 

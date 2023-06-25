@@ -6,4 +6,8 @@ class HistoryRepository(private val trabajitos: MutableList<TrabajitoModel>) {
 
     fun getTrabajitos() = trabajitos
 
+    fun getCompletedTrabajitos() =trabajitos.filter {
+        it.TrabajitoStatus == "Completed"
+    }
+
 }

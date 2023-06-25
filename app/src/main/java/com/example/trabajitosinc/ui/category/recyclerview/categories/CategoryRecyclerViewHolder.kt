@@ -1,4 +1,4 @@
-package com.example.trabajitosinc.ui.category.recyclerview
+package com.example.trabajitosinc.ui.category.recyclerview.categories
 
 import androidx.recyclerview.widget.RecyclerView
 import com.example.trabajitosinc.data.models.CategoryModel

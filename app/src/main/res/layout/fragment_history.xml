@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="@color/background_color"
     android:orientation="vertical"
-    tools:context=".ui.history.HistoryFragment"
     android:paddingTop="16dp"
-    android:background="@color/background_color">
+    tools:context=".ui.history.HistoryFragment">
 
     <FrameLayout
         android:layout_width="200dp"
@@ -17,28 +17,28 @@
         <TextView
             android:layout_width="match_parent"
             android:layout_height="match_parent"
+            android:gravity="center"
             android:text="History"
             android:textColor="@color/white"
-            android:textStyle="bold"
-            android:gravity="center"
-            android:textSize="20sp"/>
+            android:textSize="20sp"
+            android:textStyle="bold"/>
 
     </FrameLayout>
 
     <com.google.android.material.tabs.TabLayout
-        android:layout_gravity="center"
         android:id="@+id/history_tabs"
         android:layout_width="250dp"
         android:layout_height="wrap_content"
+        android:layout_gravity="center"
         android:layout_marginTop="20dp"
-        app:tabMode="fixed"
+        android:background="@drawable/tab_background_shape"
         app:tabGravity="center"
-        app:tabIndicatorGravity="stretch"
-        app:tabSelectedTextColor="@color/white"
-        app:tabIndicatorColor="@null"
-        app:tabIndicatorAnimationMode="linear"
         app:tabIndicator="@drawable/tab_indicator"
-        android:background="@drawable/tab_background_shape">
+        app:tabIndicatorAnimationMode="linear"
+        app:tabIndicatorColor="@null"
+        app:tabIndicatorGravity="stretch"
+        app:tabMode="fixed"
+        app:tabSelectedTextColor="@color/white">
 
     </com.google.android.material.tabs.TabLayout>
 
@@ -46,14 +46,10 @@
         android:id="@+id/history_pager"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_marginTop="0dp">
+        android:layout_marginTop="0dp"
+        android:paddingTop="@dimen/mid_padding"
+        android:layout_gravity="center">
 
     </androidx.viewpager2.widget.ViewPager2>
-
-    <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/my_trabajitos_list"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content" />
-
 
 </LinearLayout>

@@ -1,5 +1,9 @@
 package com.example.trabajitosinc.data.models
 
+import android.os.Parcelable
+import kotlinx.android.parcel.Parcelize
+
+@Parcelize
 data class TrabajitoModel(
     val workerId: String,
     val requesterId: String,
@@ -12,4 +16,4 @@ data class TrabajitoModel(
     val taskDescription: String,
     val bill: String,
     val TrabajitoStatus: String
-)
+):Parcelable

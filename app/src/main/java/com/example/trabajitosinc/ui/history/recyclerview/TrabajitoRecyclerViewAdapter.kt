@@ -1,13 +1,14 @@
 package com.example.trabajitosinc.ui.history.recyclerview
 
+import android.content.Context
 import android.view.LayoutInflater
 import android.view.ViewGroup
-import android.widget.ExpandableListView.OnChildClickListener
 import androidx.recyclerview.widget.RecyclerView
 import com.example.trabajitosinc.data.models.TrabajitoModel
 import com.example.trabajitosinc.databinding.ItemTrabajitoCardViewBinding
 
 class TrabajitoRecyclerViewAdapter(
+    var context: Context,
     private val clickListener: (TrabajitoModel)-> Unit
 ): RecyclerView.Adapter<TrabajitoRecyclerViewHolder>() {
 
