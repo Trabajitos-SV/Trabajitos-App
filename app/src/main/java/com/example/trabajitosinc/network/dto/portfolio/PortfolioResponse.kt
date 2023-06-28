@@ -51,7 +51,7 @@ data class FindAllPortfolioResponse (
 )
 
 //Create Portfolio
-data class CreatePortfolioRequest(
+data class CreatePortfolioResponse(
     val title : String,
     val description : String,
     val images : String,
@@ -61,7 +61,7 @@ data class CreatePortfolioRequest(
 )
 
 //Delete Portfolio *FALTA HACERLO*
-data class DeletePortfolioRequest(
+data class DeletePortfolioResponse(
     val title : String,
     val description : String,
     val images : String,
@@ -72,7 +72,7 @@ data class DeletePortfolioRequest(
 
 
 //Update Portfolio
-data class UpdatePortfolioRequest(
+data class UpdatePortfolioResponse(
     val title : String,
     val description : String,
     val images : String,
@@ -82,7 +82,7 @@ data class UpdatePortfolioRequest(
 )
 
 //Create Review
-data class CreateReviewRequest(
+data class CreateReviewResponse(
     val description: String,
     val qualification: Int,
     @SerializedName("id_user") val userRequest: List<UserModel>,
