@@ -1,5 +1,7 @@
 package com.example.trabajitosinc.network.dto.portfolio.createPortfolio
 
+import com.example.trabajitosinc.network.dto.portfolio.Review.ReviewRequest
+
 
 data class CreatePortfolioRequest (
     val title : String,
@@ -7,12 +9,7 @@ data class CreatePortfolioRequest (
     val images : String,
     val user: List<String>,
     val category: String,
-    val reviews: List<reviewRequest> = emptyList()
+    val reviews: List<ReviewRequest> = emptyList()
     )
 
-data class reviewRequest(
-    val review: String,
-    val qualification: Int,
-    val portfolioId: String,
-)
 

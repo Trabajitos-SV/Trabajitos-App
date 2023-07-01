@@ -1,4 +1,5 @@
 package com.example.trabajitosinc.network.dto.portfolio.createPortfolio
+import com.example.trabajitosinc.network.dto.portfolio.Review.ReviewResponse
 
 data class CreatePortfolioResponse (
     val _id: String,
@@ -7,11 +8,5 @@ data class CreatePortfolioResponse (
     val user: String,
     val category: String,
     val images: List<String>,
-    val reviews: List<reviewResponse> = emptyList()
-)
-
-data class reviewResponse(
-    val review: String,
-    val qualification: Int,
-    val portfolioId: String,
+    val reviews: List<ReviewResponse> = emptyList()
 )
