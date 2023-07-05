@@ -6,4 +6,6 @@ class UserComplexRepository(private val complexUsers: MutableList<UserComplexMod
 
     fun getComplexUsers() = complexUsers
 
+    fun getSelectedCategory(selectedCategory: String) =complexUsers.filter { it.portfolio.category == selectedCategory }
+
 }
