@@ -101,7 +101,7 @@
         android:label="HistoryRecyclerViewContainer" />
     <fragment
         android:id="@+id/selectedWorkerFragment"
-        android:name="com.example.trabajitosinc.ui.SelectedWorkerFragment"
+        android:name="com.example.trabajitosinc.ui.category.SelectedWorkerFragment"
         android:label="fragment_selected_worker"
         tools:layout="@layout/fragment_selected_worker" />
 </navigation>

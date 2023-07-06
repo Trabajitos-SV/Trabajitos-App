@@ -1,4 +1,4 @@
-package com.example.trabajitosinc.ui
+package com.example.trabajitosinc.ui.category
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment

@@ -1,4 +1,4 @@
-package com.example.trabajitosinc.ui
+package com.example.trabajitosinc.ui.register
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment
@@ -9,34 +9,32 @@ import android.widget.Toast
 import androidx.fragment.app.activityViewModels
 import androidx.navigation.fragment.findNavController
 import com.example.trabajitosinc.R
-import com.example.trabajitosinc.databinding.FragmentRegisterPagerContentBinding
+import com.example.trabajitosinc.databinding.FragmentSignInBinding
 import com.example.trabajitosinc.ui.register.RegisterUiStatus
 import com.example.trabajitosinc.ui.register.viewmodel.RegisterViewModel
 
 
-class RegisterPagerContentFragment : Fragment() {
+class SignUpFragment : Fragment() {
 
     private val registerViewModel : RegisterViewModel by activityViewModels {
         RegisterViewModel.Factory
     }
 
-    private lateinit var binding : FragmentRegisterPagerContentBinding
+    private lateinit var binding : FragmentSignInBinding
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View? {
-
-        binding = FragmentRegisterPagerContentBinding.inflate(inflater, container, false)
+    ): View {
+        binding = FragmentSignInBinding.inflate(inflater, container, false)
         return binding.root
     }
-
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
         binding.registerButton.setOnClickListener {
-            findNavController().navigate(R.id.action_loginFragment_self)
+            findNavController().navigate(R.id.action_signInFragment_to_loginFragment)
         }
 
 
@@ -68,11 +66,12 @@ class RegisterPagerContentFragment : Fragment() {
             is RegisterUiStatus.Success -> {
                 registerViewModel.clearStatus()
                 registerViewModel.clearData()
-                findNavController().navigate(R.id.action_loginFragment_self)
+                findNavController().navigate(R.id.action_signInFragment_to_loginFragment)
             }
 
             else -> {}
         }
     }
+
 
 }

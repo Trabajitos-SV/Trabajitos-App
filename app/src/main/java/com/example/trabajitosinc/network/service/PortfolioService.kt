@@ -1,7 +1,7 @@
 package com.example.trabajitosinc.network.service
 
+import com.example.trabajitosinc.network.dto.portfolio.FindAllPortfolioResponse
 import com.example.trabajitosinc.network.dto.portfolio.createPortfolio.CreatePortfolioResponse
-import com.example.trabajitosinc.network.dto.portfolio.findAllPortfolios.FindAllPortfolioResponse
 import com.example.trabajitosinc.network.dto.portfolio.findMyPortfolio.FindMyPortfolioResponse
 import retrofit2.http.DELETE
 import retrofit2.http.GET
