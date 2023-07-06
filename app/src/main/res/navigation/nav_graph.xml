@@ -55,6 +55,9 @@
         <argument
             android:name="category"
             app:argType="com.example.trabajitosinc.data.models.CategoryModel" />
+        <action
+            android:id="@+id/action_selectedCategoryFragment_to_selectedWorkerFragment"
+            app:destination="@id/selectedWorkerFragment" />
     </fragment>
     <fragment
         android:id="@+id/editProfileFragment"
@@ -96,4 +99,9 @@
         android:id="@+id/historyRecyclerViewContainer"
         android:name="com.example.trabajitosinc.ui.history.HistoryRecyclerViewContainer"
         android:label="HistoryRecyclerViewContainer" />
+    <fragment
+        android:id="@+id/selectedWorkerFragment"
+        android:name="com.example.trabajitosinc.ui.SelectedWorkerFragment"
+        android:label="fragment_selected_worker"
+        tools:layout="@layout/fragment_selected_worker" />
 </navigation>
