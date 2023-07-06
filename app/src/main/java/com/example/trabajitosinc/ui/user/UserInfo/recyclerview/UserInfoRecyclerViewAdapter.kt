@@ -1,4 +1,4 @@
-package com.example.trabajitosinc.ui.user.recyclerview
+package com.example.trabajitosinc.ui.user.UserInfo.recyclerview
 
 import android.view.LayoutInflater
 import android.view.ViewGroup
@@ -14,7 +14,7 @@ class UserInfoRecyclerViewAdapter (
 
     private val users = ArrayList<UserModel>()
 
-    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): UserInfoRecyclerViewHolder{
+    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): UserInfoRecyclerViewHolder {
         val binding = ItemRepositoryViewBinding.inflate(LayoutInflater.from(parent.context), parent, false)
         return UserInfoRecyclerViewHolder(binding)
     }

@@ -67,7 +67,7 @@
     </fragment>
     <fragment
         android:id="@+id/createPortfolioFragment"
-        android:name="com.example.trabajitosinc.ui.user.CreatePortfolioFragment"
+        android:name="com.example.trabajitosinc.ui.user.CreatePortfolio.CreatePortfolioFragment"
         android:label="fragment_create_portfolio"
         tools:layout="@layout/fragment_create_portfolio" >
         <action
@@ -76,7 +76,7 @@
     </fragment>
     <fragment
         android:id="@+id/userInfoFragment"
-        android:name="com.example.trabajitosinc.ui.user.UserInfoFragment"
+        android:name="com.example.trabajitosinc.ui.user.UserInfo.UserInfoFragment"
         android:label="UserInfoFragment" >
         <action
             android:id="@+id/action_userInfoFragment_to_navigation_user"
