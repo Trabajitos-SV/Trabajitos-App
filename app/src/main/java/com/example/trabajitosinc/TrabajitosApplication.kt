@@ -5,6 +5,7 @@ import android.content.Context
 import android.content.SharedPreferences
 import com.example.trabajitosinc.data.categories
 import com.example.trabajitosinc.data.complexUsers
+import com.example.trabajitosinc.data.porfolios
 
 import com.example.trabajitosinc.data.users
 import com.example.trabajitosinc.repositories.UserRepository
@@ -18,7 +19,9 @@ import com.example.trabajitosinc.repository.CredentialsRepository
 
 class TrabajitosApplication: Application() {
 
-
+    val portfolioRepository : PortfolioRepository by lazy {
+        PortfolioRepository(porfolios)
+    }
 
     val categoryRepository: CategoryRepository by lazy {
         CategoryRepository(categories)

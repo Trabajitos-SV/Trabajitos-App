@@ -4,6 +4,7 @@ import com.example.trabajitosinc.R
 import com.example.trabajitosinc.data.models.CategoryModel
 import com.example.trabajitosinc.data.models.PortfolioModel
 import com.example.trabajitosinc.data.models.PortfolioModel2
+import com.example.trabajitosinc.data.models.ReviewsModel
 import com.example.trabajitosinc.data.models.UserModel
 import com.example.trabajitosinc.data.models.TrabajitoModel
 import com.example.trabajitosinc.data.models.UserComplexModel
@@ -18,6 +19,56 @@ val categories = mutableListOf(
     CategoryModel("Welding", R.drawable.welding_icon),
     CategoryModel("Plumbing", R.drawable.plumbing_icon),
     CategoryModel("Welding", R.drawable.welding_icon)
+)
+val porfolios = mutableListOf(
+    PortfolioModel(
+        id = "123",
+        title = "",
+        description = "hola",
+        images =  R.drawable.welding_icon,
+        user = "Lee ",
+        category = "Futbolista",
+        review = listOf(
+            ReviewsModel(description = "Excelente", qualification = 10, id_user = "123")
+        )
+
+    ),
+    PortfolioModel(
+            id = "123",
+    title = "",
+    description = "hola",
+    images =  R.drawable.plumbing_icon,
+    user = "Lee ",
+    category = "Futbolista",
+    review = listOf(
+        ReviewsModel(description = "Excelente", qualification = 10, id_user = "123")
+    )
+
+),
+    PortfolioModel(
+        id = "123",
+        title = "",
+        description = "hola",
+        images =  R.drawable.housekeeper_icon,
+        user = "Lee ",
+        category = "Futbolista",
+        review = listOf(
+        ReviewsModel(description = "Excelente", qualification = 10, id_user = "123")
+    )
+
+),
+    PortfolioModel(
+        id = "123",
+        title = "",
+        description = "hola",
+        images =  R.drawable.no_image,
+        user = "Lee ",
+        category = "Futbolista",
+        review = listOf(
+            ReviewsModel(description = "Excelente", qualification = 10, id_user = "123")
+        )
+
+    )
 )
 
 val trabajitos = mutableListOf(

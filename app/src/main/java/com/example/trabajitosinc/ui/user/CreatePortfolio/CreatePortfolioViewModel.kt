@@ -43,7 +43,14 @@ class CreatePortfolioViewModel(
 
     }
 
-
+    companion object {
+        val Factory = viewModelFactory {
+            initializer {
+                val app = this[APPLICATION_KEY] as TrabajitosApplication
+                CreatePortfolioViewModel(app.portfolioRepository)
+            }
+        }
+    }
 
 }
 
