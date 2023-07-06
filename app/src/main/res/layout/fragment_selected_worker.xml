@@ -52,11 +52,12 @@
                     android:layout_margin="8dp">
 
                     <com.google.android.material.imageview.ShapeableImageView
-                        android:id="@+id/imageView3"
+                        android:id="@+id/main_image_worker"
                         android:layout_width="match_parent"
                         android:layout_height="200dp"
                         android:background="#CACACA"
                         android:src="@drawable/no_image"
+                        android:scaleType="center"
                         app:layout_constraintEnd_toEndOf="parent"
                         app:layout_constraintStart_toStartOf="parent"
                         app:layout_constraintTop_toTopOf="parent"
@@ -72,10 +73,10 @@
                         android:textSize="24sp"
                         android:textStyle="bold"
                         app:layout_constraintStart_toStartOf="parent"
-                        app:layout_constraintTop_toBottomOf="@+id/imageView3" />
+                        app:layout_constraintTop_toBottomOf="@+id/main_image_worker" />
 
                     <TextView
-                        android:id="@+id/worker_name_selected_worker2"
+                        android:id="@+id/description_tittle"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="8dp"
@@ -139,14 +140,14 @@
                         app:shapeAppearanceOverlay="@style/Circular" />
 
                     <TextView
-                        android:id="@+id/textView19"
+                        android:id="@+id/description_selected_worker"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="8dp"
                         android:text="A really  long text"
                         android:textSize="16dp"
-                        app:layout_constraintStart_toStartOf="@+id/worker_name_selected_worker2"
-                        app:layout_constraintTop_toBottomOf="@+id/worker_name_selected_worker2" />
+                        app:layout_constraintStart_toStartOf="@+id/description_tittle"
+                        app:layout_constraintTop_toBottomOf="@+id/description_tittle" />
 
                 </androidx.constraintlayout.widget.ConstraintLayout>
             </androidx.cardview.widget.CardView>

@@ -1,5 +1,6 @@
 package com.example.trabajitosinc.ui.user.CreatePortfolio
 
+import android.net.Uri
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider.AndroidViewModelFactory.Companion.APPLICATION_KEY
@@ -11,6 +12,8 @@ import com.example.trabajitosinc.repositories.PortfolioRepository
 
 class CreatePortfolioViewModel(
     private val portfolioRepository : PortfolioRepository ): ViewModel() {
+
+    private var selectedImage: Uri? = null
 
     //Datos del Portafolio
 
@@ -40,8 +43,19 @@ class CreatePortfolioViewModel(
         user.value = portfolio.user.toString()
         category.value = portfolio.category.toString()
         review.value = portfolio.review.toString()
+        selectedImage = null
 
     }
+
+    fun getSelectedImage(): Uri? {
+        return selectedImage
+    }
+
+    fun setSelectedImage(imageUri: Uri?) {
+        selectedImage = imageUri
+    }
+
+
 
     companion object {
         val Factory = viewModelFactory {

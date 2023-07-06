@@ -1,5 +1,5 @@
 package com.example.trabajitosinc.ui.user.CreatePortfolio
-import CreatePorfolioRecyclerViewAdapter
+import com.example.trabajitosinc.ui.user.CreatePortfolio.recyclerview.CreatePorfolioRecyclerViewAdapter
 import android.app.Activity
 import android.content.Intent
 import android.content.pm.PackageManager
@@ -51,11 +51,6 @@ class CreatePortfolioFragment : Fragment() {
             findNavController().navigate(R.id.action_createPortfolioFragment_to_navigation_user)
         }
 
-        binding.postPortfolioButton.setOnClickListener {
-            requestPermissions()
-        }
-
-
 
         setRecyclerViewImages(view)
     }
@@ -70,14 +65,31 @@ class CreatePortfolioFragment : Fragment() {
 
         binding.carouselRecyclerView.adapter = adapter
         displayImages()
+
+        // Detectar el clic en el último elemento del RecyclerView
+        adapter.setLastItemClickListener {
+            requestPermissions()
+        }
     }
+
+
+
 
 
 
     private fun displayImages() {
         adapter.setData(createPortfolioViewModel.getPortfolio())
         adapter.notifyDataSetChanged()
+
+        // Verificar si hay una imagen seleccionada y establecerla como seleccionada en el adaptador
+        val selectedImage = createPortfolioViewModel.getSelectedImage()
+        if (selectedImage != null) {
+            val selectedPosition = adapter.getItemPosition(selectedImage)
+            adapter.setSelected(selectedPosition)
+        }
     }
+
+
 
     private fun showSelectedItem(portfolio: PortfolioModel) {
         createPortfolioViewModel.setSelectedPortfolio(portfolio)
@@ -109,19 +121,25 @@ class CreatePortfolioFragment : Fragment() {
     }
 
 
-    private val startForActivityGallery = registerForActivityResult(
-        ActivityResultContracts.StartActivityForResult()
-    ){ result ->
-
-        if (result.resultCode == Activity.RESULT_OK){
-            val data = result.data?.data
-        }
-
-    }
     private fun pickPhotoFromGallery() {
         val intent = Intent(Intent.ACTION_PICK)
         intent.type = "image/*"
         startForActivityGallery.launch(intent)
     }
+
+    private val startForActivityGallery = registerForActivityResult(
+        ActivityResultContracts.StartActivityForResult()
+    ) { result ->
+        if (result.resultCode == Activity.RESULT_OK) {
+            val data = result.data?.data
+            // Guardar la imagen seleccionada en el ViewModel
+            createPortfolioViewModel.setSelectedImage(data)
+            // Mostrar la imagen en el RecyclerView
+            displayImages()
+        }
+    }
+
+
+
 
 }
