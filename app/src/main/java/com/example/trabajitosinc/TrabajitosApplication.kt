@@ -12,6 +12,7 @@ import com.example.trabajitosinc.data.trabajitos
 import com.example.trabajitosinc.network.retrofit.RetrofitInstance
 import com.example.trabajitosinc.repositories.CategoryRepository
 import com.example.trabajitosinc.repositories.HistoryRepository
+import com.example.trabajitosinc.repositories.PortfolioRepository
 import com.example.trabajitosinc.repositories.UserComplexRepository
 import com.example.trabajitosinc.repository.CredentialsRepository
 

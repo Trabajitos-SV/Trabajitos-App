@@ -2,6 +2,7 @@ package com.example.trabajitosinc.data
 
 import com.example.trabajitosinc.R
 import com.example.trabajitosinc.data.models.CategoryModel
+import com.example.trabajitosinc.data.models.PortfolioModel
 import com.example.trabajitosinc.data.models.PortfolioModel2
 import com.example.trabajitosinc.data.models.UserModel
 import com.example.trabajitosinc.data.models.TrabajitoModel
