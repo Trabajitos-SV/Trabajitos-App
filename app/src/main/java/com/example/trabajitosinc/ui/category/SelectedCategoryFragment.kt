@@ -37,7 +37,7 @@ class SelectedCategoryFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        selectedCategory = args.category!!
+        selectedCategory = args.category
 
         binding.selectedCategoryTittle.text = selectedCategory.name
         binding.imageView2.setImageResource(selectedCategory.image)
@@ -46,10 +46,10 @@ class SelectedCategoryFragment : Fragment() {
 
     }
 
-    private fun showSelectedItem(user: UserComplexModel){
-        selectedCategoryViewModel.setSelected(user)
+    private fun showSelectedItem(worker: UserComplexModel){
+        selectedCategoryViewModel.setSelected(worker)
 
-        val directions = SelectedCategoryFragmentDirections.actionSelectedCategoryFragmentToSelectedWorkerFragment()
+        val directions = SelectedCategoryFragmentDirections.actionSelectedCategoryFragmentToSelectedWorkerFragment(worker)
         findNavController().navigate(directions)
 
     }
