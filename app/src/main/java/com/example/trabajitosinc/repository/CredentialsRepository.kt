@@ -15,7 +15,7 @@ class CredentialsRepository(private val api: AuthService) {
             return ApiResponse.Success(response.token)
         }catch (e: HttpException){
             if (e.code() == 400){
-                return ApiResponse.ErrorWithMessage("Invalid username, email or password")
+                return ApiResponse.ErrorWithMessage("Invalid email or password")
             }
             return ApiResponse.Error(e)
         }catch (e: IOException){
@@ -23,13 +23,13 @@ class CredentialsRepository(private val api: AuthService) {
         }
     }
 
-    suspend fun register(name: String ,email: String, password: String): ApiResponse<String>{
+    suspend fun register(name: String, phone: String ,email: String, password: String): ApiResponse<String>{
         try {
-            val response = api.register(RegisterRequest(name, email,  password))
+            val response = api.register(RegisterRequest(name, phone, email, password))
             return ApiResponse.Success(response.message)
         }catch (e: HttpException){
             if (e.code() == 400){
-                return ApiResponse.ErrorWithMessage("Check username, email or password")
+                return ApiResponse.ErrorWithMessage("Check email or password")
             }
             return ApiResponse.Error(e)
         }catch (e: IOException){

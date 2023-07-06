@@ -14,7 +14,6 @@ class RetrofitApplication : Application() {
     private fun getAPIService() = with(RetrofitInstance){
         setToken(getToken())
         getLoginService()
-
     }
 
     fun getToken(): String = prefs.getString(USER_TOKEN, "")!!

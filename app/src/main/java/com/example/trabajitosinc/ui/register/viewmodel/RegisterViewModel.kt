@@ -7,7 +7,6 @@ import androidx.lifecycle.ViewModelProvider.AndroidViewModelFactory.Companion.AP
 import androidx.lifecycle.viewModelScope
 import androidx.lifecycle.viewmodel.initializer
 import androidx.lifecycle.viewmodel.viewModelFactory
-import com.example.trabajitosinc.RetrofitApplication
 import com.example.trabajitosinc.TrabajitosApplication
 import com.example.trabajitosinc.network.ApiResponse
 import com.example.trabajitosinc.repository.CredentialsRepository
@@ -18,15 +17,16 @@ class RegisterViewModel (private val repository : CredentialsRepository ) : View
     var name = MutableLiveData("")
     var email = MutableLiveData("")
     var password = MutableLiveData("")
+    var phone = MutableLiveData("")
 
     private val _status = MutableLiveData<RegisterUiStatus>(RegisterUiStatus.Resume)
     val status: LiveData<RegisterUiStatus>
         get() = _status
 
-    private fun register(name: String, email: String,  password: String) {
+    private fun register(name: String, phone: String, email: String,  password: String) {
         viewModelScope.launch {
             _status.postValue(
-                when (val response = repository.register(name, email, password)){
+                when (val response = repository.register(name, phone, email, password)){
                     is ApiResponse.Error -> RegisterUiStatus.Error(response.exception)
                     is ApiResponse.ErrorWithMessage -> RegisterUiStatus.ErrorWithMessage(response.message)
                     is ApiResponse.Success -> RegisterUiStatus.Success
@@ -40,7 +40,7 @@ class RegisterViewModel (private val repository : CredentialsRepository ) : View
             _status.value = RegisterUiStatus.ErrorWithMessage("Wrong information")
             return
         }
-        register(name.value!!, email.value!!, password.value!!)
+        register(name.value!!, phone.value!!, email.value!!, password.value!!)
     }
 
     private fun validateData(): Boolean {
@@ -48,6 +48,7 @@ class RegisterViewModel (private val repository : CredentialsRepository ) : View
             name.value.isNullOrEmpty() -> return false
             email.value.isNullOrEmpty() -> return false
             password.value.isNullOrEmpty() -> return false
+            phone.value.isNullOrEmpty() -> return false
         }
         return true
     }
@@ -60,6 +61,7 @@ class RegisterViewModel (private val repository : CredentialsRepository ) : View
         name.value = ""
         email.value = ""
         password.value = ""
+        phone.value = ""
     }
 
 

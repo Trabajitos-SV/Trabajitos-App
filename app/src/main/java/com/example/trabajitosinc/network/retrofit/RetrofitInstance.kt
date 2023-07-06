@@ -1,12 +1,11 @@
 package com.example.trabajitosinc.network.retrofit
 
 import com.example.trabajitosinc.network.service.AuthService
-import com.google.gson.Gson
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
 
 
-const val BASE_URL = "https://retrofit.up.railway.app/"
+const val BASE_URL = "https://joseguidos.tech/"
 object RetrofitInstance {
 
     private var token = ""
