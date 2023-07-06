@@ -1,4 +1,4 @@
-package com.example.trabajitosinc.ui.user
+package com.example.trabajitosinc.ui.user.UserInfo
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment
@@ -14,7 +14,7 @@ import com.example.trabajitosinc.R
 import com.example.trabajitosinc.data.models.UserModel
 import com.example.trabajitosinc.databinding.FragmentUserInfoBinding
 import com.example.trabajitosinc.databinding.FragmentUserPageBinding
-import com.example.trabajitosinc.ui.user.recyclerview.UserInfoRecyclerViewAdapter
+import com.example.trabajitosinc.ui.user.UserInfo.recyclerview.UserInfoRecyclerViewAdapter
 import com.example.trabajitosinc.ui.viewmodel.UserInfoViewModel
 
 

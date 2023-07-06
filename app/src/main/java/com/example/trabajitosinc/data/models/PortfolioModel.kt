@@ -1,10 +1,11 @@
 package com.example.trabajitosinc.data.models
 
 data class PortfolioModel (
+    val id: String,
     val title: String,
     val description: String,
     val images: String,
-    val user: List<UserModel>,
-    val category: List<CategoryModel>,
+    val user: String,
+    val category: String,
     val review: List<ReviewsModel>
 )

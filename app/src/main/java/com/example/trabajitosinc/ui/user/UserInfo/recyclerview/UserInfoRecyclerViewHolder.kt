@@ -1,4 +1,4 @@
-package com.example.trabajitosinc.ui.user.recyclerview
+package com.example.trabajitosinc.ui.user.UserInfo.recyclerview
 
 import androidx.recyclerview.widget.RecyclerView
 import com.example.trabajitosinc.data.models.UserModel
