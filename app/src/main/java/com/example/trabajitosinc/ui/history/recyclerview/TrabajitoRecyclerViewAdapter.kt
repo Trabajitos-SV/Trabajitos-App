@@ -16,7 +16,7 @@ class TrabajitoRecyclerViewAdapter(
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): TrabajitoRecyclerViewHolder {
         val binding = ItemTrabajitoCardViewBinding.inflate(LayoutInflater.from(parent.context), parent, false)
-        return TrabajitoRecyclerViewHolder(binding)
+        return TrabajitoRecyclerViewHolder(binding, context)
     }
 
     override fun getItemCount(): Int {

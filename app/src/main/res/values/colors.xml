@@ -13,4 +13,7 @@
     <color name="background_color">#E7EEFA</color>
     <color name="trabajitos_blue">#3431D2</color>
     <color name="blue_app">#B30000FF</color>
+    <color name="status_pending">#ECBB0E</color>
+    <color name="status_progrss">#71D596</color>
+    <color name="status_completed">#01A3FE</color>
 </resources>
