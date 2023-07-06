@@ -7,9 +7,7 @@ data class CreatePortfolioRequest (
     val title : String,
     val description : String,
     val images : String,
-    val user: List<String>,
-    val category: String,
-    val reviews: List<ReviewRequest> = emptyList()
+    val category: String
     )
 
 
