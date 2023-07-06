@@ -2,7 +2,7 @@ package com.example.trabajitosinc.network.dto.portfolio.findAllPortfolios
 
 import com.example.trabajitosinc.network.dto.portfolio.Review.ReviewResponse
 
-data class FindPortfolioResponse (
+data class FindAllPortfolioResponse (
     val _id: String,
     val title: String,
     val description: String,
