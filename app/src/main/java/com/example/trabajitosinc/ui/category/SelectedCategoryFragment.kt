@@ -6,6 +6,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.activityViewModels
+import androidx.navigation.fragment.findNavController
 import androidx.navigation.fragment.navArgs
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.trabajitosinc.data.models.CategoryModel
@@ -48,7 +49,8 @@ class SelectedCategoryFragment : Fragment() {
     private fun showSelectedItem(user: UserComplexModel){
         selectedCategoryViewModel.setSelected(user)
 
-        //Todo: navigation
+        val directions = SelectedCategoryFragmentDirections.actionSelectedCategoryFragmentToSelectedWorkerFragment()
+        findNavController().navigate(directions)
 
     }
 
