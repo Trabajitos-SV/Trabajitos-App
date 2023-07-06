@@ -13,7 +13,7 @@ import com.example.trabajitosinc.repositories.PortfolioRepository
 class CreatePortfolioViewModel(
     private val portfolioRepository : PortfolioRepository ): ViewModel() {
 
-    private var selectedImage: Uri? = null
+    private val selectedImage = MutableLiveData<Uri?>()
 
     //Datos del Portafolio
 
@@ -43,16 +43,16 @@ class CreatePortfolioViewModel(
         user.value = portfolio.user.toString()
         category.value = portfolio.category.toString()
         review.value = portfolio.review.toString()
-        selectedImage = null
+
 
     }
 
     fun getSelectedImage(): Uri? {
-        return selectedImage
+        return selectedImage.value
     }
 
     fun setSelectedImage(imageUri: Uri?) {
-        selectedImage = imageUri
+        selectedImage.value = imageUri
     }
 
 

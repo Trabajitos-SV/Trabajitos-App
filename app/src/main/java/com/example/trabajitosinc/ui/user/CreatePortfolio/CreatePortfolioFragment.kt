@@ -1,5 +1,4 @@
 package com.example.trabajitosinc.ui.user.CreatePortfolio
-import com.example.trabajitosinc.ui.user.CreatePortfolio.recyclerview.CreatePorfolioRecyclerViewAdapter
 import android.app.Activity
 import android.content.Intent
 import android.content.pm.PackageManager
@@ -13,11 +12,14 @@ import android.widget.ArrayAdapter
 import android.widget.Toast
 import androidx.activity.result.contract.ActivityResultContracts
 import androidx.core.content.ContextCompat
+import androidx.core.net.toUri
 import androidx.fragment.app.activityViewModels
 import androidx.navigation.fragment.findNavController
 import com.example.trabajitosinc.R
 import com.example.trabajitosinc.data.models.PortfolioModel
+import com.example.trabajitosinc.data.porfolios
 import com.example.trabajitosinc.databinding.FragmentCreatePortfolioBinding
+import com.example.trabajitosinc.ui.user.CreatePortfolio.recyclerview.CreatePorfolioRecyclerViewAdapter
 import com.google.android.material.carousel.CarouselLayoutManager
 
 
@@ -51,16 +53,17 @@ class CreatePortfolioFragment : Fragment() {
             findNavController().navigate(R.id.action_createPortfolioFragment_to_navigation_user)
         }
 
-
-        setRecyclerViewImages(view)
+        val images = porfolios[0].images
+        setRecyclerViewImages(images, createPortfolioViewModel)
     }
 
-    fun setRecyclerViewImages(view: View) {
+    fun setRecyclerViewImages( images: List<String>, viewModel: CreatePortfolioViewModel) {
         val carouselLayoutManager = CarouselLayoutManager()
         binding.carouselRecyclerView.layoutManager = carouselLayoutManager
 
-        adapter = CreatePorfolioRecyclerViewAdapter {
-            showSelectedItem(it)
+        adapter = CreatePorfolioRecyclerViewAdapter (images){ selectedImage ->
+            viewModel.setSelectedImage(selectedImage.toUri())
+            adapter.setSelected(selectedImage.toInt())
         }
 
         binding.carouselRecyclerView.adapter = adapter
@@ -71,9 +74,6 @@ class CreatePortfolioFragment : Fragment() {
             requestPermissions()
         }
     }
-
-
-
 
 
 
@@ -138,8 +138,5 @@ class CreatePortfolioFragment : Fragment() {
             displayImages()
         }
     }
-
-
-
 
 }
