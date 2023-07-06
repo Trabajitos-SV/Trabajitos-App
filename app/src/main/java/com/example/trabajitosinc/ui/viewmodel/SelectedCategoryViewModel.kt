@@ -50,6 +50,8 @@ class SelectedCategoryViewModel(private val repository: UserComplexRepository): 
 
     fun getComplexUsers() = repository.getComplexUsers()
 
+    fun getUserByCategory(selctedCategory: String) = repository.getSelectedCategory(selctedCategory)
+
     companion object {
         val Factory = viewModelFactory {
             initializer {

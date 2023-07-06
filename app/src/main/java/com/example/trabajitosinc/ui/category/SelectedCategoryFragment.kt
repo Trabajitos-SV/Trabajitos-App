@@ -53,7 +53,7 @@ class SelectedCategoryFragment : Fragment() {
     }
 
     private fun displayWorkers() {
-        adapter.setData(selectedCategoryViewModel.getComplexUsers())
+        adapter.setData(selectedCategoryViewModel.getUserByCategory(args.category.name))
         adapter.notifyDataSetChanged()
     }
 
