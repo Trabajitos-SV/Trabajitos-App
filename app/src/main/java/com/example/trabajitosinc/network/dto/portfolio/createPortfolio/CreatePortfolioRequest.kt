@@ -1,7 +1,5 @@
 package com.example.trabajitosinc.network.dto.portfolio.createPortfolio
 
-import com.example.trabajitosinc.network.dto.portfolio.Review.ReviewRequest
-
 
 data class CreatePortfolioRequest (
     val title : String,
