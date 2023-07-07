@@ -12,7 +12,6 @@ import androidx.navigation.fragment.findNavController
 import com.example.trabajitosinc.R
 import com.example.trabajitosinc.TrabajitosApplication
 import com.example.trabajitosinc.databinding.FragmentLoginPagerContentBinding
-import com.example.trabajitosinc.ui.login.LoginUiStatus
 import com.example.trabajitosinc.ui.login.viewmodel.LoginViewModel
 
 

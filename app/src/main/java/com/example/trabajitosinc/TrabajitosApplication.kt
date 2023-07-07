@@ -6,16 +6,17 @@ import android.content.SharedPreferences
 import com.example.trabajitosinc.data.categories
 import com.example.trabajitosinc.data.complexUsers
 import com.example.trabajitosinc.data.porfolios
-
 import com.example.trabajitosinc.data.users
 import com.example.trabajitosinc.repositories.UserRepository
 import com.example.trabajitosinc.data.trabajitos
 import com.example.trabajitosinc.network.retrofit.RetrofitInstance
+import com.example.trabajitosinc.network.retrofit.RetrofitInstance.setToken
 import com.example.trabajitosinc.repositories.CategoryRepository
 import com.example.trabajitosinc.repositories.HistoryRepository
 import com.example.trabajitosinc.repositories.PortfolioRepository
 import com.example.trabajitosinc.repositories.UserComplexRepository
 import com.example.trabajitosinc.repository.CredentialsRepository
+import com.example.trabajitosinc.repository.PortfolioCRepository
 
 class TrabajitosApplication: Application() {
 
@@ -47,14 +48,22 @@ class TrabajitosApplication: Application() {
     private fun getAPIService() = with(RetrofitInstance){
         setToken(getToken())
         getLoginService()
-
     }
 
+    private fun getAPIServicePortfolio() = with(RetrofitInstance){
+        setToken(getToken())
+        getPortfolioService()
+    }
     fun getToken(): String = prefs.getString(USER_TOKEN, "")!!
 
     val credentialsRepository: CredentialsRepository by lazy {
         CredentialsRepository(getAPIService())
     }
+
+    val portfolioCRepository: PortfolioCRepository by lazy {
+        portfolioCRepository
+    }
+
     fun saveAuthToken(token: String){
         val editor = prefs.edit()
         editor.putString(USER_TOKEN, token)

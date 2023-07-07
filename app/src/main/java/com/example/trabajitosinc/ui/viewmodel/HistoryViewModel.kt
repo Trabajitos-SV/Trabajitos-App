@@ -1,6 +1,5 @@
 package com.example.trabajitosinc.ui.viewmodel
 
-import android.text.Spannable.Factory
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider

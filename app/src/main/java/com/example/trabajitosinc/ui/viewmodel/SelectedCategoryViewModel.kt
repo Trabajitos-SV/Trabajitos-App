@@ -1,13 +1,11 @@
 package com.example.trabajitosinc.ui.viewmodel
 
-import android.text.Spannable.Factory
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider.AndroidViewModelFactory.Companion.APPLICATION_KEY
 import androidx.lifecycle.viewmodel.initializer
 import androidx.lifecycle.viewmodel.viewModelFactory
 import com.example.trabajitosinc.TrabajitosApplication
-import com.example.trabajitosinc.data.models.CategoryModel
 import com.example.trabajitosinc.data.models.UserComplexModel
 import com.example.trabajitosinc.repositories.UserComplexRepository
 

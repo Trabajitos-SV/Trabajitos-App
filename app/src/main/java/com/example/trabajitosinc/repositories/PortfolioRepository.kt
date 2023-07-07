@@ -7,4 +7,5 @@ class PortfolioRepository (private val portfolios: MutableList<PortfolioModel> )
 
     fun getPortfolios()= portfolios
 
+
 }

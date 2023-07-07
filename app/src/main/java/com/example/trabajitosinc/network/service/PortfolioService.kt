@@ -1,24 +1,13 @@
 package com.example.trabajitosinc.network.service
 
-import com.example.trabajitosinc.network.dto.portfolio.FindAllPortfolioResponse
+import com.example.trabajitosinc.network.dto.portfolio.createPortfolio.CreatePortfolioRequest
 import com.example.trabajitosinc.network.dto.portfolio.createPortfolio.CreatePortfolioResponse
-import com.example.trabajitosinc.network.dto.portfolio.findMyPortfolio.FindMyPortfolioResponse
-import retrofit2.http.DELETE
-import retrofit2.http.GET
-import retrofit2.http.PATCH
+import retrofit2.http.Body
 import retrofit2.http.POST
 
 interface PortfolioService {
 
-    @GET("portfolio/myPortfolio")
-    suspend fun findMyPortfolio(): FindMyPortfolioResponse
-
-    @GET("portfolio")
-    suspend fun findAllPortfolio(): FindAllPortfolioResponse
-
-    @POST("portfolio")
-    suspend fun createPortfolio(): CreatePortfolioResponse
-
-
+    @POST("api/portfolio")
+    suspend fun createPortfolioR(@Body credentials: CreatePortfolioRequest): CreatePortfolioResponse
 
 }

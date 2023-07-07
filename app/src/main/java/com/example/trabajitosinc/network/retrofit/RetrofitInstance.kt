@@ -1,6 +1,7 @@
 package com.example.trabajitosinc.network.retrofit
 
 import com.example.trabajitosinc.network.service.AuthService
+import com.example.trabajitosinc.repository.PortfolioCRepository
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
 
@@ -21,6 +22,10 @@ object RetrofitInstance {
 
     fun getLoginService(): AuthService {
         return retrofit.create(AuthService::class.java)
+    }
+
+    fun getPortfolioService(): PortfolioCRepository {
+        return retrofit.create(PortfolioCRepository::class.java)
     }
 
 }
