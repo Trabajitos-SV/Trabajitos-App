@@ -79,11 +79,14 @@ class CreatePortfolioFragment : Fragment() {
 
     private fun displayImages(portfolio: PortfolioModel) {
         val images = portfolio.images.toMutableList()
+        val selectedImage = createPortfolioViewModel.getSelectedImage()
+        if (selectedImage != null) {
+            images.add(selectedImage.toString()) // Agregar la imagen seleccionada a la lista de imágenes
+        }
         adapter.setData(images)
         adapter.notifyDataSetChanged()
 
         // Verificar si hay una imagen seleccionada y establecerla como seleccionada en el adaptador
-        val selectedImage = createPortfolioViewModel.getSelectedImage()
         if (selectedImage != null) {
             val selectedPosition = adapter.getItemPosition(selectedImage)
             adapter.setSelected(selectedPosition)

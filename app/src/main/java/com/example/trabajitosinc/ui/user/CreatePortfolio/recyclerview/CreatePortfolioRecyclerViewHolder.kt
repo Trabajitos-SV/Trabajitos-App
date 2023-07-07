@@ -36,7 +36,6 @@ class CreatePortfolioRecyclerViewHolder(private val binding: ItemImagePortfolioB
                     isFirstResource: Boolean
                 ): Boolean {
                     // La imagen se cargó correctamente, realizar cualquier acción adicional si es necesario
-                    Toast.makeText(binding.root.context, "Imagen cargada correctamente", Toast.LENGTH_SHORT).show()
                     return false
                 }
             })
