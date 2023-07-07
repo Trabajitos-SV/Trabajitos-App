@@ -15,6 +15,8 @@ class MainActivity : AppCompatActivity() {
 
         val preferences = PreferenceHelper.defaultPrefs(this)
         if (preferences["session", false]) {
+            goToHome()
+        } else {
             goToLogIn()
         }
     }

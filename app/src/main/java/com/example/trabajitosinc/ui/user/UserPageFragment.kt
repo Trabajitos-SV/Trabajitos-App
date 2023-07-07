@@ -1,5 +1,6 @@
 package com.example.trabajitosinc.ui.user
 
+import android.content.Intent
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
@@ -8,6 +9,9 @@ import android.view.ViewGroup
 import androidx.navigation.fragment.findNavController
 import com.example.trabajitosinc.R
 import com.example.trabajitosinc.databinding.FragmentUserPageBinding
+import com.example.trabajitosinc.ui.LoginActivity
+import com.example.trabajitosinc.util.PreferenceHelper
+import com.example.trabajitosinc.util.PreferenceHelper.set
 
 class UserPageFragment : Fragment() {
 
@@ -39,7 +43,19 @@ class UserPageFragment : Fragment() {
 
         binding.logoutButton.setOnClickListener {
             //findNavController().navigate(R.id.action_navigation_user_to_loginActivity)
+            clearSessioPrefferences(view)
+            goToLogin()
         }
+    }
+    private fun goToLogin(){
+        val i = Intent(context, LoginActivity::class.java)
+        startActivity(i)
+        requireActivity().finish()
+    }
+
+    private fun clearSessioPrefferences(view: View) {
+        //val preferences = PreferenceHelper.defaultPrefs(requireContext())
+        //preferences["session"] = false
     }
 
 }
