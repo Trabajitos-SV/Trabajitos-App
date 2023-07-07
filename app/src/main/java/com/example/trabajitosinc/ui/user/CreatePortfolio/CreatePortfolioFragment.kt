@@ -1,5 +1,4 @@
 package com.example.trabajitosinc.ui.user.CreatePortfolio
-import com.example.trabajitosinc.ui.user.CreatePortfolio.recyclerview.CreatePorfolioRecyclerViewAdapter
 import android.app.Activity
 import android.content.Intent
 import android.content.pm.PackageManager
@@ -13,11 +12,14 @@ import android.widget.ArrayAdapter
 import android.widget.Toast
 import androidx.activity.result.contract.ActivityResultContracts
 import androidx.core.content.ContextCompat
+import androidx.core.net.toUri
 import androidx.fragment.app.activityViewModels
 import androidx.navigation.fragment.findNavController
 import com.example.trabajitosinc.R
 import com.example.trabajitosinc.data.models.PortfolioModel
+import com.example.trabajitosinc.data.porfolios
 import com.example.trabajitosinc.databinding.FragmentCreatePortfolioBinding
+import com.example.trabajitosinc.ui.user.CreatePortfolio.recyclerview.CreatePorfolioRecyclerViewAdapter
 import com.google.android.material.carousel.CarouselLayoutManager
 
 
@@ -51,20 +53,21 @@ class CreatePortfolioFragment : Fragment() {
             findNavController().navigate(R.id.action_createPortfolioFragment_to_navigation_user)
         }
 
-
-        setRecyclerViewImages(view)
+        val images = porfolios[0].images.toMutableList()
+        setRecyclerViewImages(images, createPortfolioViewModel)
     }
 
-    fun setRecyclerViewImages(view: View) {
+    fun setRecyclerViewImages( images: MutableList<String>, viewModel: CreatePortfolioViewModel) {
         val carouselLayoutManager = CarouselLayoutManager()
         binding.carouselRecyclerView.layoutManager = carouselLayoutManager
 
-        adapter = CreatePorfolioRecyclerViewAdapter {
-            showSelectedItem(it)
+        adapter = CreatePorfolioRecyclerViewAdapter (images){ selectedImage ->
+            viewModel.setSelectedImage(selectedImage.toUri())
+            adapter.setSelected(selectedImage.toInt())
         }
 
         binding.carouselRecyclerView.adapter = adapter
-        displayImages()
+        displayImages(porfolios[0])
 
         // Detectar el clic en el último elemento del RecyclerView
         adapter.setLastItemClickListener {
@@ -74,11 +77,9 @@ class CreatePortfolioFragment : Fragment() {
 
 
 
-
-
-
-    private fun displayImages() {
-        adapter.setData(createPortfolioViewModel.getPortfolio())
+    private fun displayImages(portfolio: PortfolioModel) {
+        val images = portfolio.images.toMutableList()
+        adapter.setData(images)
         adapter.notifyDataSetChanged()
 
         // Verificar si hay una imagen seleccionada y establecerla como seleccionada en el adaptador
@@ -86,7 +87,10 @@ class CreatePortfolioFragment : Fragment() {
         if (selectedImage != null) {
             val selectedPosition = adapter.getItemPosition(selectedImage)
             adapter.setSelected(selectedPosition)
+
+            Toast.makeText(requireContext(), "Imagen seleccionada", Toast.LENGTH_SHORT).show()
         }
+
     }
 
 
@@ -135,11 +139,8 @@ class CreatePortfolioFragment : Fragment() {
             // Guardar la imagen seleccionada en el ViewModel
             createPortfolioViewModel.setSelectedImage(data)
             // Mostrar la imagen en el RecyclerView
-            displayImages()
+            displayImages(porfolios[0])
         }
     }
-
-
-
 
 }

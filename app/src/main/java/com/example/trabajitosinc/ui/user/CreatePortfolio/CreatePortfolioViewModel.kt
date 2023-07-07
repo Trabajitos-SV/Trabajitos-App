@@ -13,7 +13,11 @@ import com.example.trabajitosinc.repositories.PortfolioRepository
 class CreatePortfolioViewModel(
     private val portfolioRepository : PortfolioRepository ): ViewModel() {
 
-    private var selectedImage: Uri? = null
+    private val selectedImage = MutableLiveData<Uri?>()
+
+    private val portfolio = MutableLiveData<PortfolioModel>()
+
+
 
     //Datos del Portafolio
 
@@ -24,7 +28,12 @@ class CreatePortfolioViewModel(
     val category = MutableLiveData("")
     val review = MutableLiveData("")
 
-    fun getPortfolio()= portfolioRepository.getPortfolios()
+
+    fun getPortfolio(): PortfolioModel? = portfolio.value
+
+    fun setPortfolio(portfolio: PortfolioModel) {
+        this.portfolio.value = portfolio
+    }
 
     fun clearPortfolioData() {
         title.value = ""
@@ -43,16 +52,18 @@ class CreatePortfolioViewModel(
         user.value = portfolio.user.toString()
         category.value = portfolio.category.toString()
         review.value = portfolio.review.toString()
-        selectedImage = null
+
 
     }
 
     fun getSelectedImage(): Uri? {
-        return selectedImage
+        return selectedImage.value
     }
 
     fun setSelectedImage(imageUri: Uri?) {
-        selectedImage = imageUri
+        selectedImage.value = imageUri
+        println("Selected Image: $imageUri")
+
     }
 
 

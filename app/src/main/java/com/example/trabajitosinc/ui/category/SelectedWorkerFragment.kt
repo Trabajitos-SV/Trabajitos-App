@@ -5,6 +5,7 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.navigation.findNavController
 import androidx.navigation.fragment.navArgs
 import com.bumptech.glide.Glide
 import com.example.trabajitosinc.R
@@ -31,17 +32,21 @@ class SelectedWorkerFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
 
         selectedWorker = args.worker
-        bind()
+        bind(view)
 
     }
 
-    private fun bind() {
+    private fun bind(view: View) {
         binding.workerNameSelectedWorker.text = selectedWorker.name
         binding.descriptionSelectedWorker.text = selectedWorker.portfolio.description
         Glide
             .with(this)
             .load(selectedWorker.portfolio.images[0])
             .into(binding.mainImageWorker)
+
+        binding.floatingActionButton.setOnClickListener {
+            view.findNavController().navigate(R.id.action_selectedWorkerFragment_to_scheduleAppointmentFragment)
+        }
     }
 
 }

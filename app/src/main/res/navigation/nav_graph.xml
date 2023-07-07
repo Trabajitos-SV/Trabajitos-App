@@ -107,5 +107,13 @@
         <argument
             android:name="worker"
             app:argType="com.example.trabajitosinc.data.models.UserComplexModel" />
+        <action
+            android:id="@+id/action_selectedWorkerFragment_to_scheduleAppointmentFragment"
+            app:destination="@id/scheduleAppointmentFragment" />
     </fragment>
+    <fragment
+        android:id="@+id/scheduleAppointmentFragment"
+        android:name="com.example.trabajitosinc.ScheduleAppointmentFragment"
+        android:label="fragment_schedule_appointment"
+        tools:layout="@layout/fragment_schedule_appointment" />
 </navigation>

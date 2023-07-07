@@ -5,14 +5,14 @@ import android.net.Uri
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
-import com.example.trabajitosinc.data.models.PortfolioModel
 import com.example.trabajitosinc.databinding.ItemImagePortfolioBinding
 
+
 class CreatePorfolioRecyclerViewAdapter(
-    private val clickListener: (PortfolioModel) -> Unit
+    private val images: MutableList<String>,
+    private val clickListener: (String) -> Unit
 ): RecyclerView.Adapter<CreatePortfolioRecyclerViewHolder>() {
 
-    private val portfolios = ArrayList<PortfolioModel>()
     private var selectedPosition = RecyclerView.NO_POSITION
     private var lastItemClickListener: (() -> Unit)? = null
 
@@ -24,10 +24,11 @@ class CreatePorfolioRecyclerViewAdapter(
     }
 
     override fun onBindViewHolder(holder: CreatePortfolioRecyclerViewHolder, position: Int) {
-            val portfolio = portfolios[position]
-            holder.bind(portfolio, clickListener)
+            val imageUrl = images[position]
+            holder.bind(imageUrl,clickListener)
 
             holder.itemView.isSelected = position == selectedPosition
+
         // Configurar el clic en el último elemento
         if (position == itemCount - 1) {
             holder.itemView.setOnClickListener {
@@ -38,17 +39,17 @@ class CreatePorfolioRecyclerViewAdapter(
 
 
     override fun getItemCount(): Int {
-        return portfolios.size
+        return images.size
     }
 
-    fun setData(portfolioList: List<PortfolioModel>) {
-        portfolios.clear()
-        portfolios.addAll(portfolioList)
+    fun setData(images: List<String>) {
+        this.images.clear()
+        this.images.addAll(images)
         notifyDataSetChanged()
     }
 
     fun setSelected(position: Int) {
-        if (position in 0 until portfolios.size) {
+        if (position in 0 until images.size) {
             val previousSelectedPosition = selectedPosition
             selectedPosition = position
             notifyItemChanged(previousSelectedPosition)
@@ -58,8 +59,8 @@ class CreatePorfolioRecyclerViewAdapter(
 
     // Método para obtener la posición de un elemento en función de la imagen seleccionada
     fun getItemPosition(selectedImage: Uri): Int {
-        for (i in 0 until portfolios.size) {
-            if (portfolios[i].images == selectedImage.toString()) {
+        for (i in 0 until images.size) {
+            if (images[i] == selectedImage.toString()) {
                 return i
             }
         }
@@ -69,6 +70,8 @@ class CreatePorfolioRecyclerViewAdapter(
     fun setLastItemClickListener(listener: () -> Unit) {
         lastItemClickListener = listener
     }
+
+
 
 
 }
