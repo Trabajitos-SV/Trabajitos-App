@@ -45,14 +45,11 @@ class TrabajitosApplication: Application() {
         getSharedPreferences("Retrofit", Context.MODE_PRIVATE)
     }
 
+
+    //FactoryKey para Login y Register con token
     private fun getAPIService() = with(RetrofitInstance){
         setToken(getToken())
         getLoginService()
-    }
-
-    private fun getAPIServicePortfolio() = with(RetrofitInstance){
-        setToken(getToken())
-        getPortfolioService()
     }
     fun getToken(): String = prefs.getString(USER_TOKEN, "")!!
 
@@ -60,8 +57,14 @@ class TrabajitosApplication: Application() {
         CredentialsRepository(getAPIService())
     }
 
+
+    //Factory Key para Create Portfolio con token
+    private fun getAPIServicePortfolio() = with(RetrofitInstance){
+        setToken(getToken())
+        getPortfolioService()
+    }
     val portfolioCRepository: PortfolioCRepository by lazy {
-        portfolioCRepository
+        PortfolioCRepository(getAPIServicePortfolio())
     }
 
     fun saveAuthToken(token: String){
