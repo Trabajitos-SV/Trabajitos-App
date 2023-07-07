@@ -52,7 +52,7 @@ class TrabajitoFragment : Fragment() {
         }
         binding.endJobTrabajito.setOnClickListener{
             if (validateBill()){
-                it.findNavController().popBackStack()
+                it.findNavController().navigate(R.id.action_trabajitoFragment_to_trabajitoEndVerificationCode)
             }
         }
     }
