@@ -15,6 +15,10 @@ class CreatePortfolioViewModel(
 
     private val selectedImage = MutableLiveData<Uri?>()
 
+    private val portfolio = MutableLiveData<PortfolioModel>()
+
+
+
     //Datos del Portafolio
 
     val title = MutableLiveData("")
@@ -24,7 +28,12 @@ class CreatePortfolioViewModel(
     val category = MutableLiveData("")
     val review = MutableLiveData("")
 
-    fun getPortfolio()= portfolioRepository.getPortfolios()
+
+    fun getPortfolio(): PortfolioModel? = portfolio.value
+
+    fun setPortfolio(portfolio: PortfolioModel) {
+        this.portfolio.value = portfolio
+    }
 
     fun clearPortfolioData() {
         title.value = ""
@@ -53,6 +62,8 @@ class CreatePortfolioViewModel(
 
     fun setSelectedImage(imageUri: Uri?) {
         selectedImage.value = imageUri
+        println("Selected Image: $imageUri")
+
     }
 
 

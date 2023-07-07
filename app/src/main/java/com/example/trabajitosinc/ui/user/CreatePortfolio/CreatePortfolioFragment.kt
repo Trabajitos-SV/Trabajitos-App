@@ -53,11 +53,11 @@ class CreatePortfolioFragment : Fragment() {
             findNavController().navigate(R.id.action_createPortfolioFragment_to_navigation_user)
         }
 
-        val images = porfolios[0].images
+        val images = porfolios[0].images.toMutableList()
         setRecyclerViewImages(images, createPortfolioViewModel)
     }
 
-    fun setRecyclerViewImages( images: List<String>, viewModel: CreatePortfolioViewModel) {
+    fun setRecyclerViewImages( images: MutableList<String>, viewModel: CreatePortfolioViewModel) {
         val carouselLayoutManager = CarouselLayoutManager()
         binding.carouselRecyclerView.layoutManager = carouselLayoutManager
 
@@ -67,7 +67,7 @@ class CreatePortfolioFragment : Fragment() {
         }
 
         binding.carouselRecyclerView.adapter = adapter
-        displayImages()
+        displayImages(porfolios[0])
 
         // Detectar el clic en el último elemento del RecyclerView
         adapter.setLastItemClickListener {
@@ -77,8 +77,9 @@ class CreatePortfolioFragment : Fragment() {
 
 
 
-    private fun displayImages() {
-        adapter.setData(createPortfolioViewModel.getPortfolio())
+    private fun displayImages(portfolio: PortfolioModel) {
+        val images = portfolio.images.toMutableList()
+        adapter.setData(images)
         adapter.notifyDataSetChanged()
 
         // Verificar si hay una imagen seleccionada y establecerla como seleccionada en el adaptador
@@ -86,7 +87,10 @@ class CreatePortfolioFragment : Fragment() {
         if (selectedImage != null) {
             val selectedPosition = adapter.getItemPosition(selectedImage)
             adapter.setSelected(selectedPosition)
+
+            Toast.makeText(requireContext(), "Imagen seleccionada", Toast.LENGTH_SHORT).show()
         }
+
     }
 
 
@@ -135,7 +139,7 @@ class CreatePortfolioFragment : Fragment() {
             // Guardar la imagen seleccionada en el ViewModel
             createPortfolioViewModel.setSelectedImage(data)
             // Mostrar la imagen en el RecyclerView
-            displayImages()
+            displayImages(porfolios[0])
         }
     }
 
