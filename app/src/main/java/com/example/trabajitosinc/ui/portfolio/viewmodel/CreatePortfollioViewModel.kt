@@ -13,7 +13,7 @@ import com.example.trabajitosinc.repository.PortfolioCRepository
 import com.example.trabajitosinc.ui.portfolio.CreatePortfolioUiStates
 import kotlinx.coroutines.launch
 
-class CreatePortfolioViewModel(private val repository: PortfolioCRepository): ViewModel(){
+class CreatePortfollioViewModel(private val repository: PortfolioCRepository): ViewModel(){
     var title = MutableLiveData("")
     var description = MutableLiveData("")
     var images = MutableLiveData("")
@@ -70,7 +70,7 @@ class CreatePortfolioViewModel(private val repository: PortfolioCRepository): Vi
         val Factory = viewModelFactory {
             initializer {
                 val app = this[APPLICATION_KEY] as TrabajitosApplication
-                CreatePortfolioViewModel(app.portfolioCRepository)
+                CreatePortfollioViewModel(app.portfolioCRepository)
             }
         }
     }
