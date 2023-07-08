@@ -58,7 +58,7 @@ class TrabajitosApplication: Application() {
     }
 
 
-    //Factory Key para Create Portfolio con token
+    //Factory Key para Portfolio con token
     private fun getAPIServicePortfolio() = with(RetrofitInstance){
         setToken(getToken())
         getPortfolioService()
@@ -66,6 +66,9 @@ class TrabajitosApplication: Application() {
     val portfolioCRepository: PortfolioCRepository by lazy {
         PortfolioCRepository(getAPIServicePortfolio())
     }
+
+
+
 
     fun saveAuthToken(token: String){
         val editor = prefs.edit()
