@@ -53,6 +53,11 @@ class LoginPagerContentFragment : Fragment() {
         setViewModel()
 
         observeStatus()
+
+
+
+
+
     }
 
 
