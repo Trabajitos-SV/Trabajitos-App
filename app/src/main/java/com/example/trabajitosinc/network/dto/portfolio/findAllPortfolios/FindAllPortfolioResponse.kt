@@ -7,6 +7,6 @@ data class FindAllPortfolioResponse (
     val title: String,
     val description: String,
     val user: String,
-    val images: List<String>,
+    val images: Array<String>,
     val reviews: List<ReviewResponse> = emptyList()
 )
