@@ -21,7 +21,7 @@ class LoginActivity : AppCompatActivity() {
 
 
         val preferences = PreferenceHelper.defaultPrefs(this)
-        if (preferences["session", false]) {
+        if (preferences["token", ""].contains(".")) {
             goToHome()
         }
 

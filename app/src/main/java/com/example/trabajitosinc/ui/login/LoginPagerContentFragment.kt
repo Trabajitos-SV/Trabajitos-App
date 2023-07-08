@@ -58,13 +58,12 @@ class LoginPagerContentFragment : Fragment() {
 
     private fun goToHome() {
         val i = Intent(context, MainActivity::class.java)
-        creteSessionPreferences()
         startActivity(i)
         requireActivity().finish()
     }
-    private fun creteSessionPreferences() {
+    private fun creteSessionPreferences(token : String) {
         val preferences = PreferenceHelper.defaultPrefs(requireContext())
-        preferences["session"] = true
+        preferences["token"] = token
     }
 
 
@@ -79,7 +78,7 @@ class LoginPagerContentFragment : Fragment() {
     }
 
     private fun handleUiStatus(status: LoginUiStatus) {
-        when(status) {
+        when (status) {
             is LoginUiStatus.Error -> {
                 Toast.makeText(requireContext(), "An error has occurred", Toast.LENGTH_SHORT).show()
             }
@@ -90,13 +89,16 @@ class LoginPagerContentFragment : Fragment() {
                 loginViewModel.clearStatus()
                 loginViewModel.clearData()
                 app.saveAuthToken(status.token)
-                //findNavController().navigate(R.id.action_loginFragment_to_mainActivity)
+                creteSessionPreferences(status.token)
                 goToHome()
+
+                Toast.makeText(requireContext(), "SIU", Toast.LENGTH_SHORT).show()
             }
 
             else -> {}
         }
     }
+
 
 
 }
