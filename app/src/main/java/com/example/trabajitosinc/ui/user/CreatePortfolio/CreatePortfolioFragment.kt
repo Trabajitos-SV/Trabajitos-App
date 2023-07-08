@@ -29,6 +29,8 @@ class CreatePortfolioFragment : Fragment() {
         CreatePortfolioViewModel.Factory
     }
 
+    private val myImages = porfolios[0].images.toMutableList()
+
     private lateinit var adapter: CreatePorfolioRecyclerViewAdapter
     private lateinit var binding: FragmentCreatePortfolioBinding
 
@@ -67,7 +69,7 @@ class CreatePortfolioFragment : Fragment() {
         }
 
         binding.carouselRecyclerView.adapter = adapter
-        displayImages(porfolios[0])
+        displayImages(myImages)
 
         // Detectar el clic en el último elemento del RecyclerView
         adapter.setLastItemClickListener {
@@ -77,11 +79,13 @@ class CreatePortfolioFragment : Fragment() {
 
 
 
-    private fun displayImages(portfolio: PortfolioModel) {
-        val images = portfolio.images.toMutableList()
+    private fun displayImages(images: MutableList<String>) {
+
         val selectedImage = createPortfolioViewModel.getSelectedImage()
         if (selectedImage != null) {
-            images.add(selectedImage.toString()) // Agregar la imagen seleccionada a la lista de imágenes
+            val aux = images.size
+            images.add(aux-1 ,selectedImage.toString()) // Agregar la imagen seleccionada a la lista de imágenes
+            adapter.notifyDataSetChanged()
         }
         adapter.setData(images)
         adapter.notifyDataSetChanged()
@@ -142,7 +146,7 @@ class CreatePortfolioFragment : Fragment() {
             // Guardar la imagen seleccionada en el ViewModel
             createPortfolioViewModel.setSelectedImage(data)
             // Mostrar la imagen en el RecyclerView
-            displayImages(porfolios[0])
+            displayImages(myImages)
         }
     }
 
