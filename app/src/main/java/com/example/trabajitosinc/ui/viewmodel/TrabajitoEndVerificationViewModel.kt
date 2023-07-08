@@ -9,9 +9,11 @@ import kotlin.random.Random
 
 class TrabajitoEndVerificationViewModel():ViewModel() {
 
-    fun getVerificationCode(): Int{
+    //val verificationCode = getVerificationCode()
+
+    fun getVerificationCode(): String{
         val random = Random(System.currentTimeMillis())
-        return random.nextInt(1000, 10000)
+        return random.nextInt(1000, 10000).toString()
     }
 
     companion object {
