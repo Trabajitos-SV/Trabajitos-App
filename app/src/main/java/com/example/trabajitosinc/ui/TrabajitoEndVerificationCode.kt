@@ -21,8 +21,8 @@ class TrabajitoEndVerificationCode : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_trabajito_end_verification_code, container, false)
+        binding = FragmentTrabajitoEndVerificationCodeBinding.inflate(inflater, container, false)
+        return binding.root
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
@@ -31,6 +31,7 @@ class TrabajitoEndVerificationCode : Fragment() {
         val numeroSeguridad = trabajitoEndVerificationViewModel.getVerificationCode().toString()
         val numeroSeparado = numeroSeguridad.chunked(1).joinToString("     ")
 
+        binding.confirmationNumberText.text = numeroSeparado
     }
 
 }

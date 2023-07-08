@@ -92,7 +92,7 @@ class LoginPagerContentFragment : Fragment() {
                 creteSessionPreferences(status.token)
                 goToHome()
 
-                Toast.makeText(requireContext(), "SIU", Toast.LENGTH_SHORT).show()
+                Toast.makeText(requireContext(), status.token, Toast.LENGTH_LONG).show()
             }
 
             else -> {}
