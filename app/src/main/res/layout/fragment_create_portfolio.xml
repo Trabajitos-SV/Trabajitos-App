@@ -96,7 +96,6 @@
                     style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
                     android:layout_width="340dp"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="8dp"
                     android:hint="Title"
                     app:boxBackgroundColor="@color/white"
                     app:boxCornerRadiusBottomEnd="12dp"
@@ -106,7 +105,7 @@
                     app:boxStrokeWidth="0dp"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@+id/carousel_recycler_view">
+                    app:layout_constraintTop_toBottomOf="@+id/agregar_btn">
 
                     <com.google.android.material.textfield.TextInputEditText
                         android:layout_width="match_parent"
@@ -140,33 +139,6 @@
 
                 </com.google.android.material.textfield.TextInputLayout>
 
-                <com.google.android.material.textfield.TextInputLayout
-                    android:id="@+id/cost_input"
-                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
-                    android:layout_width="340dp"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="8dp"
-                    android:hint="Estimated cost"
-                    app:boxBackgroundColor="@color/white"
-                    app:boxCornerRadiusBottomEnd="12dp"
-                    app:boxCornerRadiusBottomStart="12dp"
-                    app:boxCornerRadiusTopEnd="12dp"
-                    app:boxCornerRadiusTopStart="12dp"
-                    app:boxStrokeWidth="0dp"
-                    app:endIconMode="custom"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintHorizontal_bias="0.507"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@+id/category_input"
-                    app:startIconDrawable="@drawable/dollar_icon">
-
-                    <com.google.android.material.textfield.TextInputEditText
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:inputType="numberDecimal"
-                        android:textSize="14sp" />
-                </com.google.android.material.textfield.TextInputLayout>
-
 
                 <com.google.android.material.textfield.TextInputLayout
                     android:id="@+id/description_input"
@@ -184,7 +156,7 @@
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintHorizontal_bias="0.507"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@+id/cost_input">
+                    app:layout_constraintTop_toBottomOf="@+id/category_input">
 
                     <com.google.android.material.textfield.TextInputEditText
                         android:layout_width="match_parent"
@@ -207,6 +179,26 @@
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toBottomOf="@+id/description_input" />
+
+                <Button
+                    android:id="@+id/agregar_btn"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:text="Agregar"
+                    android:textAllCaps="false"
+                    app:layout_constraintStart_toStartOf="@+id/title_input"
+                    app:layout_constraintTop_toBottomOf="@+id/carousel_recycler_view" />
+
+                <Button
+                    android:id="@+id/eliminar_btn"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:text="Eliminar"
+                    android:textAllCaps="false"
+                    app:layout_constraintEnd_toEndOf="@+id/title_input"
+                    app:layout_constraintTop_toBottomOf="@+id/carousel_recycler_view" />
             </androidx.constraintlayout.widget.ConstraintLayout>
 
         </ScrollView>
