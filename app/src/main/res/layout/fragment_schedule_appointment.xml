@@ -1,0 +1,197 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:paddingTop="16dp"
+    android:background="@color/background_color"
+    tools:context=".ScheduleAppointmentFragment">
+
+    <FrameLayout
+        android:layout_width="250dp"
+        android:layout_height="40dp"
+        android:layout_marginBottom="8dp"
+        android:background="@drawable/page_title_shape">
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:text="Schedule Appointment"
+            android:textColor="@color/white"
+            android:textStyle="bold"
+            android:gravity="center"
+            android:textSize="20sp"/>
+    </FrameLayout>
+
+    <androidx.cardview.widget.CardView
+        app:cardElevation="0dp"
+        android:id="@+id/worker_info_card"
+        android:layout_width="350dp"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_margin="@dimen/small_padding"
+        app:cardCornerRadius="16dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="horizontal"
+            android:layout_margin="@dimen/mid_padding">
+
+            <ImageView
+                android:id="@+id/worker_image_trabajito"
+                android:layout_width="130dp"
+                android:layout_height="100dp"
+                android:src="@drawable/no_image"/>
+
+            <LinearLayout
+                android:layout_width="190dp"
+                android:layout_height="100dp"
+                android:orientation="vertical"
+                android:gravity="center_vertical">
+
+                <TextView
+                    android:id="@+id/worker_name_trabajito"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Worker_name"
+                    android:textStyle="bold"
+                    android:textColor="@color/black"
+                    android:textSize="16sp"/>
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Location: "
+                        android:textStyle="bold"
+                        android:textColor="@color/black"
+                        android:textSize="16sp"/>
+
+                    <TextView
+                        android:id="@+id/worker_location_trabajito"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Location"
+                        android:textColor="@color/black"
+                        android:textSize="16sp"/>
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Phone number: "
+                        android:textStyle="bold"
+                        android:textColor="@color/black"
+                        android:textSize="16sp"/>
+
+                    <TextView
+                        android:id="@+id/worker_phone_trabajito"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="12345678"
+                        android:textColor="@color/black"
+                        android:textSize="16sp"/>
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+    </androidx.cardview.widget.CardView>
+
+    <com.google.android.material.textfield.TextInputLayout
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+        android:id="@+id/task_input_layout"
+        android:layout_width="350dp"
+        android:layout_gravity="center"
+        android:layout_height="wrap_content"
+        android:layout_margin="8dp"
+        android:hint="Describe your task"
+        app:endIconMode="custom"
+        app:boxStrokeWidth="0dp"
+        app:boxBackgroundColor="@color/white"
+        app:boxCornerRadiusTopEnd="16dp"
+        app:boxCornerRadiusBottomEnd="16dp"
+        app:boxCornerRadiusTopStart="16dp"
+        app:boxCornerRadiusBottomStart="16dp">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:textSize="14sp"
+            android:inputType="textMultiLine"
+            android:minLines="4"
+            android:gravity="start"/>
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="8dp"
+        android:layout_gravity="center">
+
+        <com.google.android.material.textfield.TextInputLayout
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            android:id="@+id/start_date_input_layout"
+            android:layout_width="285dp"
+            android:layout_marginEnd="10dp"
+            android:layout_height="wrap_content"
+            android:hint="Wished start date dd/mm/aaaa"
+            app:boxStrokeWidth="0dp"
+            android:layout_gravity="center"
+            app:boxBackgroundColor="@color/white"
+            app:boxCornerRadiusTopEnd="16dp"
+            app:boxCornerRadiusBottomEnd="16dp"
+            app:boxCornerRadiusTopStart="16dp"
+            app:boxCornerRadiusBottomStart="16dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.475"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/info_email_text">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/start_date_input_edit_text"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:textSize="14sp"
+                android:inputType="date"/>
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <ImageButton
+            android:id="@+id/date_picker_actions"
+            android:layout_width="53dp"
+            android:layout_height="53dp"
+            android:src="@drawable/calendar_icon"
+            app:tint="@color/white"
+            android:contentDescription="Set date"
+            android:layout_gravity="bottom"
+            android:background="@drawable/bg_rounded_corners"
+            app:backgroundTint="@color/trabajitos_blue"/>
+
+    </LinearLayout>
+
+
+    <Button
+        android:id="@+id/confirm_button_trabajito"
+        android:layout_width="350dp"
+        android:layout_height="48dp"
+        android:layout_gravity="center"
+        android:layout_margin="@dimen/small_padding"
+        android:background="@drawable/bg_rounded_corners"
+        android:text="Confirm"
+        app:backgroundTint="@color/trabajitos_blue" />
+
+</LinearLayout>
