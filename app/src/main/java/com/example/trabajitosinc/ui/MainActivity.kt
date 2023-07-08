@@ -1,40 +1,28 @@
 package com.example.trabajitosinc.ui
 
-import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import androidx.navigation.findNavController
+import androidx.navigation.ui.setupWithNavController
 import com.example.trabajitosinc.R
-import com.example.trabajitosinc.util.PreferenceHelper
-import com.example.trabajitosinc.util.PreferenceHelper.get
-import com.example.trabajitosinc.util.PreferenceHelper.set
+import com.example.trabajitosinc.databinding.ActivityMainBinding
+import com.google.android.material.bottomnavigation.BottomNavigationView
 
 class MainActivity : AppCompatActivity() {
+
+    private lateinit var binding: ActivityMainBinding
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_main2)
 
-        val preferences = PreferenceHelper.defaultPrefs(this)
-        if (preferences["session", false]) {
-            goToHome()
-        } else {
-            goToLogIn()
-        }
-    }
+        binding = ActivityMainBinding.inflate(layoutInflater)
+        setContentView(binding.root)
 
-    private fun goToLogIn() {
-        val i = Intent(this, LoginActivity::class.java)
-        startActivity(i)
-    }
+        val navView: BottomNavigationView = binding.navView
 
-    private fun goToHome() {
-        val i = Intent(this@MainActivity, TrabajitosActivity::class.java)
-        createSessionPreferences()
-        startActivity(i)
-        finish()
-    }
+        val navController =findNavController(R.id.nav_host_fragment_activity_main)
 
-    private fun createSessionPreferences() {
-        val preferences = PreferenceHelper.defaultPrefs(this)
-        preferences["session"] = true
+        navView.setupWithNavController(navController)
+
     }
 }

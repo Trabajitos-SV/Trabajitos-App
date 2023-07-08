@@ -54,8 +54,8 @@ class UserPageFragment : Fragment() {
     }
 
     private fun clearSessioPrefferences(view: View) {
-        //val preferences = PreferenceHelper.defaultPrefs(requireContext())
-        //preferences["session"] = false
+        val preferences = PreferenceHelper.defaultPrefs(requireContext())
+        preferences["session"] = false
     }
 
 }

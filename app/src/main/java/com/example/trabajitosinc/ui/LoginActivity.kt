@@ -1,11 +1,7 @@
 package com.example.trabajitosinc.ui
 
-import android.app.Activity
 import android.content.Intent
-import androidx.lifecycle.Observer
-import androidx.lifecycle.ViewModelProvider
 import android.os.Bundle
-import androidx.annotation.StringRes
 import androidx.appcompat.app.AppCompatActivity
 import com.example.trabajitosinc.databinding.ActivityLoginBinding
 import com.example.trabajitosinc.util.PreferenceHelper
@@ -31,13 +27,8 @@ class LoginActivity : AppCompatActivity() {
 
     }
 
-    private fun goToLogIn() {
-        val i = Intent(this, LoginActivity::class.java)
-        startActivity(i)
-    }
-
     private fun goToHome() {
-        val i = Intent(this, TrabajitosActivity::class.java)
+        val i = Intent(this, MainActivity::class.java)
         createSessionPreferences()
         startActivity(i)
         finish()

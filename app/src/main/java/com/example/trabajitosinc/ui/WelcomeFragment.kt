@@ -46,7 +46,7 @@ class WelcomeFragment : Fragment() {
     }
 
     private fun goToHome() {
-        val i = Intent(context, TrabajitosActivity::class.java)
+        val i = Intent(context, MainActivity::class.java)
         creteSessionPreferences()
         startActivity(i)
         requireActivity().finish()
