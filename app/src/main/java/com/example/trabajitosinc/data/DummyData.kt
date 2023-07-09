@@ -4,11 +4,9 @@ import com.example.trabajitosinc.R
 import com.example.trabajitosinc.data.models.CategoryModel
 import com.example.trabajitosinc.data.models.MunicipalityModel
 import com.example.trabajitosinc.data.models.PortfolioModel
-import com.example.trabajitosinc.data.models.PortfolioModel2
 import com.example.trabajitosinc.data.models.ReviewsModel
 import com.example.trabajitosinc.data.models.UserModel
 import com.example.trabajitosinc.data.models.TrabajitoModel
-import com.example.trabajitosinc.data.models.UserComplexModel
 
 val categories = mutableListOf(
     CategoryModel("1","Carpentry", R.drawable.carpentry_icon),
@@ -24,7 +22,7 @@ val categories = mutableListOf(
 val porfolios = mutableListOf(
     PortfolioModel(
         id = "123",
-        title = "",
+        title = "gghjgjh",
         description = "hola",
         images = listOf(
             "https://phantom-marca.unidadeditorial.es/936fd16b77c008bf1039febccb975c52/resize/828/f/jpg/assets/multimedia/imagenes/2023/05/09/16836175499566.jpg",
@@ -41,7 +39,7 @@ val porfolios = mutableListOf(
             MunicipalityModel("1", "uca"),
             "https://cdn.autobild.es/sites/navi.axelspringer.es/public/media/image/2016/09/569465-whatsapp-que-tus-contactos-ponen-rana-perfil.jpg?tf=3840x"
         ),
-        category = "Futbolista",
+        category = "Carpentry",
         review = listOf(
             ReviewsModel(description = "Excelente", qualification = 10, id_user = "123")
         )
@@ -135,75 +133,4 @@ val users = mutableListOf(
     UserModel("2","Jose","Nestor@uca.com",25252525,MunicipalityModel("1", "uca"), "https://cdn.autobild.es/sites/navi.axelspringer.es/public/media/image/2016/09/569465-whatsapp-que-tus-contactos-ponen-rana-perfil.jpg?tf=3840x") ,
     UserModel("3","Jose","Nestor@uca.com",25252525,MunicipalityModel("1", "uca"), "https://cdn.autobild.es/sites/navi.axelspringer.es/public/media/image/2016/09/569465-whatsapp-que-tus-contactos-ponen-rana-perfil.jpg?tf=3840x"),
     UserModel("4","Jose","Nestor@uca.com",25252525,MunicipalityModel("1", "uca"), "https://cdn.autobild.es/sites/navi.axelspringer.es/public/media/image/2016/09/569465-whatsapp-que-tus-contactos-ponen-rana-perfil.jpg?tf=3840x")
-)
-
-val complexUsers = mutableListOf(
-    UserComplexModel(
-        id = "1",
-        name = "John Carpenter",
-        email = "johncarpenter@example.com",
-        number = 1234567890,
-        location = "New York",
-        image = R.drawable.no_image,
-        portfolio = PortfolioModel2(
-            images = arrayOf(
-                "https://t3.ftcdn.net/jpg/00/89/10/68/360_F_89106812_D8J6Y7KzgLr1FKTgOYZKYSM458BXTCaX.jpg",
-                "https://uploads-ssl.webflow.com/647888ca92d03e3fca3f1ea0/647888ca92d03e3fca3f2389_carpentry-p-1080.jpeg"
-            ),
-            title = "Custom Furniture",
-            category = "Carpentry",
-            description = "Specializing in crafting custom furniture pieces with high-quality materials."
-        )
-    ),
-    UserComplexModel(
-        id = "2",
-        name = "Emily Woodworker",
-        email = "emilywoodworker@example.com",
-        number = 987654321,
-        location = "Los Angeles",
-        image = R.drawable.no_image,
-        portfolio = PortfolioModel2(
-            images = arrayOf(
-                "https://example.com/carpentry_image3.jpg",
-                "https://example.com/carpentry_image4.jpg"
-            ),
-            title = "Cabinetry and Shelving",
-            category = "Carpentry",
-            description = "Expertise in designing and installing custom cabinetry and shelving solutions."
-        )
-    ),
-    UserComplexModel(
-        id = "3",
-        name = "David Spark",
-        email = "davidspark@example.com",
-        number = 234578901,
-        location = "Chicago",
-        image = R.drawable.no_image,
-        portfolio = PortfolioModel2(
-            images = arrayOf(
-                "https://example.com/electrician_image1.jpg",
-                "https://example.com/electrician_image2.jpg"
-            ),
-            title = "Residential Wiring",
-            category = "Electrician",
-            description = "Proficient in handling residential wiring projects, ensuring safety and compliance."
-        )
-    ),
-    UserComplexModel(
-        id = "4",
-        name = "Sophia Electrica",
-        email = "sophiaelectrica@example.com",
-        number = 345678912,
-        location = "Miami",
-        image = R.drawable.google_icon,
-        portfolio = PortfolioModel2(
-            images = arrayOf(
-                "https://example.com/electrician_image3.jpg",
-                "https://example.com/electrician_image4.jpg"
-            ),
-            title = "Lighting Installation",
-            category = "Electrician",
-            description = "Specializing in efficient lighting installation and energy-saving solutions."
-        )
-    )
 )

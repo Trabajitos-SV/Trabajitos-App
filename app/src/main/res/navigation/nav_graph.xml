@@ -107,12 +107,12 @@
         android:name="com.example.trabajitosinc.ui.category.SelectedWorkerFragment"
         android:label="fragment_selected_worker"
         tools:layout="@layout/fragment_selected_worker" >
-        <argument
-            android:name="worker"
-            app:argType="com.example.trabajitosinc.data.models.UserComplexModel" />
         <action
             android:id="@+id/action_selectedWorkerFragment_to_scheduleAppointmentFragment"
             app:destination="@id/scheduleAppointmentFragment" />
+        <argument
+            android:name="portfolio"
+            app:argType="com.example.trabajitosinc.data.models.PortfolioModel" />
     </fragment>
     <fragment
         android:id="@+id/scheduleAppointmentFragment"
