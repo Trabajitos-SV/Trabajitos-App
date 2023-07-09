@@ -2,6 +2,7 @@ package com.example.trabajitosinc.data
 
 import com.example.trabajitosinc.R
 import com.example.trabajitosinc.data.models.CategoryModel
+import com.example.trabajitosinc.data.models.MunicipalityModel
 import com.example.trabajitosinc.data.models.PortfolioModel
 import com.example.trabajitosinc.data.models.PortfolioModel2
 import com.example.trabajitosinc.data.models.ReviewsModel
@@ -37,7 +38,7 @@ val porfolios = mutableListOf(
             "Jose",
             "Nestor@uca.com",
             25252525,
-            "Uca",
+            MunicipalityModel("1", "uca"),
             "https://cdn.autobild.es/sites/navi.axelspringer.es/public/media/image/2016/09/569465-whatsapp-que-tus-contactos-ponen-rana-perfil.jpg?tf=3840x"
         ),
         category = "Futbolista",
@@ -130,10 +131,10 @@ val trabajitos = mutableListOf(
 )
 
 val users = mutableListOf(
-    UserModel("1","Jose","Nestor@uca.com",25252525,"Uca", "https://cdn.autobild.es/sites/navi.axelspringer.es/public/media/image/2016/09/569465-whatsapp-que-tus-contactos-ponen-rana-perfil.jpg?tf=3840x") ,
-    UserModel("2","Jose","Nestor@uca.com",25252525,"Uca", "https://cdn.autobild.es/sites/navi.axelspringer.es/public/media/image/2016/09/569465-whatsapp-que-tus-contactos-ponen-rana-perfil.jpg?tf=3840x") ,
-    UserModel("3","Jose","Nestor@uca.com",25252525,"Uca", "https://cdn.autobild.es/sites/navi.axelspringer.es/public/media/image/2016/09/569465-whatsapp-que-tus-contactos-ponen-rana-perfil.jpg?tf=3840x"),
-    UserModel("4","Jose","Nestor@uca.com",25252525,"Uca", "https://cdn.autobild.es/sites/navi.axelspringer.es/public/media/image/2016/09/569465-whatsapp-que-tus-contactos-ponen-rana-perfil.jpg?tf=3840x")
+    UserModel("1","Jose","Nestor@uca.com",25252525, MunicipalityModel("1", "uca"), "https://cdn.autobild.es/sites/navi.axelspringer.es/public/media/image/2016/09/569465-whatsapp-que-tus-contactos-ponen-rana-perfil.jpg?tf=3840x") ,
+    UserModel("2","Jose","Nestor@uca.com",25252525,MunicipalityModel("1", "uca"), "https://cdn.autobild.es/sites/navi.axelspringer.es/public/media/image/2016/09/569465-whatsapp-que-tus-contactos-ponen-rana-perfil.jpg?tf=3840x") ,
+    UserModel("3","Jose","Nestor@uca.com",25252525,MunicipalityModel("1", "uca"), "https://cdn.autobild.es/sites/navi.axelspringer.es/public/media/image/2016/09/569465-whatsapp-que-tus-contactos-ponen-rana-perfil.jpg?tf=3840x"),
+    UserModel("4","Jose","Nestor@uca.com",25252525,MunicipalityModel("1", "uca"), "https://cdn.autobild.es/sites/navi.axelspringer.es/public/media/image/2016/09/569465-whatsapp-que-tus-contactos-ponen-rana-perfil.jpg?tf=3840x")
 )
 
 val complexUsers = mutableListOf(
