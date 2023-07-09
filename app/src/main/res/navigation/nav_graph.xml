@@ -97,6 +97,9 @@
         <action
             android:id="@+id/action_trabajitoFragment_to_trabajitoEndVerificationCode"
             app:destination="@id/trabajitoEndVerificationCode" />
+        <action
+            android:id="@+id/action_trabajitoFragment_to_workerConfirmationNumberFragment"
+            app:destination="@id/workerConfirmationNumberFragment" />
     </fragment>
     <fragment
         android:id="@+id/historyRecyclerViewContainer"
@@ -124,4 +127,9 @@
         android:name="com.example.trabajitosinc.ui.TrabajitoEndVerificationCode"
         android:label="fragment_trabajito_end_verification_code"
         tools:layout="@layout/fragment_trabajito_end_verification_code" />
+    <fragment
+        android:id="@+id/workerConfirmationNumberFragment"
+        android:name="com.example.trabajitosinc.ui.WorkerConfirmationNumberFragment"
+        android:label="fragment_worker_confirmation_number"
+        tools:layout="@layout/fragment_worker_confirmation_number" />
 </navigation>
