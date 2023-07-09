@@ -2,7 +2,6 @@ package com.example.trabajitosinc.ui.home.TopPerformanceRecyclerView
 
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
-import com.example.trabajitosinc.data.models.RepositoryModel
 import com.example.trabajitosinc.data.models.UserModel
 import com.example.trabajitosinc.databinding.ItemTopPerformanceBinding
 
