@@ -6,5 +6,5 @@ class UserModel(
     val email: String,
     val number: Int,
     val location: String,
-    val image: Int
+    val image: String
     )

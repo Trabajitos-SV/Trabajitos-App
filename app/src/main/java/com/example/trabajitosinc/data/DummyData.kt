@@ -123,10 +123,10 @@ val trabajitos = mutableListOf(
 )
 
 val users = mutableListOf(
-    UserModel("1","Jose","Nestor@uca.com",25252525,"Uca", R.drawable.plumbing_icon) ,
-    UserModel("2","Jose","Nestor@uca.com",25252525,"Uca", R.drawable.electrician_icon) ,
-    UserModel("3","Jose","Nestor@uca.com",25252525,"Uca", R.drawable.housekeeper_icon),
-    UserModel("4","Jose","Nestor@uca.com",25252525,"Uca", R.drawable.welding_icon)
+    UserModel("1","Jose","Nestor@uca.com",25252525,"Uca", "https://cdn.autobild.es/sites/navi.axelspringer.es/public/media/image/2016/09/569465-whatsapp-que-tus-contactos-ponen-rana-perfil.jpg?tf=3840x") ,
+    UserModel("2","Jose","Nestor@uca.com",25252525,"Uca", "https://cdn.autobild.es/sites/navi.axelspringer.es/public/media/image/2016/09/569465-whatsapp-que-tus-contactos-ponen-rana-perfil.jpg?tf=3840x") ,
+    UserModel("3","Jose","Nestor@uca.com",25252525,"Uca", "https://cdn.autobild.es/sites/navi.axelspringer.es/public/media/image/2016/09/569465-whatsapp-que-tus-contactos-ponen-rana-perfil.jpg?tf=3840x"),
+    UserModel("4","Jose","Nestor@uca.com",25252525,"Uca", "https://cdn.autobild.es/sites/navi.axelspringer.es/public/media/image/2016/09/569465-whatsapp-que-tus-contactos-ponen-rana-perfil.jpg?tf=3840x")
 )
 
 val complexUsers = mutableListOf(
