@@ -5,7 +5,7 @@ data class PortfolioModel(
     val title: String,
     val description: String,
     val images: List<String>,
-    val user: String,
+    val user: UserModel,
     val category: String,
     val review: List<ReviewsModel>
 )

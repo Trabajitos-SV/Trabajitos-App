@@ -10,15 +10,15 @@ import com.example.trabajitosinc.data.models.TrabajitoModel
 import com.example.trabajitosinc.data.models.UserComplexModel
 
 val categories = mutableListOf(
-    CategoryModel("Carpentry", R.drawable.carpentry_icon),
-    CategoryModel("Electrician", R.drawable.electrician_icon),
-    CategoryModel("Housekeeper", R.drawable.housekeeper_icon),
-    CategoryModel("Plumbing", R.drawable.plumbing_icon),
-    CategoryModel("Welding", R.drawable.welding_icon),
-    CategoryModel("Plumbing", R.drawable.plumbing_icon),
-    CategoryModel("Welding", R.drawable.welding_icon),
-    CategoryModel("Plumbing", R.drawable.plumbing_icon),
-    CategoryModel("Welding", R.drawable.welding_icon)
+    CategoryModel("1","Carpentry", R.drawable.carpentry_icon),
+    CategoryModel("2","Electrician", R.drawable.electrician_icon),
+    CategoryModel("2","Housekeeper", R.drawable.housekeeper_icon),
+    CategoryModel("4","Plumbing", R.drawable.plumbing_icon),
+    CategoryModel("5","Welding", R.drawable.welding_icon),
+    CategoryModel("5","Plumbing", R.drawable.plumbing_icon),
+    CategoryModel("5","Welding", R.drawable.welding_icon),
+    CategoryModel("5","Plumbing", R.drawable.plumbing_icon),
+    CategoryModel("5","Welding", R.drawable.welding_icon)
 )
 val porfolios = mutableListOf(
     PortfolioModel(
@@ -32,7 +32,14 @@ val porfolios = mutableListOf(
             "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAOEAAADhCAMAAAAJbSJIAAAAgVBMVEXw8PABFicAAAD39/cACyD6+fpJUVgAABiLjpHS0tP8/PzOzs8AABXs7e0ADyIAAAacnqAtOUMAABEcKjamp6pYX2UdJTCtsLN8gIQAABvk5eYAAA3Bw8UpND4gLTkyPUZqbnOWmZyGiYx6foMXHywYHyxrcHW4u73a3N1ASFEAECD3KgboAAACYElEQVR4nO3c63KaQBiAYWAxKBVijEbRYAxJc+j9X2DBnhbcTpFhT/Z9fjIfie+M4mGBIAAAAAAAAAAAAAAAAAAAAAAAAAAAAABwxcTuiy6ZsB138hjpM7Md10jLONSlWE9s59XS+1xbYXzjTGFyO77CpcL5KsjGFkwLhwqXq/EPemKaUGgIhUNRaA6FQ1FozjUWirTlUBdu0lHIPRYLxba8kzzVn5Dzw90YyqP0VLBXKKoob2m+BOTj2B//FNkrnNzo+z6YP6SuFMbz8dV/Nr93pTBeL8Z3LBwqTKapGFu6WjpVqOH9j0JjKByKQnMoHIpCcy4rFGnvST8LxXNZ9R31slBsojh67jnrZ+FLUX9K7/coPS3cUijNUmgMhTIKW7MUGkOhjMLWLIXGUCijsDXrcWH678HAk8LztYgfhd3NyoftQ6GoXh86XptVwe7Gr2/KvT0ofI/OFnVD5QJxtFDs7kGhWOx7LvUmWz8Lgyy53Xc0C+J5d+M++lDs7UNhkG261nGYf753t+58fR2eH0z/cixV7+tFYdf/8o5P4c9ZCo2hUEZha5ZCYyiUUdiapdAYCmUUtmY7hRM/CqtlWBwvKfz4faX67MXWNaQXnTG0+xYpf7JQaArDXLpS3dp1wBee19b7rgGnwg4vCntTFc6Vv6zqprUwb99SodyN/m960Hr25aG9xmHnthimzi+1h8KhKDSHwqHcKiwqDfcyWc0dKgwLDXdMSkKXCjVxpHBdaCuMSxcKg5mGZ+gvj7bjTkQ200W5OAwAAAAAAAAAAAAAAAAAAAAAAAAAAADganwH5zd6LobMFeIAAAAASUVORK5CYII="
         ),
 
-        user = "Lee ",
+        user = UserModel(
+            "1",
+            "Jose",
+            "Nestor@uca.com",
+            25252525,
+            "Uca",
+            "https://cdn.autobild.es/sites/navi.axelspringer.es/public/media/image/2016/09/569465-whatsapp-que-tus-contactos-ponen-rana-perfil.jpg?tf=3840x"
+        ),
         category = "Futbolista",
         review = listOf(
             ReviewsModel(description = "Excelente", qualification = 10, id_user = "123")
