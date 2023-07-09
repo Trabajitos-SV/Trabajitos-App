@@ -10,7 +10,7 @@ import androidx.navigation.fragment.findNavController
 import androidx.navigation.fragment.navArgs
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.trabajitosinc.data.models.CategoryModel
-import com.example.trabajitosinc.data.models.UserComplexModel
+import com.example.trabajitosinc.data.models.PortfolioModel
 import com.example.trabajitosinc.databinding.FragmentSelectedCategoryBinding
 import com.example.trabajitosinc.ui.category.recyclerview.users.ComplexUserRecyclerViewAdapter
 import com.example.trabajitosinc.ui.viewmodel.SelectedCategoryViewModel
@@ -46,7 +46,7 @@ class SelectedCategoryFragment : Fragment() {
 
     }
 
-    private fun showSelectedItem(worker: UserComplexModel){
+    private fun showSelectedItem(worker: PortfolioModel){
         selectedCategoryViewModel.setSelected(worker)
 
         val directions = SelectedCategoryFragmentDirections.actionSelectedCategoryFragmentToSelectedWorkerFragment(worker)
@@ -55,7 +55,7 @@ class SelectedCategoryFragment : Fragment() {
     }
 
     private fun displayWorkers() {
-        adapter.setData(selectedCategoryViewModel.getUserByCategory(args.category.name))
+        adapter.setData(selectedCategoryViewModel.getPortfolioByCategory(args.category.name))
         adapter.notifyDataSetChanged()
     }
 

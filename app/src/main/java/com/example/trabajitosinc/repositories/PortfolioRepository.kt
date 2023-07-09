@@ -7,5 +7,5 @@ class PortfolioRepository (private val portfolios: MutableList<PortfolioModel> )
 
     fun getPortfolios()= portfolios
 
-
+    fun getSelectedCategory(selectedCategory: String) = portfolios.filter { it.category == selectedCategory }
 }

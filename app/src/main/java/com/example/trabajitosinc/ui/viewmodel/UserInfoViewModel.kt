@@ -12,8 +12,8 @@ import com.example.trabajitosinc.repositories.UserRepository
 class UserInfoViewModel(private val repository : UserRepository) : ViewModel(){
     var name = MutableLiveData("")
     var email = MutableLiveData("")
-    var number = MutableLiveData("")
-    var location = MutableLiveData("")
+    var phone = MutableLiveData("")
+    var municipality = MutableLiveData("")
     var image = MutableLiveData("")
 
     fun getUsers() = repository.getUsers()
@@ -22,8 +22,8 @@ class UserInfoViewModel(private val repository : UserRepository) : ViewModel(){
     fun clearUserData(){
         name.value = ""
         email.value = ""
-        number.value = ""
-        location.value = ""
+        phone.value = ""
+        municipality.value = ""
         image.value = ""
     }
 
@@ -31,8 +31,8 @@ class UserInfoViewModel(private val repository : UserRepository) : ViewModel(){
         clearUserData()
         name.value = user.name
         email.value = user.email
-        number.value = user.number.toString()
-        location.value = user.location
+        phone.value = user.phone.toString()
+        municipality.value = user.municipality.name
         image.value = user.image.toString()
 
     }

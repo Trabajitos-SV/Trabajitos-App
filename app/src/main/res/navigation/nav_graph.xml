@@ -97,6 +97,9 @@
         <action
             android:id="@+id/action_trabajitoFragment_to_trabajitoEndVerificationCode"
             app:destination="@id/trabajitoEndVerificationCode" />
+        <action
+            android:id="@+id/action_trabajitoFragment_to_workerConfirmationNumberFragment"
+            app:destination="@id/workerConfirmationNumberFragment" />
     </fragment>
     <fragment
         android:id="@+id/historyRecyclerViewContainer"
@@ -107,12 +110,12 @@
         android:name="com.example.trabajitosinc.ui.category.SelectedWorkerFragment"
         android:label="fragment_selected_worker"
         tools:layout="@layout/fragment_selected_worker" >
-        <argument
-            android:name="worker"
-            app:argType="com.example.trabajitosinc.data.models.UserComplexModel" />
         <action
             android:id="@+id/action_selectedWorkerFragment_to_scheduleAppointmentFragment"
             app:destination="@id/scheduleAppointmentFragment" />
+        <argument
+            android:name="portfolio"
+            app:argType="com.example.trabajitosinc.data.models.PortfolioModel" />
     </fragment>
     <fragment
         android:id="@+id/scheduleAppointmentFragment"
@@ -124,4 +127,9 @@
         android:name="com.example.trabajitosinc.ui.TrabajitoEndVerificationCode"
         android:label="fragment_trabajito_end_verification_code"
         tools:layout="@layout/fragment_trabajito_end_verification_code" />
+    <fragment
+        android:id="@+id/workerConfirmationNumberFragment"
+        android:name="com.example.trabajitosinc.ui.WorkerConfirmationNumberFragment"
+        android:label="fragment_worker_confirmation_number"
+        tools:layout="@layout/fragment_worker_confirmation_number" />
 </navigation>

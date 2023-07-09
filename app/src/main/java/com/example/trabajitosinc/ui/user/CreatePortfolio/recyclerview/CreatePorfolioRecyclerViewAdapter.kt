@@ -34,6 +34,10 @@ class CreatePorfolioRecyclerViewAdapter(
             holder.itemView.setOnClickListener {
                 lastItemClickListener?.invoke()
             }
+        } else {
+            holder.itemView.setOnClickListener {
+                Unit
+            }
         }
     }
 

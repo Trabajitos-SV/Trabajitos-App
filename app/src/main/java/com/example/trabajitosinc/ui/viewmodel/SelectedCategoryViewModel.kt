@@ -6,55 +6,57 @@ import androidx.lifecycle.ViewModelProvider.AndroidViewModelFactory.Companion.AP
 import androidx.lifecycle.viewmodel.initializer
 import androidx.lifecycle.viewmodel.viewModelFactory
 import com.example.trabajitosinc.TrabajitosApplication
-import com.example.trabajitosinc.data.models.UserComplexModel
-import com.example.trabajitosinc.repositories.UserComplexRepository
+import com.example.trabajitosinc.data.models.PortfolioModel
+import com.example.trabajitosinc.repositories.PortfolioRepository
 
-class SelectedCategoryViewModel(private val repository: UserComplexRepository): ViewModel() {
-    var id = MutableLiveData("")
+class SelectedCategoryViewModel(private val repository: PortfolioRepository): ViewModel() {
+    var userId = MutableLiveData("")
+    var portfolioId = MutableLiveData("")
     var name = MutableLiveData("")
     var email = MutableLiveData("")
-    var number = MutableLiveData("")
-    var location = MutableLiveData("")
-    var image = MutableLiveData("")
+    var phone = MutableLiveData("")
+    var municipality = MutableLiveData("")
+    var userImage = MutableLiveData("")
     //val images = MutableLiveData("")
     val title = MutableLiveData("")
     val category = MutableLiveData("")
     val description = MutableLiveData("")
 
-    fun setSelected(user: UserComplexModel){
+    fun setSelected(portfolio: PortfolioModel){
         clearData()
-        id.value = user.id
-        name.value= user.name
-        email.value = user.email
-        number.value = user.number.toString()
-        location.value = user.location
-        image.value = user.image.toString()
-        title.value = user.portfolio.title
-        category.value = user.portfolio.category
-        description.value = user.portfolio.description
+        userId.value = portfolio.user.id
+        portfolioId.value = portfolio.id
+        name.value= portfolio.user.name
+        email.value = portfolio.user.email
+        phone.value = portfolio.user.phone.toString()
+        municipality.value = portfolio.user.municipality.name
+        userImage.value = portfolio.user.image
+        title.value = portfolio.title
+        category.value = portfolio.category
+        description.value = portfolio.description
     }
 
     private fun clearData() {
-        id.value = ""
+        userId.value = ""
         name.value = ""
         email.value = ""
-        number.value = ""
-        location.value = ""
-        image.value = ""
+        phone.value = ""
+        municipality.value = ""
+        userImage.value = ""
         title.value = ""
         category.value = ""
         description.value = ""
     }
 
-    fun getComplexUsers() = repository.getComplexUsers()
+    fun getPortfolios() = repository.getPortfolios()
 
-    fun getUserByCategory(selctedCategory: String) = repository.getSelectedCategory(selctedCategory)
+    fun getPortfolioByCategory(selctedCategory: String) = repository.getSelectedCategory(selctedCategory)
 
     companion object {
         val Factory = viewModelFactory {
             initializer {
                 val app = this[APPLICATION_KEY] as TrabajitosApplication
-                SelectedCategoryViewModel(app.userComplexRepository)
+                SelectedCategoryViewModel(app.portfolioRepository)
             }
         }
     }
