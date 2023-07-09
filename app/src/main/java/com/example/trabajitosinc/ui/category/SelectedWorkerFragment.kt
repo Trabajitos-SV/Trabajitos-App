@@ -88,6 +88,11 @@ class SelectedWorkerFragment : Fragment() {
             .load(selectedPortfolio.images[0])
             .into(binding.mainImageWorker)
 
+        Glide
+            .with(this)
+            .load(selectedPortfolio.user.image)
+            .into(binding.imageView2)
+
         binding.floatingActionButton.setOnClickListener {
             view.findNavController().navigate(R.id.action_selectedWorkerFragment_to_scheduleAppointmentFragment)
         }

@@ -30,6 +30,10 @@ class SelectedWorkerRecyclerViewAdapter (
         holder.bind(imageUrl, clickListener)
 
         holder.itemView.isSelected = position == selectedPosition
+
+        holder.itemView.setOnClickListener {
+            Unit
+        }
     }
 
     fun setData(images: List<String>) {
