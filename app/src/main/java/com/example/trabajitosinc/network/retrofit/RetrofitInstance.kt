@@ -28,5 +28,4 @@ object RetrofitInstance {
     fun getPortfolioService(): PortfolioService {
         return retrofit.create(PortfolioService::class.java)
     }
-
 }
