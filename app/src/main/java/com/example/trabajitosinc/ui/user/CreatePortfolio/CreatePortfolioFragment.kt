@@ -20,6 +20,7 @@ import com.example.trabajitosinc.data.models.PortfolioModel
 import com.example.trabajitosinc.data.porfolios
 import com.example.trabajitosinc.databinding.FragmentCreatePortfolioBinding
 import com.example.trabajitosinc.ui.user.CreatePortfolio.recyclerview.CreatePorfolioRecyclerViewAdapter
+import com.example.trabajitosinc.ui.user.portfolio.viewmodel.CreatePortfollioViewModel
 import com.google.android.material.carousel.CarouselLayoutManager
 
 
@@ -56,7 +57,6 @@ class CreatePortfolioFragment : Fragment() {
         val images = porfolios[0].images.toMutableList()
         setRecyclerViewImages(images, createPortfolioViewModel)
     }
-
     fun setRecyclerViewImages( images: MutableList<String>, viewModel: CreatePortfolioViewModel) {
         val carouselLayoutManager = CarouselLayoutManager()
         binding.carouselRecyclerView.layoutManager = carouselLayoutManager

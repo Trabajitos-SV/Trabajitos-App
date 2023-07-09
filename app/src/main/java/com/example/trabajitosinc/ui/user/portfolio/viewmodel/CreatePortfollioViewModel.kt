@@ -1,5 +1,6 @@
-package com.example.trabajitosinc.ui.portfolio.viewmodel
+package com.example.trabajitosinc.ui.user.portfolio.viewmodel
 
+import android.net.Uri
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
@@ -10,7 +11,7 @@ import androidx.lifecycle.viewmodel.viewModelFactory
 import com.example.trabajitosinc.TrabajitosApplication
 import com.example.trabajitosinc.network.ApiResponse
 import com.example.trabajitosinc.repository.PortfolioCRepository
-import com.example.trabajitosinc.ui.portfolio.CreatePortfolioUiStates
+import com.example.trabajitosinc.ui.user.portfolio.CreatePortfolioUiStates
 import kotlinx.coroutines.launch
 
 class CreatePortfollioViewModel(private val repository: PortfolioCRepository): ViewModel(){

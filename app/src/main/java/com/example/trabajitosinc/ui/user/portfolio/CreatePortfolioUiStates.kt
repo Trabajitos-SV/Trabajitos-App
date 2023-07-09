@@ -1,4 +1,4 @@
-package com.example.trabajitosinc.ui.portfolio
+package com.example.trabajitosinc.ui.user.portfolio
 
 sealed class CreatePortfolioUiStates {
 
