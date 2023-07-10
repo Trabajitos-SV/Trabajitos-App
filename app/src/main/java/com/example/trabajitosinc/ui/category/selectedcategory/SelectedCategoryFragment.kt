@@ -15,14 +15,14 @@ import com.example.trabajitosinc.data.models.CategoryModel
 import com.example.trabajitosinc.data.models.PortfolioModel
 import com.example.trabajitosinc.databinding.FragmentSelectedCategoryBinding
 import com.example.trabajitosinc.network.ApiResponse
-import com.example.trabajitosinc.ui.category.selectedcategory.recyclerview.ComplexUserRecyclerViewAdapter
+import com.example.trabajitosinc.ui.category.selectedcategory.recyclerview.PortfolioByCategoryRecyclerViewAdapter
 import com.example.trabajitosinc.ui.category.selectedcategory.viewmodel.SelectedCategoryViewModel
 import kotlinx.coroutines.launch
 
 class SelectedCategoryFragment : Fragment() {
 
     private lateinit var binding: FragmentSelectedCategoryBinding
-    private lateinit var adapter: ComplexUserRecyclerViewAdapter
+    private lateinit var adapter: PortfolioByCategoryRecyclerViewAdapter
 
     private val selectedCategoryViewModel: SelectedCategoryViewModel by activityViewModels {
         SelectedCategoryViewModel.Factory
@@ -84,7 +84,7 @@ class SelectedCategoryFragment : Fragment() {
     fun setRecyclerView(view: View) {
         binding.workersRecyclerView.layoutManager = LinearLayoutManager(view.context)
 
-        adapter = ComplexUserRecyclerViewAdapter {
+        adapter = PortfolioByCategoryRecyclerViewAdapter {
             showSelectedItem(it)
         }
 
