@@ -1,19 +1,23 @@
 package com.example.trabajitosinc.ui.category.selectedcategory
 
 import android.os.Bundle
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Toast
+import androidx.fragment.app.Fragment
 import androidx.fragment.app.activityViewModels
+import androidx.lifecycle.lifecycleScope
 import androidx.navigation.fragment.findNavController
 import androidx.navigation.fragment.navArgs
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.trabajitosinc.data.models.CategoryModel
 import com.example.trabajitosinc.data.models.PortfolioModel
 import com.example.trabajitosinc.databinding.FragmentSelectedCategoryBinding
+import com.example.trabajitosinc.network.ApiResponse
 import com.example.trabajitosinc.ui.category.selectedcategory.recyclerview.ComplexUserRecyclerViewAdapter
 import com.example.trabajitosinc.ui.category.selectedcategory.viewmodel.SelectedCategoryViewModel
+import kotlinx.coroutines.launch
 
 class SelectedCategoryFragment : Fragment() {
 
@@ -44,9 +48,24 @@ class SelectedCategoryFragment : Fragment() {
 
         setRecyclerView(view)
 
+        lifecycleScope.launch {
+            val response =
+                selectedCategoryViewModel.getPortfolioByCatergoryRemote(selectedCategory.id)
+            when (response) {
+                is ApiResponse.Error -> TODO()
+                is ApiResponse.ErrorWithMessage -> TODO()
+                is ApiResponse.Success -> Toast.makeText(
+                    requireContext(),
+                    "${response.data.docs.size}",
+                    Toast.LENGTH_LONG
+                ).show()
+            }
+        }
+
+
     }
 
-    private fun showSelectedItem(worker: PortfolioModel){
+    private fun showSelectedItem(worker: PortfolioModel) {
         selectedCategoryViewModel.setSelected(worker)
 
         val directions =
@@ -62,10 +81,10 @@ class SelectedCategoryFragment : Fragment() {
         adapter.notifyDataSetChanged()
     }
 
-    fun setRecyclerView(view: View){
+    fun setRecyclerView(view: View) {
         binding.workersRecyclerView.layoutManager = LinearLayoutManager(view.context)
 
-        adapter = ComplexUserRecyclerViewAdapter{
+        adapter = ComplexUserRecyclerViewAdapter {
             showSelectedItem(it)
         }
 

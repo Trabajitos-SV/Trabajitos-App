@@ -38,7 +38,6 @@ class CreatePortfollioViewModel(private val repository: PortfolioCRepository): V
         }
     }
 
-
     fun onCreatePortfolio() {
         if(!validateData()){
             _status.value = CreatePortfolioUiStates.ErrorWithMessage("Wrong information")

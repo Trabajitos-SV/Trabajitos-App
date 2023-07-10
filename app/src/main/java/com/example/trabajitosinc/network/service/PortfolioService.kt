@@ -7,6 +7,7 @@ import com.example.trabajitosinc.network.dto.portfolio.findPortfolioByCategoryId
 import retrofit2.http.Body
 import retrofit2.http.GET
 import retrofit2.http.POST
+import retrofit2.http.Path
 
 interface PortfolioService {
 
@@ -16,4 +17,9 @@ interface PortfolioService {
     @GET("api/portfolio/byCategory/{identifier}")
     suspend fun findPortfolioByCategoryIdR(@Body credentials: FindPortfolioByCategoryIdRequest): FindPortfolioByCategoryIdResponse
 
+    @GET("api/portfolio/byCategory/{identifier}")
+    suspend fun findPortfolioCatTEST(@Path("identifier") identifier: String): FindPortfolioByCategoryIdResponse
+
+
 }
+

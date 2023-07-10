@@ -8,8 +8,12 @@ import androidx.lifecycle.viewmodel.viewModelFactory
 import com.example.trabajitosinc.TrabajitosApplication
 import com.example.trabajitosinc.data.models.PortfolioModel
 import com.example.trabajitosinc.repositories.PortfolioRepository
+import com.example.trabajitosinc.repository.PortfolioCRepository
 
-class SelectedCategoryViewModel(private val repository: PortfolioRepository): ViewModel() {
+class SelectedCategoryViewModel(
+    private val repository: PortfolioRepository,
+    private val remoteCRepository: PortfolioCRepository
+) : ViewModel() {
     var userId = MutableLiveData("")
     var portfolioId = MutableLiveData("")
     var name = MutableLiveData("")
@@ -17,16 +21,17 @@ class SelectedCategoryViewModel(private val repository: PortfolioRepository): Vi
     var phone = MutableLiveData("")
     var municipality = MutableLiveData("")
     var userImage = MutableLiveData("")
+
     //val images = MutableLiveData("")
     val title = MutableLiveData("")
     val category = MutableLiveData("")
     val description = MutableLiveData("")
 
-    fun setSelected(portfolio: PortfolioModel){
+    fun setSelected(portfolio: PortfolioModel) {
         clearData()
         userId.value = portfolio.user.id
         portfolioId.value = portfolio.id
-        name.value= portfolio.user.name
+        name.value = portfolio.user.name
         email.value = portfolio.user.email
         phone.value = portfolio.user.phone.toString()
         municipality.value = portfolio.user.municipality.name
@@ -50,13 +55,17 @@ class SelectedCategoryViewModel(private val repository: PortfolioRepository): Vi
 
     fun getPortfolios() = repository.getPortfolios()
 
-    fun getPortfolioByCategory(selctedCategory: String) = repository.getSelectedCategory(selctedCategory)
+    fun getPortfolioByCategory(selctedCategory: String) =
+        repository.getSelectedCategory(selctedCategory)
+
+    suspend fun getPortfolioByCatergoryRemote(selectCategory: String) =
+        remoteCRepository.fndPortfolioByCategoryId(selectCategory)
 
     companion object {
         val Factory = viewModelFactory {
             initializer {
                 val app = this[APPLICATION_KEY] as TrabajitosApplication
-                SelectedCategoryViewModel(app.portfolioRepository)
+                SelectedCategoryViewModel(app.portfolioRepository, app.portfolioCRepository)
             }
         }
     }

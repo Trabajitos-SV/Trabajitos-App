@@ -73,5 +73,12 @@ class TrabajitosApplication: Application() {
         const val USER_TOKEN = "user_token"
     }
 
+
+    //PokeRetrofitInstance
+    private val pokemonService = with(RetrofitInstance){
+        getPortfolioService()
+    }
+
+
 }
 
