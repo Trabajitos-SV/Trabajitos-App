@@ -20,7 +20,7 @@ import com.example.trabajitosinc.data.models.PortfolioModel
 import com.example.trabajitosinc.data.porfolios
 import com.example.trabajitosinc.databinding.FragmentCreatePortfolioBinding
 import com.example.trabajitosinc.ui.user.CreatePortfolio.recyclerview.CreatePorfolioRecyclerViewAdapter
-import com.example.trabajitosinc.ui.user.portfolio.viewmodel.CreatePortfollioViewModel
+//import com.example.trabajitosinc.ui.user.portfolio.viewmodel.CreatePortfollioViewModel
 import com.google.android.material.carousel.CarouselLayoutManager
 
 
