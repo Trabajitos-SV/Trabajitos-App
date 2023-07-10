@@ -9,15 +9,20 @@ import com.example.trabajitosinc.data.models.UserModel
 import com.example.trabajitosinc.data.models.TrabajitoModel
 
 val categories = mutableListOf(
-    CategoryModel("1","Carpentry", R.drawable.carpentry_icon),
-    CategoryModel("2","Electrician", R.drawable.electrician_icon),
-    CategoryModel("2","Housekeeper", R.drawable.housekeeper_icon),
-    CategoryModel("4","Plumbing", R.drawable.plumbing_icon),
-    CategoryModel("5","Welding", R.drawable.welding_icon),
-    CategoryModel("5","Plumbing", R.drawable.plumbing_icon),
-    CategoryModel("5","Welding", R.drawable.welding_icon),
-    CategoryModel("5","Plumbing", R.drawable.plumbing_icon),
-    CategoryModel("5","Welding", R.drawable.welding_icon)
+    CategoryModel("64a9bacbe6ae18d84f582692","Carpenter", R.drawable.carpentry_icon),
+    CategoryModel("64a9bacbe6ae18d84f58268e","Electrician", R.drawable.electrician_icon),
+    CategoryModel("64a9bacbe6ae18d84f582690","Plumber", R.drawable.plumbing_icon),
+    CategoryModel("64a9bacbe6ae18d84f582694", "Construction Worker", R.drawable.no_image),
+    CategoryModel("64a9bacbe6ae18d84f582696", "Painter", R.drawable.no_image),
+    CategoryModel("64a9bacbe6ae18d84f582698", "Gardener", R.drawable.no_image),
+    CategoryModel("64a9bacce6ae18d84f58269a", "Mechanic", R.drawable.no_image),
+    CategoryModel("64a9bacce6ae18d84f58269e", "Massage Therapist", R.drawable.no_image),
+    CategoryModel("64a9bacce6ae18d84f5826a0", "Hair Stylist", R.drawable.no_image),
+    CategoryModel("64a9bacce6ae18d84f5826a2", "Translator", R.drawable.no_image),
+    CategoryModel("64a9bacce6ae18d84f5826a4", "Photographer", R.drawable.no_image),
+    CategoryModel("64a9bacce6ae18d84f5826a6", "Personal Trainer", R.drawable.no_image),
+    CategoryModel("64a9bacce6ae18d84f5826a8", "Virtual Assistant", R.drawable.no_image),
+    CategoryModel("64a9bacce6ae18d84f5826aa", "Manicurist", R.drawable.no_image)
 )
 val porfolios = mutableListOf(
     PortfolioModel(
