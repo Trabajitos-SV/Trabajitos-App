@@ -1,4 +1,4 @@
-package com.example.trabajitosinc.ui
+package com.example.trabajitosinc.ui.history.endtrabajito.endworker
 
 import android.content.Context
 import android.os.Bundle
@@ -10,11 +10,8 @@ import android.view.ViewGroup
 import android.view.inputmethod.InputMethodManager
 import android.widget.EditText
 import android.widget.Toast
-import androidx.core.content.ContextCompat.getSystemService
 import androidx.core.widget.addTextChangedListener
-import com.example.trabajitosinc.R
 import com.example.trabajitosinc.databinding.FragmentWorkerConfirmationNumberBinding
-import kotlinx.coroutines.delay
 
 class WorkerConfirmationNumberFragment : Fragment() {
 

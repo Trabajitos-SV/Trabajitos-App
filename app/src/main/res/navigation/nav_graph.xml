@@ -16,7 +16,7 @@
     </fragment>
     <fragment
         android:id="@+id/navigation_history"
-        android:name="com.example.trabajitosinc.ui.history.HistoryFragment"
+        android:name="com.example.trabajitosinc.ui.history.historymain.HistoryFragment"
         android:label="fragment_history"
         tools:layout="@layout/fragment_history" >
         <action
@@ -87,7 +87,7 @@
     </fragment>
     <fragment
         android:id="@+id/trabajitoFragment"
-        android:name="com.example.trabajitosinc.ui.history.TrabajitoFragment"
+        android:name="com.example.trabajitosinc.ui.history.trabajito.TrabajitoFragment"
         android:label="fragment_trabajito"
         tools:layout="@layout/fragment_trabajito" >
         <argument
@@ -103,7 +103,7 @@
     </fragment>
     <fragment
         android:id="@+id/historyRecyclerViewContainer"
-        android:name="com.example.trabajitosinc.ui.history.HistoryRecyclerViewContainer"
+        android:name="com.example.trabajitosinc.ui.history.historymain.viewpager.HistoryRecyclerViewContainer"
         android:label="HistoryRecyclerViewContainer" />
     <fragment
         android:id="@+id/selectedWorkerFragment"
@@ -124,12 +124,12 @@
         tools:layout="@layout/fragment_schedule_appointment" />
     <fragment
         android:id="@+id/trabajitoEndVerificationCode"
-        android:name="com.example.trabajitosinc.ui.TrabajitoEndVerificationCode"
+        android:name="com.example.trabajitosinc.ui.history.endtrabajito.endrequester.TrabajitoEndVerificationCode"
         android:label="fragment_trabajito_end_verification_code"
         tools:layout="@layout/fragment_trabajito_end_verification_code" />
     <fragment
         android:id="@+id/workerConfirmationNumberFragment"
-        android:name="com.example.trabajitosinc.ui.WorkerConfirmationNumberFragment"
+        android:name="com.example.trabajitosinc.ui.history.endtrabajito.endworker.WorkerConfirmationNumberFragment"
         android:label="fragment_worker_confirmation_number"
         tools:layout="@layout/fragment_worker_confirmation_number" />
 </navigation>

@@ -1,4 +1,4 @@
-package com.example.trabajitosinc.ui.viewmodel
+package com.example.trabajitosinc.ui.history.endtrabajito.endrequester.viewmodel
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider.AndroidViewModelFactory.Companion.APPLICATION_KEY

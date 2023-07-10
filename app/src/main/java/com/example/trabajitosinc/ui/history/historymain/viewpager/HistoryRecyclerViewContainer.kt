@@ -1,8 +1,7 @@
-package com.example.trabajitosinc.ui.history
+package com.example.trabajitosinc.ui.history.historymain.viewpager
 
 import android.content.Context
 import android.os.Bundle
-import android.util.Log
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
@@ -10,12 +9,11 @@ import android.view.ViewGroup
 import androidx.fragment.app.activityViewModels
 import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
-import androidx.recyclerview.widget.RecyclerView
-import com.example.trabajitosinc.R
 import com.example.trabajitosinc.data.models.TrabajitoModel
 import com.example.trabajitosinc.databinding.FragmentHistoryRecyclerViewBinding
-import com.example.trabajitosinc.ui.history.recyclerview.TrabajitoRecyclerViewAdapter
-import com.example.trabajitosinc.ui.viewmodel.HistoryViewModel
+import com.example.trabajitosinc.ui.history.historymain.HistoryFragmentDirections
+import com.example.trabajitosinc.ui.history.historymain.viewpager.recyclerview.TrabajitoRecyclerViewAdapter
+import com.example.trabajitosinc.ui.history.historymain.viewmodel.HistoryViewModel
 
 class HistoryRecyclerViewContainer : Fragment() {
 

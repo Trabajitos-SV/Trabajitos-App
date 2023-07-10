@@ -1,4 +1,4 @@
-package com.example.trabajitosinc.ui.history.recyclerview
+package com.example.trabajitosinc.ui.history.historymain.viewpager.recyclerview
 
 import android.content.Context
 import android.widget.ExpandableListView.OnChildClickListener

@@ -1,4 +1,4 @@
-package com.example.trabajitosinc.ui
+package com.example.trabajitosinc.ui.history.endtrabajito.endrequester
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment
@@ -6,9 +6,8 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.activityViewModels
-import com.example.trabajitosinc.R
 import com.example.trabajitosinc.databinding.FragmentTrabajitoEndVerificationCodeBinding
-import com.example.trabajitosinc.ui.viewmodel.TrabajitoEndVerificationViewModel
+import com.example.trabajitosinc.ui.history.endtrabajito.endrequester.viewmodel.TrabajitoEndVerificationViewModel
 
 class TrabajitoEndVerificationCode : Fragment() {
 
