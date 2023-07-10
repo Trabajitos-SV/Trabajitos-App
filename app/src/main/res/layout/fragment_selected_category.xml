@@ -6,7 +6,7 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="vertical"
-        tools:context=".ui.category.SelectedCategoryFragment" >
+        tools:context=".ui.category.selectedcategory.SelectedCategoryFragment" >
 
         <TextView
             android:id="@+id/selected_category_tittle"

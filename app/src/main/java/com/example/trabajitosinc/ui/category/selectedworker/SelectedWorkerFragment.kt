@@ -1,4 +1,4 @@
-package com.example.trabajitosinc.ui.category
+package com.example.trabajitosinc.ui.category.selectedworker
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment
@@ -14,6 +14,7 @@ import com.example.trabajitosinc.R
 import com.example.trabajitosinc.data.models.PortfolioModel
 import com.example.trabajitosinc.data.porfolios
 import com.example.trabajitosinc.databinding.FragmentSelectedWorkerBinding
+import com.example.trabajitosinc.ui.category.selectedworker.SelectedWorkerFragmentArgs
 import com.example.trabajitosinc.ui.category.selectedworker.recylcerview.SelectedWorkerRecyclerViewAdapter
 import com.example.trabajitosinc.ui.category.selectedworker.viewmodel.SelectedWorkerViewModel
 import com.google.android.material.carousel.CarouselLayoutManager

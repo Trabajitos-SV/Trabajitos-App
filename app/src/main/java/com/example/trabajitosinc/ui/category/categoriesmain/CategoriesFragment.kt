@@ -1,4 +1,4 @@
-package com.example.trabajitosinc.ui.category
+package com.example.trabajitosinc.ui.category.categoriesmain
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment
@@ -10,8 +10,8 @@ import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.GridLayoutManager
 import com.example.trabajitosinc.data.models.CategoryModel
 import com.example.trabajitosinc.databinding.FragmentCategoriesBinding
-import com.example.trabajitosinc.ui.category.recyclerview.categories.CategoryRecyclerViewAdapter
-import com.example.trabajitosinc.ui.viewmodel.CategoryViewModel
+import com.example.trabajitosinc.ui.category.categoriesmain.recyclerview.CategoryRecyclerViewAdapter
+import com.example.trabajitosinc.ui.category.categoriesmain.viewmodel.CategoryViewModel
 
 class CategoriesFragment : Fragment() {
 
@@ -41,7 +41,10 @@ class CategoriesFragment : Fragment() {
     private fun showSelectedItem(category: CategoryModel){
         categoryViewModel.setSelected(category)
 
-        val direction = CategoriesFragmentDirections.actionNavigationCategoriesToSelectedCategoryFragment(category)
+        val direction =
+            CategoriesFragmentDirections.actionNavigationCategoriesToSelectedCategoryFragment(
+                category
+            )
         findNavController().navigate(direction)
     }
 

@@ -5,12 +5,12 @@
     <data>
         <variable
             name="viewmodel"
-            type="com.example.trabajitosinc.ui.viewmodel.TrabajitoEndVerificationViewModel" />
+            type="com.example.trabajitosinc.ui.history.endtrabajito.endrequester.viewmodel.TrabajitoEndVerificationViewModel" />
     </data>
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        tools:context=".ui.TrabajitoEndVerificationCode">
+        tools:context=".ui.history.endtrabajito.endrequester.TrabajitoEndVerificationCode">
 
         <TextView
             android:id="@+id/textView18"
