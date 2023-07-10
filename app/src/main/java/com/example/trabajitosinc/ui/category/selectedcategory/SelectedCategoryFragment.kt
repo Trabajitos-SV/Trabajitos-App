@@ -1,4 +1,4 @@
-package com.example.trabajitosinc.ui.category
+package com.example.trabajitosinc.ui.category.selectedcategory
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment
@@ -12,8 +12,8 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.trabajitosinc.data.models.CategoryModel
 import com.example.trabajitosinc.data.models.PortfolioModel
 import com.example.trabajitosinc.databinding.FragmentSelectedCategoryBinding
-import com.example.trabajitosinc.ui.category.recyclerview.users.ComplexUserRecyclerViewAdapter
-import com.example.trabajitosinc.ui.viewmodel.SelectedCategoryViewModel
+import com.example.trabajitosinc.ui.category.selectedcategory.recyclerview.ComplexUserRecyclerViewAdapter
+import com.example.trabajitosinc.ui.category.selectedcategory.viewmodel.SelectedCategoryViewModel
 
 class SelectedCategoryFragment : Fragment() {
 
@@ -49,7 +49,10 @@ class SelectedCategoryFragment : Fragment() {
     private fun showSelectedItem(worker: PortfolioModel){
         selectedCategoryViewModel.setSelected(worker)
 
-        val directions = SelectedCategoryFragmentDirections.actionSelectedCategoryFragmentToSelectedWorkerFragment(worker)
+        val directions =
+            SelectedCategoryFragmentDirections.actionSelectedCategoryFragmentToSelectedWorkerFragment(
+                worker
+            )
         findNavController().navigate(directions)
 
     }

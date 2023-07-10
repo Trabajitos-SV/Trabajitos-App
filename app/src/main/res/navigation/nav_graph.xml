@@ -25,7 +25,7 @@
     </fragment>
     <fragment
         android:id="@+id/navigation_categories"
-        android:name="com.example.trabajitosinc.ui.category.CategoriesFragment"
+        android:name="com.example.trabajitosinc.ui.category.categoriesmain.CategoriesFragment"
         android:label="fragment_categories"
         tools:layout="@layout/fragment_categories" >
         <action
@@ -49,7 +49,7 @@
     </fragment>
     <fragment
         android:id="@+id/selectedCategoryFragment"
-        android:name="com.example.trabajitosinc.ui.category.SelectedCategoryFragment"
+        android:name="com.example.trabajitosinc.ui.category.selectedcategory.SelectedCategoryFragment"
         android:label="fragment_selected_category"
         tools:layout="@layout/fragment_selected_category" >
         <argument
@@ -107,7 +107,7 @@
         android:label="HistoryRecyclerViewContainer" />
     <fragment
         android:id="@+id/selectedWorkerFragment"
-        android:name="com.example.trabajitosinc.ui.category.SelectedWorkerFragment"
+        android:name="com.example.trabajitosinc.ui.category.selectedworker.SelectedWorkerFragment"
         android:label="fragment_selected_worker"
         tools:layout="@layout/fragment_selected_worker" >
         <action

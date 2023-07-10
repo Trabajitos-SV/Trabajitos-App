@@ -1,4 +1,4 @@
-package com.example.trabajitosinc.ui.category.recyclerview.users
+package com.example.trabajitosinc.ui.category.selectedcategory.recyclerview
 
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide

@@ -15,7 +15,7 @@
         android:background="@color/background_color"
         android:orientation="vertical"
         android:paddingTop="16dp"
-        tools:context=".ui.category.SelectedWorkerFragment">
+        tools:context=".ui.category.selectedworker.SelectedWorkerFragment">
 
         <FrameLayout
             android:id="@+id/frameLayout2"

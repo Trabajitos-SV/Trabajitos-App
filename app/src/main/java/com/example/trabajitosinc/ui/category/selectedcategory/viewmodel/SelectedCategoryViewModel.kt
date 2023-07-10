@@ -1,4 +1,4 @@
-package com.example.trabajitosinc.ui.viewmodel
+package com.example.trabajitosinc.ui.category.selectedcategory.viewmodel
 
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
