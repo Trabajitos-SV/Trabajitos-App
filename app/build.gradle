@@ -76,4 +76,6 @@ dependencies {
     //SharedPreferences
     implementation 'androidx.preference:preference:1.2.0'
 
+    //Lottie files for animations
+    implementation "com.airbnb.android:lottie:3.4.0"
 }

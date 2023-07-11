@@ -11,6 +11,9 @@ import android.view.inputmethod.InputMethodManager
 import android.widget.EditText
 import android.widget.Toast
 import androidx.core.widget.addTextChangedListener
+import androidx.navigation.findNavController
+import androidx.navigation.fragment.findNavController
+import com.example.trabajitosinc.R
 import com.example.trabajitosinc.databinding.FragmentWorkerConfirmationNumberBinding
 
 class WorkerConfirmationNumberFragment : Fragment() {
@@ -35,6 +38,10 @@ class WorkerConfirmationNumberFragment : Fragment() {
         setListener()
 
         initFocus()
+
+        binding.buttonConfirmVerification.setOnClickListener{
+            view.findNavController().navigate(R.id.action_workerConfirmationNumberFragment_to_doneFragment)
+        }
     }
 
     private fun setListener() {
@@ -53,7 +60,7 @@ class WorkerConfirmationNumberFragment : Fragment() {
 
         setKeyListener(fromEditText = binding.editText2EndConfirmation, backToEditText = binding.editTextOneEndConfirmation)
         setKeyListener(fromEditText = binding.editText3EndConfirmation, backToEditText = binding.editText2EndConfirmation)
-        setKeyListener(fromEditText = binding.editText4EndConfirmation, backToEditText = binding.editText4EndConfirmation)
+        setKeyListener(fromEditText = binding.editText4EndConfirmation, backToEditText = binding.editText3EndConfirmation)
     }
 
     private fun initFocus(){

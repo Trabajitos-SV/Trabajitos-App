@@ -131,5 +131,14 @@
         android:id="@+id/workerConfirmationNumberFragment"
         android:name="com.example.trabajitosinc.ui.history.endtrabajito.endworker.WorkerConfirmationNumberFragment"
         android:label="fragment_worker_confirmation_number"
-        tools:layout="@layout/fragment_worker_confirmation_number" />
+        tools:layout="@layout/fragment_worker_confirmation_number" >
+        <action
+            android:id="@+id/action_workerConfirmationNumberFragment_to_doneFragment"
+            app:destination="@id/doneFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/doneFragment"
+        android:name="com.example.trabajitosinc.ui.history.done.DoneFragment"
+        android:label="fragment_done"
+        tools:layout="@layout/fragment_done" />
 </navigation>
