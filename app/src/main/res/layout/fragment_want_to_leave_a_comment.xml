@@ -4,18 +4,24 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ui.history.everythingok.EverythingOkFragment">
+    tools:context=".ui.history.wanttoleaveacomment.WantToLeaveACommentFragment">
 
     <TextView
-        android:id="@+id/textView22"
-        android:layout_width="wrap_content"
+        android:id="@+id/textView23"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="64dp"
-        android:text="Everything OK with your trabajito?"
-        android:textSize="24sp"
+        android:layout_margin="32dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="16dp"
+        android:gravity="center"
+        android:text="We are xxxxx to hear that, want to leave a comment "
+        android:textSize="32dp"
+        app:layout_constraintBottom_toTopOf="@+id/confirm_button_trabajito"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_chainStyle="packed" />
 
     <Button
         android:id="@+id/confirm_button_trabajito"
@@ -24,13 +30,12 @@
         android:layout_gravity="center"
         android:layout_margin="@dimen/small_padding"
         android:backgroundTint="@color/trabajitos_blue"
-        android:text="Yes"
+        android:text="Comment"
         app:layout_constraintBottom_toTopOf="@+id/end_job_trabajito"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView22"
-        app:layout_constraintVertical_chainStyle="packed" />
+        app:layout_constraintTop_toBottomOf="@+id/textView23" />
 
     <Button
         android:id="@+id/end_job_trabajito"
@@ -38,11 +43,13 @@
         android:layout_height="50dp"
         android:layout_gravity="center"
         android:layout_margin="@dimen/small_padding"
-        android:backgroundTint="@android:color/holo_red_light"
-        android:text="No"
+        android:backgroundTint="@color/white"
+        android:textColor="@color/trabajitos_blue"
+        android:text="NO"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/confirm_button_trabajito" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>
