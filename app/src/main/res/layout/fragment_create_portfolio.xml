@@ -96,6 +96,7 @@
                     style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
                     android:layout_width="340dp"
                     android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
                     android:hint="Title"
                     app:boxBackgroundColor="@color/white"
                     app:boxCornerRadiusBottomEnd="12dp"
@@ -105,7 +106,7 @@
                     app:boxStrokeWidth="0dp"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@+id/agregar_btn">
+                    app:layout_constraintTop_toBottomOf="@+id/carousel_recycler_view">
 
                     <com.google.android.material.textfield.TextInputEditText
                         android:layout_width="match_parent"
@@ -183,25 +184,7 @@
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toBottomOf="@+id/description_input" />
 
-                <Button
-                    android:id="@+id/agregar_btn"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="8dp"
-                    android:text="Agregar"
-                    android:textAllCaps="false"
-                    app:layout_constraintStart_toStartOf="@+id/title_input"
-                    app:layout_constraintTop_toBottomOf="@+id/carousel_recycler_view" />
 
-                <Button
-                    android:id="@+id/eliminar_btn"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="8dp"
-                    android:text="Eliminar"
-                    android:textAllCaps="false"
-                    app:layout_constraintEnd_toEndOf="@+id/title_input"
-                    app:layout_constraintTop_toBottomOf="@+id/carousel_recycler_view" />
             </androidx.constraintlayout.widget.ConstraintLayout>
 
         </ScrollView>
