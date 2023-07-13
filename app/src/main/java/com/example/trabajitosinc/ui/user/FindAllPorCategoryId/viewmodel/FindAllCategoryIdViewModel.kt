@@ -27,10 +27,10 @@ class FindAllCategoryIdViewModel(private val repository: PortfolioCRepository) :
         get() = _status
 
 
-    private fun findAllCategoryById(idCategory: String) {
+    private fun findAllCategoryById(idCategory: String, page: Int) {
         viewModelScope.launch {
             _status.postValue(
-                when (val response = repository.fndPortfolioByCategoryId(idCategory)) {
+                when (val response = repository.fndPortfolioByCategoryId(idCategory, page)) {
                     is ApiResponse.Error -> FindAllCategoryIdUiStates.Error(response.exception)
                     is ApiResponse.ErrorWithMessage -> FindAllCategoryIdUiStates.ErrorWithMessage(
                         response.message

@@ -8,6 +8,7 @@ import retrofit2.http.Body
 import retrofit2.http.GET
 import retrofit2.http.POST
 import retrofit2.http.Path
+import retrofit2.http.Query
 
 interface PortfolioService {
 
@@ -17,8 +18,8 @@ interface PortfolioService {
     @GET("api/portfolio/byCategory/{identifier}")
     suspend fun findPortfolioByCategoryIdR(@Body credentials: FindPortfolioByCategoryIdRequest): FindPortfolioByCategoryIdResponse
 
-    @GET("api/portfolio/byCategory/{identifier}")
-    suspend fun findPortfolioCatTEST(@Path("identifier") identifier: String): FindPortfolioByCategoryIdResponse
+    @GET("api/portfolio/byCategory/{identifier}/?page=1")
+    suspend fun findPortfolioCatTEST(@Path("identifier") identifier: String, @Query("page") page: Int): FindPortfolioByCategoryIdResponse
 
 
 }

@@ -53,4 +53,16 @@ object RetrofitInstance {
     fun getPortfolioService(): PortfolioService {
         return retrofit.create(PortfolioService::class.java)
     }
+
+
+    private val retrofit2: PortfolioService = Retrofit.Builder()
+        .baseUrl(BASE_URL)
+        .addConverterFactory(GsonConverterFactory.create())
+        .client(getClient())
+        .build()
+        .create(PortfolioService::class.java)
+
+    suspend fun findPortfolioCatTEST(identifier: String, page: Int) =
+        retrofit2.findPortfolioCatTEST(identifier, page)
+
 }

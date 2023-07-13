@@ -25,9 +25,9 @@ class PortfolioCRepository(private val api: PortfolioService) {
         }
     }
 
-    suspend fun fndPortfolioByCategoryId(idCategory: String): ApiResponse<FindPortfolioByCategoryIdResponse>{
+    suspend fun fndPortfolioByCategoryId(idCategory: String, page: Int): ApiResponse<FindPortfolioByCategoryIdResponse>{
         try {
-            val response = api.findPortfolioCatTEST(idCategory)
+            val response = api.findPortfolioCatTEST(idCategory, page)
             return ApiResponse.Success(response)
         }catch (e: HttpException){
             if (e.code() == 400){

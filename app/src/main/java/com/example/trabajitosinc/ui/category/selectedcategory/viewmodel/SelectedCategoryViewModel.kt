@@ -58,8 +58,8 @@ class SelectedCategoryViewModel(
     fun getPortfolioByCategory(selctedCategory: String) =
         repository.getSelectedCategory(selctedCategory)
 
-    suspend fun getPortfolioByCatergoryRemote(selectCategory: String) =
-        remoteCRepository.fndPortfolioByCategoryId(selectCategory)
+    suspend fun getPortfolioByCatergoryRemote(selectCategory: String, page: Int) =
+        remoteCRepository.fndPortfolioByCategoryId(selectCategory, page)
 
     companion object {
         val Factory = viewModelFactory {

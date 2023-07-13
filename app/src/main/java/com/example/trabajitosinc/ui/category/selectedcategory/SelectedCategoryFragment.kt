@@ -50,7 +50,7 @@ class SelectedCategoryFragment : Fragment() {
 
         lifecycleScope.launch {
             val response =
-                selectedCategoryViewModel.getPortfolioByCatergoryRemote(selectedCategory.id)
+                selectedCategoryViewModel.getPortfolioByCatergoryRemote(selectedCategory.id, 1)
             when (response) {
                 is ApiResponse.Error -> TODO()
                 is ApiResponse.ErrorWithMessage -> TODO()

@@ -9,7 +9,7 @@ import com.example.trabajitosinc.data.models.UserModel
 import com.example.trabajitosinc.data.models.TrabajitoModel
 
 val categories = mutableListOf(
-    CategoryModel("64a9bacbe6ae18d84f582692","Carpenter", R.drawable.carpentry_icon),
+    CategoryModel("64a9bacbe6ae18d84f58268e","Carpenter", R.drawable.carpentry_icon),
     CategoryModel("64a9bacbe6ae18d84f58268e","Electrician", R.drawable.electrician_icon),
     CategoryModel("64a9bacbe6ae18d84f582690","Plumber", R.drawable.plumbing_icon),
     CategoryModel("64a9bacbe6ae18d84f582694", "Construction Worker", R.drawable.no_image),
