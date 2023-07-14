@@ -6,6 +6,7 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Toast
 import androidx.navigation.fragment.findNavController
 import com.example.trabajitosinc.R
 import com.example.trabajitosinc.databinding.FragmentWelcomeBinding
@@ -39,7 +40,8 @@ class WelcomeFragment : Fragment() {
         }
 
         binding.signInButton.setOnClickListener{
-            goToHome()
+            //goToHome()
+            Toast.makeText(requireContext(),"Coming Soon", Toast.LENGTH_SHORT).show()
             //
         }
 

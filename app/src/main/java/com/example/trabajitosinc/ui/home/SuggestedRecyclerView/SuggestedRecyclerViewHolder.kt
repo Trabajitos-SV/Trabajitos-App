@@ -19,7 +19,7 @@ class SuggestedRecyclerViewHolder(private val binding: ItemSuggestedAssociatesBi
 
 
         binding.suggestedAssociatesCard.setOnClickListener{
-            clickListener(user)
+            Unit
         }
 
     }
