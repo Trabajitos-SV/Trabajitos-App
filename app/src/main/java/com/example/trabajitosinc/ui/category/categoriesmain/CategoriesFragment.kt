@@ -25,7 +25,7 @@ class CategoriesFragment : Fragment() {
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View? {
+    ): View {
         binding = FragmentCategoriesBinding.inflate(inflater, container, false)
         return binding.root
     }
@@ -53,7 +53,7 @@ class CategoriesFragment : Fragment() {
         adapter.notifyDataSetChanged()
     }
 
-    fun setRecyclerView(view: View){
+    private fun setRecyclerView(view: View){
         binding.categoriesListRecyclerView.layoutManager = GridLayoutManager(view.context, 2)
         //LinearLayoutManager(view.context)
         adapter = CategoryRecyclerViewAdapter {

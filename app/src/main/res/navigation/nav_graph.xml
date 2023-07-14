@@ -114,8 +114,25 @@
             android:id="@+id/action_selectedWorkerFragment_to_scheduleAppointmentFragment"
             app:destination="@id/scheduleAppointmentFragment" />
         <argument
-            android:name="portfolio"
-            app:argType="com.example.trabajitosinc.network.dto.portfolio.findPortfolioByCategoryId.listFindCById.FindPortfolioByCategoryIdLitst" />
+            android:name="name"
+            app:argType="string" />
+        <argument
+            android:name="workerid"
+            app:argType="string" />
+        <argument
+            android:name="phone"
+            app:argType="string" />
+        <argument android:name="email"
+            app:argType="string" />
+        <argument
+            android:name="tittle"
+            app:argType="string" />
+        <argument
+            android:name="images"
+            app:argType="string[]" />
+        <argument
+            android:name="description"
+            app:argType="string" />
     </fragment>
     <fragment
         android:id="@+id/scheduleAppointmentFragment"

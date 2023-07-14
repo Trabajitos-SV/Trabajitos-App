@@ -5,7 +5,7 @@ import kotlinx.android.parcel.Parcelize
 
 @Parcelize
 class UserModel(
-    val id : String,
+    val _id : String,
     val name: String,
     val email: String,
     val phone: Int,

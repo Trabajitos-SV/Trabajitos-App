@@ -14,7 +14,7 @@ import com.example.trabajitosinc.repositories.PortfolioRepository
 class SelectedWorkerViewModel (
     private val portfolioRepository: PortfolioRepository): ViewModel(){
 
-    private val selectedImage = MutableLiveData<Uri?>()
+    private val selectedImage = MutableLiveData("")
 
     val title = MutableLiveData("")
     val description = MutableLiveData("")
@@ -43,14 +43,12 @@ class SelectedWorkerViewModel (
         review.value = portfolio.review.toString()
     }
 
-    fun getSelectedImage(): Uri? {
-        return selectedImage.value
+    fun getSelectedImage(): String {
+        return selectedImage.value.toString()
     }
 
-    fun setSelectedImage(imageUri: Uri?) {
-        selectedImage.value = imageUri
-        println("Selected Image: $imageUri")
-
+    fun setSelectedImage(image: String) {
+        selectedImage.value = image
     }
 
 

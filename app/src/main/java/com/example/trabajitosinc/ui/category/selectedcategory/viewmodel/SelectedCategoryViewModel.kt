@@ -29,13 +29,13 @@ class SelectedCategoryViewModel(
 
     fun setSelected(portfolio: FindPortfolioByCategoryIdLitst) {
         clearData()
-        userId.value = portfolio.user.id
+        userId.value = portfolio.user._id
         portfolioId.value = portfolio._id
         name.value = portfolio.user.name
         email.value = portfolio.user.email
         phone.value = portfolio.user.phone.toString()
         municipality.value = portfolio.user.municipality
-        userImage.value = portfolio.user.image
+        //userImage.value = portfolio.user.image
         title.value = portfolio.title
         category.value = portfolio.category.name
         description.value = portfolio.description

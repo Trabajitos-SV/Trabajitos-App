@@ -42,7 +42,7 @@ class HistoryRecyclerViewContainer : Fragment() {
 
         arguments?.takeIf { it.containsKey(ARG_OBJECT) }?.apply {
 
-            val league = when(getInt(ARG_OBJECT)) {
+            when(getInt(ARG_OBJECT)) {
                 0 -> {
                     setRecyclerView(requireActivity().applicationContext, 8)
                 }

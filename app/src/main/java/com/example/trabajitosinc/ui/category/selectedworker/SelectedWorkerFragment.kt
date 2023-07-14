@@ -25,15 +25,11 @@ class SelectedWorkerFragment : Fragment() {
         SelectedWorkerViewModel.Factory
     }
 
-    private val myImages = porfolios[0].images.toMutableList()
-
-
     private lateinit var adapter: SelectedWorkerRecyclerViewAdapter
     private lateinit var binding: FragmentSelectedWorkerBinding
 
 
     private val args : SelectedWorkerFragmentArgs by navArgs()
-    private lateinit var selectedPortfolio : FindPortfolioByCategoryIdLitst
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -46,56 +42,56 @@ class SelectedWorkerFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        selectedPortfolio = args.portfolio
         bind(view)
 
-        val images = porfolios[0].images.toMutableList()
-        setRecyclerViewImages(images, selectedWorkerViewModel)
+        val imagesList = args.images
 
+        setRecyclerView(view)
 
-    }
-
-    fun setRecyclerViewImages(images: MutableList<String>, viewModel: SelectedWorkerViewModel){
-        val carouselLayoutManager = CarouselLayoutManager()
-        binding.tienequefuncionarView.layoutManager = carouselLayoutManager
-
-        adapter = SelectedWorkerRecyclerViewAdapter(images){ selectedImage ->
-            viewModel.setSelectedImage(selectedImage.toUri())
-            adapter.setSelected(selectedImage.toInt())
-        }
-
-        binding.tienequefuncionarView.adapter = adapter
-        displayImages(myImages)
+        //setRecyclerViewImages(images, selectedWorkerViewModel)
 
     }
-
-    private fun displayImages(images: MutableList<String>){
-
-        val selectedImage = selectedWorkerViewModel.getSelectedImage()
-
-        adapter.setData(images)
-        adapter.notifyDataSetChanged()
-
-    }
-
-
 
     private fun bind(view: View) {
-        binding.workerNameSelectedWorker.text = selectedPortfolio.user.name
-        binding.descriptionSelectedWorker.text = selectedPortfolio.description
         Glide
             .with(this)
-            .load(selectedPortfolio.uploadedImages[0])
+            .load(args.images[0])
             .into(binding.mainImageWorker)
 
         Glide
             .with(this)
-            .load(selectedPortfolio.user.image)
+            .load(args.images[0])
             .into(binding.imageView2)
 
         binding.floatingActionButton.setOnClickListener {
             view.findNavController().navigate(R.id.action_selectedWorkerFragment_to_scheduleAppointmentFragment)
         }
+
+        binding.workerNameSelectedWorker.text = args.name
+        binding.descriptionSelectedWorker.text = args.description
+
+    }
+
+    private fun showSelectedItem(image: String) {
+        selectedWorkerViewModel.setSelectedImage(image)
+    }
+
+    private fun displayImagesZ(images: Array<String>) {
+        adapter.setData(images)
+        adapter.notifyDataSetChanged()
+    }
+
+    private fun setRecyclerView(view: View){
+        binding.tienequefuncionarView.layoutManager = CarouselLayoutManager()
+
+        adapter = SelectedWorkerRecyclerViewAdapter{ _selected ->
+            showSelectedItem(_selected)
+        }
+
+        binding.tienequefuncionarView.adapter = adapter
+        displayImagesZ(args.images)
+
+
     }
 
 }

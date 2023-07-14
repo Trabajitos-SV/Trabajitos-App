@@ -55,12 +55,10 @@ class SelectedCategoryFragment : Fragment() {
                 is ApiResponse.Error -> TODO()
                 is ApiResponse.ErrorWithMessage -> TODO()
                 is ApiResponse.Success -> {
-                    if (response.data.docs != null) {
-                        workers.addAll(response.data.docs)
-                        Toast.makeText(requireContext(), response.data.docs[0].title, Toast.LENGTH_SHORT).show()
-                        adapter.setData(workers)
-                        adapter.notifyDataSetChanged()
-                    }
+                    workers.clear()
+                    workers.addAll(response.data.docs)
+                    Toast.makeText(requireContext(), response.data.docs[0].title, Toast.LENGTH_SHORT).show()
+                    setRecyclerView(view)
                 }
             }
         }
@@ -72,11 +70,19 @@ class SelectedCategoryFragment : Fragment() {
     private fun showSelectedItem(worker: FindPortfolioByCategoryIdLitst) {
         selectedCategoryViewModel.setSelected(worker)
 
-        val directions =
-            SelectedCategoryFragmentDirections.actionSelectedCategoryFragmentToSelectedWorkerFragment(
-                worker
-            )
+        var name = worker.user.name
+        var workerId = worker._id
+        var phone = worker.user.phone
+        var email = worker.user.email
+        var tittle = worker.title
+        var images = worker.uploadedImages.map { it.secureUrl }.toTypedArray()
+        var description = worker.description
+
+        val directions = SelectedCategoryFragmentDirections.actionSelectedCategoryFragmentToSelectedWorkerFragment(
+             name, workerId, phone.toString(), email, tittle, images, description
+        )
         findNavController().navigate(directions)
+        Toast.makeText(context, worker.user.name, Toast.LENGTH_SHORT).show()
 
     }
 

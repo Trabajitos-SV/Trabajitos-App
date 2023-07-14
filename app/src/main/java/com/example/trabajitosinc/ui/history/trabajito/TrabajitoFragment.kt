@@ -30,7 +30,7 @@ class TrabajitoFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        currentTrabajito = args.trabajito!!
+        currentTrabajito = args.trabajito
         setInfo()
 
     }
