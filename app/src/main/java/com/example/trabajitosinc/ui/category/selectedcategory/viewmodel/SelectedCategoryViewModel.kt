@@ -6,7 +6,8 @@ import androidx.lifecycle.ViewModelProvider.AndroidViewModelFactory.Companion.AP
 import androidx.lifecycle.viewmodel.initializer
 import androidx.lifecycle.viewmodel.viewModelFactory
 import com.example.trabajitosinc.TrabajitosApplication
-import com.example.trabajitosinc.data.models.PortfolioModel
+import com.example.trabajitosinc.data.models.ImageModel
+import com.example.trabajitosinc.network.dto.portfolio.findPortfolioByCategoryId.listFindCById.FindPortfolioByCategoryIdLitst
 import com.example.trabajitosinc.repositories.PortfolioRepository
 import com.example.trabajitosinc.repository.PortfolioCRepository
 
@@ -21,24 +22,24 @@ class SelectedCategoryViewModel(
     var phone = MutableLiveData("")
     var municipality = MutableLiveData("")
     var userImage = MutableLiveData("")
-
-    //val images = MutableLiveData("")
+    val images = MutableLiveData<List<ImageModel>>()
     val title = MutableLiveData("")
     val category = MutableLiveData("")
     val description = MutableLiveData("")
 
-    fun setSelected(portfolio: PortfolioModel) {
+    fun setSelected(portfolio: FindPortfolioByCategoryIdLitst) {
         clearData()
         userId.value = portfolio.user.id
-        portfolioId.value = portfolio.id
+        portfolioId.value = portfolio._id
         name.value = portfolio.user.name
         email.value = portfolio.user.email
         phone.value = portfolio.user.phone.toString()
         municipality.value = portfolio.user.municipality
         userImage.value = portfolio.user.image
         title.value = portfolio.title
-        category.value = portfolio.category
+        category.value = portfolio.category.name
         description.value = portfolio.description
+        images.value = portfolio.uploadedImages
     }
 
     private fun clearData() {
@@ -51,6 +52,7 @@ class SelectedCategoryViewModel(
         title.value = ""
         category.value = ""
         description.value = ""
+        images.value = emptyList()
     }
 
     fun getPortfolios() = repository.getPortfolios()

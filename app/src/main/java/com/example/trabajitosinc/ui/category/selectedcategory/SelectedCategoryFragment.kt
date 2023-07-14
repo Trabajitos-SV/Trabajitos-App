@@ -15,6 +15,7 @@ import com.example.trabajitosinc.data.models.CategoryModel
 import com.example.trabajitosinc.data.models.PortfolioModel
 import com.example.trabajitosinc.databinding.FragmentSelectedCategoryBinding
 import com.example.trabajitosinc.network.ApiResponse
+import com.example.trabajitosinc.network.dto.portfolio.findPortfolioByCategoryId.listFindCById.FindPortfolioByCategoryIdLitst
 import com.example.trabajitosinc.ui.category.selectedcategory.recyclerview.PortfolioByCategoryRecyclerViewAdapter
 import com.example.trabajitosinc.ui.category.selectedcategory.viewmodel.SelectedCategoryViewModel
 import kotlinx.coroutines.launch
@@ -23,6 +24,7 @@ class SelectedCategoryFragment : Fragment() {
 
     private lateinit var binding: FragmentSelectedCategoryBinding
     private lateinit var adapter: PortfolioByCategoryRecyclerViewAdapter
+    private var workers: MutableList<FindPortfolioByCategoryIdLitst> = mutableListOf()
 
     private val selectedCategoryViewModel: SelectedCategoryViewModel by activityViewModels {
         SelectedCategoryViewModel.Factory
@@ -46,26 +48,28 @@ class SelectedCategoryFragment : Fragment() {
         binding.selectedCategoryTittle.text = selectedCategory.name
         binding.imageView2.setImageResource(selectedCategory.image)
 
-        setRecyclerView(view)
-
         lifecycleScope.launch {
             val response =
                 selectedCategoryViewModel.getPortfolioByCatergoryRemote(selectedCategory.id, 1)
             when (response) {
                 is ApiResponse.Error -> TODO()
                 is ApiResponse.ErrorWithMessage -> TODO()
-                is ApiResponse.Success -> Toast.makeText(
-                    requireContext(),
-                    "${response.data.docs.size}",
-                    Toast.LENGTH_SHORT
-                ).show()
+                is ApiResponse.Success -> {
+                    if (response.data.docs != null) {
+                        workers.addAll(response.data.docs)
+                        Toast.makeText(requireContext(), response.data.docs[0].title, Toast.LENGTH_SHORT).show()
+                        adapter.setData(workers)
+                        adapter.notifyDataSetChanged()
+                    }
+                }
             }
         }
 
+        setRecyclerView(view)
 
     }
 
-    private fun showSelectedItem(worker: PortfolioModel) {
+    private fun showSelectedItem(worker: FindPortfolioByCategoryIdLitst) {
         selectedCategoryViewModel.setSelected(worker)
 
         val directions =
@@ -77,7 +81,7 @@ class SelectedCategoryFragment : Fragment() {
     }
 
     private fun displayWorkers() {
-        adapter.setData(selectedCategoryViewModel.getPortfolioByCategory(args.category.name))
+        adapter.setData(workers)
         adapter.notifyDataSetChanged()
     }
 

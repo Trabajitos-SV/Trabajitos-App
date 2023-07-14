@@ -5,12 +5,13 @@ import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.example.trabajitosinc.data.models.PortfolioModel
 import com.example.trabajitosinc.databinding.WorkerByCategoryItemBinding
+import com.example.trabajitosinc.network.dto.portfolio.findPortfolioByCategoryId.listFindCById.FindPortfolioByCategoryIdLitst
 
 class PortfolioByCategoryRecyclerViewAdapter(
-    private val clickListener: (PortfolioModel) -> Unit
+    private val clickListener: (FindPortfolioByCategoryIdLitst) -> Unit
 ): RecyclerView.Adapter<PortfolioByCategoryRecyclerViewHolder>() {
 
-    private val portfolios = ArrayList<PortfolioModel>()
+    private val portfolios = ArrayList<FindPortfolioByCategoryIdLitst>()
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): PortfolioByCategoryRecyclerViewHolder {
         val binding = WorkerByCategoryItemBinding.inflate(LayoutInflater.from(parent.context), parent, false)
@@ -26,7 +27,7 @@ class PortfolioByCategoryRecyclerViewAdapter(
         holder.bind(portfolio, clickListener)
     }
 
-    fun setData(usersList: List<PortfolioModel>){
+    fun setData(usersList: List<FindPortfolioByCategoryIdLitst>){
         portfolios.clear()
         portfolios.addAll(usersList)
     }

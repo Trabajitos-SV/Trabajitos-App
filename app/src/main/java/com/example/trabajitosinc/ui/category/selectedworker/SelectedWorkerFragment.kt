@@ -11,10 +11,9 @@ import androidx.navigation.findNavController
 import androidx.navigation.fragment.navArgs
 import com.bumptech.glide.Glide
 import com.example.trabajitosinc.R
-import com.example.trabajitosinc.data.models.PortfolioModel
 import com.example.trabajitosinc.data.porfolios
 import com.example.trabajitosinc.databinding.FragmentSelectedWorkerBinding
-import com.example.trabajitosinc.ui.category.selectedworker.SelectedWorkerFragmentArgs
+import com.example.trabajitosinc.network.dto.portfolio.findPortfolioByCategoryId.listFindCById.FindPortfolioByCategoryIdLitst
 import com.example.trabajitosinc.ui.category.selectedworker.recylcerview.SelectedWorkerRecyclerViewAdapter
 import com.example.trabajitosinc.ui.category.selectedworker.viewmodel.SelectedWorkerViewModel
 import com.google.android.material.carousel.CarouselLayoutManager
@@ -34,7 +33,7 @@ class SelectedWorkerFragment : Fragment() {
 
 
     private val args : SelectedWorkerFragmentArgs by navArgs()
-    private lateinit var selectedPortfolio : PortfolioModel
+    private lateinit var selectedPortfolio : FindPortfolioByCategoryIdLitst
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -86,7 +85,7 @@ class SelectedWorkerFragment : Fragment() {
         binding.descriptionSelectedWorker.text = selectedPortfolio.description
         Glide
             .with(this)
-            .load(selectedPortfolio.images[0])
+            .load(selectedPortfolio.uploadedImages[0])
             .into(binding.mainImageWorker)
 
         Glide

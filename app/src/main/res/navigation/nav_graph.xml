@@ -115,7 +115,7 @@
             app:destination="@id/scheduleAppointmentFragment" />
         <argument
             android:name="portfolio"
-            app:argType="com.example.trabajitosinc.data.models.PortfolioModel" />
+            app:argType="com.example.trabajitosinc.network.dto.portfolio.findPortfolioByCategoryId.listFindCById.FindPortfolioByCategoryIdLitst" />
     </fragment>
     <fragment
         android:id="@+id/scheduleAppointmentFragment"

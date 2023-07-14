@@ -31,7 +31,7 @@ class PortfolioCRepository(private val api: PortfolioService) {
             return ApiResponse.Success(response)
         }catch (e: HttpException){
             if (e.code() == 400){
-                return ApiResponse.ErrorWithMessage("The id Category is wrong")
+                return ApiResponse.ErrorWithMessage("The Category id is wrong")
             }
             return ApiResponse.Error(e)
         }catch (e: IOException){
