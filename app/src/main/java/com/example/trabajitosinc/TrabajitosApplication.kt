@@ -13,6 +13,7 @@ import com.example.trabajitosinc.network.retrofit.RetrofitInstance
 import com.example.trabajitosinc.repositories.CategoryRepository
 import com.example.trabajitosinc.repositories.HistoryRepository
 import com.example.trabajitosinc.repositories.PortfolioRepository
+import com.example.trabajitosinc.repositories.TrabajitosRepository
 import com.example.trabajitosinc.repository.CredentialsRepository
 import com.example.trabajitosinc.repository.PortfolioCRepository
 
@@ -77,6 +78,15 @@ class TrabajitosApplication: Application() {
     //PokeRetrofitInstance
     private val pokemonService = with(RetrofitInstance){
         getPortfolioService()
+    }
+
+
+    private fun getAPIServiceTrabajito() = with(RetrofitInstance){
+        setToken(getToken())
+        getTrabajitoService()
+    }
+    val trabajitosRepository: TrabajitosRepository by lazy {
+        TrabajitosRepository(getAPIServiceTrabajito())
     }
 
 

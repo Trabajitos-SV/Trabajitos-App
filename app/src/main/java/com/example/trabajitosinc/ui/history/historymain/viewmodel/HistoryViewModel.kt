@@ -7,9 +7,15 @@ import androidx.lifecycle.viewmodel.initializer
 import androidx.lifecycle.viewmodel.viewModelFactory
 import com.example.trabajitosinc.TrabajitosApplication
 import com.example.trabajitosinc.data.models.TrabajitoModel
+import com.example.trabajitosinc.network.ApiResponse
+import com.example.trabajitosinc.network.dto.trabajitos.findRequests.FindTrabajitosRequestsResponse
 import com.example.trabajitosinc.repositories.HistoryRepository
+import com.example.trabajitosinc.repositories.TrabajitosRepository
 
-class HistoryViewModel(private val repository: HistoryRepository): ViewModel() {
+class HistoryViewModel(private val repository: HistoryRepository,
+                       private val repository2: TrabajitosRepository
+): ViewModel() {
+    val trabajitos = MutableLiveData<ApiResponse<FindTrabajitosRequestsResponse>>()
 
     val workerId = MutableLiveData("")
     val requesterId = MutableLiveData("")
@@ -59,11 +65,13 @@ class HistoryViewModel(private val repository: HistoryRepository): ViewModel() {
 
     }
 
+    suspend fun getMyRequests() = repository2.getMyRequests()
+
     companion object{
         val Factory = viewModelFactory {
             initializer {
                 val app = this[ViewModelProvider.AndroidViewModelFactory.APPLICATION_KEY] as TrabajitosApplication
-                HistoryViewModel(app.historyRepository)
+                HistoryViewModel(app.historyRepository, app.trabajitosRepository)
             }
         }
     }

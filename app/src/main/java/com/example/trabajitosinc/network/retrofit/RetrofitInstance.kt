@@ -3,6 +3,7 @@ package com.example.trabajitosinc.network.retrofit
 import android.service.carrier.CarrierIdentifier
 import com.example.trabajitosinc.network.service.AuthService
 import com.example.trabajitosinc.network.service.PortfolioService
+import com.example.trabajitosinc.network.service.TrabajitosAPI
 import com.example.trabajitosinc.repository.PortfolioCRepository
 import okhttp3.Interceptor
 import okhttp3.OkHttpClient
@@ -65,4 +66,20 @@ object RetrofitInstance {
     suspend fun findPortfolioCatTEST(identifier: String, page: Int) =
         retrofit2.findPortfolioCatTEST(identifier, page)
 
+    //Trabajitos
+    private val retrofit3: TrabajitosAPI = Retrofit.Builder()
+        .baseUrl(BASE_URL)
+        .addConverterFactory(GsonConverterFactory.create())
+        .client(getClient())
+        .build()
+        .create(TrabajitosAPI::class.java)
+
+    fun getTrabajitoService(): TrabajitosAPI {
+        return retrofit.create(TrabajitosAPI::class.java)
+    }
+
+    suspend fun getMyRequests() = retrofit3.getMyRequests()
+    suspend fun getMyRequestById(identifier: String) = retrofit3.getMyRequestById(identifier)
+    suspend fun getMyJobs() = retrofit3.getMyJobs()
+    suspend fun getMyJobById(identifier: String) = retrofit3.getMyJobById(identifier)
 }
