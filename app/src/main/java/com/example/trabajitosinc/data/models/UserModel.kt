@@ -9,6 +9,6 @@ class UserModel(
     val name: String,
     val email: String,
     val phone: Int,
-    val municipality: MunicipalityModel,
+    val municipality: String,
     val image: String
 ):Parcelable

@@ -9,7 +9,7 @@ import com.example.trabajitosinc.data.models.UserModel
 import com.example.trabajitosinc.data.models.TrabajitoModel
 
 val categories = mutableListOf(
-    CategoryModel("64a9bacbe6ae18d84f58268e","Carpenter", R.drawable.carpentry_icon),
+    CategoryModel("64a9bacbe6ae18d84f582692","Carpenter", R.drawable.carpentry_icon),
     CategoryModel("64a9bacbe6ae18d84f58268e","Electrician", R.drawable.electrician_icon),
     CategoryModel("64a9bacbe6ae18d84f582690","Plumber", R.drawable.plumbing_icon),
     CategoryModel("64a9bacbe6ae18d84f582694", "Construction Worker", R.drawable.no_image),
@@ -41,7 +41,7 @@ val porfolios = mutableListOf(
             "Jose",
             "Nestor@uca.com",
             25252525,
-            MunicipalityModel("1", "uca"),
+            "uca",
             "https://cdn.autobild.es/sites/navi.axelspringer.es/public/media/image/2016/09/569465-whatsapp-que-tus-contactos-ponen-rana-perfil.jpg?tf=3840x"
         ),
         category = "Carpentry",
@@ -134,8 +134,8 @@ val trabajitos = mutableListOf(
 )
 
 val users = mutableListOf(
-    UserModel("1","Jose","Nestor@uca.com",25252525, MunicipalityModel("1", "uca"), "https://cdn.autobild.es/sites/navi.axelspringer.es/public/media/image/2016/09/569465-whatsapp-que-tus-contactos-ponen-rana-perfil.jpg?tf=3840x") ,
-    UserModel("2","Jose","Nestor@uca.com",25252525,MunicipalityModel("1", "uca"), "https://cdn.autobild.es/sites/navi.axelspringer.es/public/media/image/2016/09/569465-whatsapp-que-tus-contactos-ponen-rana-perfil.jpg?tf=3840x") ,
-    UserModel("3","Jose","Nestor@uca.com",25252525,MunicipalityModel("1", "uca"), "https://cdn.autobild.es/sites/navi.axelspringer.es/public/media/image/2016/09/569465-whatsapp-que-tus-contactos-ponen-rana-perfil.jpg?tf=3840x"),
-    UserModel("4","Jose","Nestor@uca.com",25252525,MunicipalityModel("1", "uca"), "https://cdn.autobild.es/sites/navi.axelspringer.es/public/media/image/2016/09/569465-whatsapp-que-tus-contactos-ponen-rana-perfil.jpg?tf=3840x")
+    UserModel("1","Jose","Nestor@uca.com",25252525, "uca", "https://cdn.autobild.es/sites/navi.axelspringer.es/public/media/image/2016/09/569465-whatsapp-que-tus-contactos-ponen-rana-perfil.jpg?tf=3840x") ,
+    UserModel("2","Jose","Nestor@uca.com",25252525,"uca", "https://cdn.autobild.es/sites/navi.axelspringer.es/public/media/image/2016/09/569465-whatsapp-que-tus-contactos-ponen-rana-perfil.jpg?tf=3840x") ,
+    UserModel("3","Jose","Nestor@uca.com",25252525,"uca", "https://cdn.autobild.es/sites/navi.axelspringer.es/public/media/image/2016/09/569465-whatsapp-que-tus-contactos-ponen-rana-perfil.jpg?tf=3840x"),
+    UserModel("4","Jose","Nestor@uca.com",25252525,"uca", "https://cdn.autobild.es/sites/navi.axelspringer.es/public/media/image/2016/09/569465-whatsapp-que-tus-contactos-ponen-rana-perfil.jpg?tf=3840x")
 )

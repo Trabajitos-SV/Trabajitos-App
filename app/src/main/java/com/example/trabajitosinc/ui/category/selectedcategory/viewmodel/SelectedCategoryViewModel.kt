@@ -34,7 +34,7 @@ class SelectedCategoryViewModel(
         name.value = portfolio.user.name
         email.value = portfolio.user.email
         phone.value = portfolio.user.phone.toString()
-        municipality.value = portfolio.user.municipality.name
+        municipality.value = portfolio.user.municipality
         userImage.value = portfolio.user.image
         title.value = portfolio.title
         category.value = portfolio.category

@@ -32,7 +32,7 @@ class UserInfoViewModel(private val repository : UserRepository) : ViewModel(){
         name.value = user.name
         email.value = user.email
         phone.value = user.phone.toString()
-        municipality.value = user.municipality.name
+        municipality.value = user.municipality
         image.value = user.image.toString()
 
     }

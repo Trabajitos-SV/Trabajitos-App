@@ -57,7 +57,7 @@ class SelectedCategoryFragment : Fragment() {
                 is ApiResponse.Success -> Toast.makeText(
                     requireContext(),
                     "${response.data.docs.size}",
-                    Toast.LENGTH_LONG
+                    Toast.LENGTH_SHORT
                 ).show()
             }
         }
