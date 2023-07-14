@@ -48,12 +48,28 @@ class CreatePortfolioViewModel(
 
 
     fun onCreatePortfolio() {
-        if(!validateData()){
-            _status.value = CreatePortfolioUiStates.ErrorWithMessage("Wrong information")
+        if (!validateData()) {
+            val errorMessage = StringBuilder("Wrong information:")
+            if (title.value.isNullOrEmpty()) {
+                errorMessage.append(" Title is empty")
+            }
+            if (description.value.isNullOrEmpty()) {
+                errorMessage.append(" Description is empty")
+            }
+            if (images.value.isNullOrEmpty()) {
+                errorMessage.append(" Images are empty")
+            }
+            if (category.value.isNullOrEmpty()) {
+                errorMessage.append(" Category is empty")
+            }
+            _status.value = CreatePortfolioUiStates.ErrorWithMessage(errorMessage.toString())
             return
         }
-        createPortfolio(title.value!!, description.value!!,images.value!!,category.value!!)
+
+        createPortfolio(title.value!!, description.value!!, images.value!!, category.value!!)
     }
+
+
 
     fun clearStates() {
         _status.value = CreatePortfolioUiStates.Resume
