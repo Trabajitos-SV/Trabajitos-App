@@ -20,7 +20,8 @@ import com.example.trabajitosinc.data.models.PortfolioModel
 import com.example.trabajitosinc.data.porfolios
 import com.example.trabajitosinc.databinding.FragmentCreatePortfolioBinding
 import com.example.trabajitosinc.ui.user.CreatePortfolio.recyclerview.CreatePorfolioRecyclerViewAdapter
-//import com.example.trabajitosinc.ui.user.portfolio.viewmodel.CreatePortfollioViewModel
+import com.example.trabajitosinc.ui.user.portfolio.viewmodel.CreatePortfolioViewModel
+import com.example.trabajitosinc.ui.user.portfolio.CreatePortfolioUiStates
 import com.google.android.material.carousel.CarouselLayoutManager
 
 
@@ -58,6 +59,11 @@ class CreatePortfolioFragment : Fragment() {
 
         val images = porfolios[0].images.toMutableList()
         setRecyclerViewImages(images, createPortfolioViewModel)
+
+
+        setViewModel()
+        observeStatus()
+
     }
     fun setRecyclerViewImages( images: MutableList<String>, viewModel: CreatePortfolioViewModel) {
         val carouselLayoutManager = CarouselLayoutManager()
@@ -103,7 +109,7 @@ class CreatePortfolioFragment : Fragment() {
 
 
     private fun showSelectedItem(portfolio: PortfolioModel) {
-        createPortfolioViewModel.setSelectedPortfolio(portfolio)
+        createPortfolioViewModel.setPortfolio(portfolio)
     }
 
     private fun requestPermissions(){
@@ -147,6 +153,34 @@ class CreatePortfolioFragment : Fragment() {
             createPortfolioViewModel.setSelectedImage(data)
             // Mostrar la imagen en el RecyclerView
             displayImages(myImages)
+        }
+    }
+
+    private fun setViewModel(){
+        binding.viewmodel = createPortfolioViewModel
+    }
+
+    private fun observeStatus(){
+        createPortfolioViewModel.status.observe(viewLifecycleOwner){status ->
+            handleUiStatus(status)
+        }
+    }
+
+
+    private fun handleUiStatus(status: CreatePortfolioUiStates){
+        when(status){
+            is CreatePortfolioUiStates.Error -> {
+                Toast.makeText(requireContext(), "An error has occurred", Toast.LENGTH_SHORT).show()
+            }
+            is CreatePortfolioUiStates.ErrorWithMessage -> {
+                Toast.makeText(requireContext(), status.message, Toast.LENGTH_SHORT).show()
+            }
+            is CreatePortfolioUiStates.Success -> {
+                createPortfolioViewModel.clearStates()
+                createPortfolioViewModel.clearData()
+                findNavController().navigate(R.id.action_createPortfolioFragment_to_navigation_user)
+            }
+            else -> {}
         }
     }
 

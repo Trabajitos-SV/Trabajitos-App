@@ -12,7 +12,7 @@ import com.example.trabajitosinc.TrabajitosApplication
 import com.example.trabajitosinc.network.ApiResponse
 import com.example.trabajitosinc.repository.PortfolioCRepository
 import com.example.trabajitosinc.ui.user.FindAllPorCategoryId.FindAllCategoryIdUiStates
-import com.example.trabajitosinc.ui.user.portfolio.viewmodel.CreatePortfollioViewModel
+import com.example.trabajitosinc.ui.user.portfolio.viewmodel.CreatePortfolioViewModel
 import kotlinx.coroutines.launch
 
 class FindAllCategoryIdViewModel(private val repository: PortfolioCRepository) : ViewModel() {
@@ -54,7 +54,7 @@ class FindAllCategoryIdViewModel(private val repository: PortfolioCRepository) :
         val Factory = viewModelFactory {
             initializer {
                 val app = this[APPLICATION_KEY] as TrabajitosApplication
-                CreatePortfollioViewModel(app.portfolioCRepository)
+                CreatePortfolioViewModel(app.portfolioCRepository)
             }
         }
     }

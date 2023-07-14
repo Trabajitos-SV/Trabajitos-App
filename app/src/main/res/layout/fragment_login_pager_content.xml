@@ -71,8 +71,6 @@
             app:boxCornerRadiusTopEnd="12dp"
             app:boxCornerRadiusTopStart="12dp"
             app:boxStrokeColor="#2196F3"
-            app:counterEnabled="true"
-            app:counterMaxLength="8"
             app:endIconDrawable="@drawable/locked_icon"
             app:endIconMode="password_toggle"
             app:hintTextColor="#009688"

@@ -6,7 +6,7 @@
     <data>
         <variable
             name="viewmodel"
-            type="com.example.trabajitosinc.ui.viewmodel.UserInfoViewModel" />
+            type="com.example.trabajitosinc.ui.user.portfolio.viewmodel.CreatePortfolioViewModel" />
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout
@@ -111,7 +111,7 @@
                     <com.google.android.material.textfield.TextInputEditText
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-
+                        android:text="@={viewmodel.title}"
                         android:textSize="14sp" />
                 </com.google.android.material.textfield.TextInputLayout>
 
@@ -137,7 +137,7 @@
                         android:id="@+id/dropdown_field"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-
+                        android:text="@={viewmodel.category}"
                         android:inputType="none" />
 
                 </com.google.android.material.textfield.TextInputLayout>
@@ -165,7 +165,7 @@
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
                         android:inputType="textMultiLine"
-
+                        android:text="@={viewmodel.description}"
                         android:maxLines="5"
                         android:textSize="14sp" />
                 </com.google.android.material.textfield.TextInputLayout>
@@ -177,6 +177,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginTop="24dp"
                     android:backgroundTint="@color/blue_app"
+                    android:onClick="@{() -> viewmodel.onCreatePortfolio()}"
                     android:text="Post Portfolio"
                     android:textColor="@color/white"
                     android:textSize="18sp"
