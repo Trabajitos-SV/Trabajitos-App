@@ -6,16 +6,24 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.fragment.app.activityViewModels
+import androidx.lifecycle.lifecycleScope
 import androidx.navigation.fragment.findNavController
 import com.example.trabajitosinc.R
 import com.example.trabajitosinc.databinding.FragmentUserPageBinding
+import com.example.trabajitosinc.network.ApiResponse
 import com.example.trabajitosinc.ui.LoginActivity
+import com.example.trabajitosinc.ui.user.UserInfo.viewmodel.WhoAmIViewModel
 import com.example.trabajitosinc.util.PreferenceHelper
 import com.example.trabajitosinc.util.PreferenceHelper.set
+import kotlinx.coroutines.launch
 
 class UserPageFragment : Fragment() {
 
     private lateinit var binding : FragmentUserPageBinding
+    private val selectedWhoAmIViewModel: WhoAmIViewModel by activityViewModels {
+        WhoAmIViewModel.Factory
+    }
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -46,6 +54,23 @@ class UserPageFragment : Fragment() {
             clearSessioPrefferences(view)
             goToLogin()
         }
+
+        lifecycleScope.launch{
+            val response =
+                selectedWhoAmIViewModel.getMyInfoUser()
+
+            when(response){
+                is ApiResponse.Error -> TODO()
+                is ApiResponse.ErrorWithMessage -> TODO()
+                is ApiResponse.Success -> {
+                    binding.nameText.text = response.data.name
+                    binding.textView3.text = response.data.email
+                }
+            }
+
+        }
+
+
     }
     private fun goToLogin(){
         val i = Intent(context, LoginActivity::class.java)

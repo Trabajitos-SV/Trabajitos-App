@@ -4,8 +4,10 @@ import com.example.trabajitosinc.network.dto.portfolio.createPortfolio.CreatePor
 import com.example.trabajitosinc.network.dto.portfolio.createPortfolio.CreatePortfolioResponse
 import com.example.trabajitosinc.network.dto.portfolio.findPortfolioByCategoryId.FindPortfolioByCategoryIdRequest
 import com.example.trabajitosinc.network.dto.portfolio.findPortfolioByCategoryId.FindPortfolioByCategoryIdResponse
+import com.example.trabajitosinc.network.dto.portfolio.whoAmI.WhoAmIResponse
 import retrofit2.http.Body
 import retrofit2.http.GET
+import retrofit2.http.Header
 import retrofit2.http.POST
 import retrofit2.http.Path
 import retrofit2.http.Query
@@ -21,6 +23,8 @@ interface PortfolioService {
     @GET("api/portfolio/byCategory/{identifier}/?page=1")
     suspend fun findPortfolioCatTEST(@Path("identifier") identifier: String, @Query("page") page: Int): FindPortfolioByCategoryIdResponse
 
+    @GET("api/auth/whoami")
+    suspend fun getMyPortfolioWhoAmI(): WhoAmIResponse
 
 }
 
