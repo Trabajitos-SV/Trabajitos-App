@@ -57,7 +57,7 @@ class SelectedCategoryFragment : Fragment() {
                 is ApiResponse.Success -> {
                     workers.clear()
                     workers.addAll(response.data.docs)
-                    Toast.makeText(requireContext(), response.data.docs[0].title, Toast.LENGTH_SHORT).show()
+                    //Toast.makeText(requireContext(), response.data.docs[0].title, Toast.LENGTH_SHORT).show()
                     setRecyclerView(view)
                 }
             }
