@@ -67,7 +67,6 @@ class UserPageFragment : Fragment() {
                     binding.textView3.text = response.data.email
                 }
             }
-
         }
 
 
