@@ -18,7 +18,7 @@ class TopPerformanceRecyclerViewHolder (private val binding: ItemTopPerformanceB
 
 
         binding.topPerformanceCardView.setOnClickListener{
-            clickListener(user)
+            Unit
         }
 
     }
