@@ -42,7 +42,7 @@ val porfolios = mutableListOf(
             "Nestor@uca.com",
             25252525,
             "uca",
-            "https://cdn.autobild.es/sites/navi.axelspringer.es/public/media/image/2016/09/569465-whatsapp-que-tus-contactos-ponen-rana-perfil.jpg?tf=3840x"
+            "https://i2.wp.com/blog.empleate.com/wp-content/uploads/2019/03/felicidad-trabajo-770x514.jpg"
         ),
         category = "Carpentry",
         review = listOf(
@@ -134,8 +134,8 @@ val trabajitos = mutableListOf(
 )
 
 val users = mutableListOf(
-    UserModel("1","Jose","Nestor@uca.com",25252525, "uca", "https://cdn.autobild.es/sites/navi.axelspringer.es/public/media/image/2016/09/569465-whatsapp-que-tus-contactos-ponen-rana-perfil.jpg?tf=3840x") ,
-    UserModel("2","Jose","Nestor@uca.com",25252525,"uca", "https://cdn.autobild.es/sites/navi.axelspringer.es/public/media/image/2016/09/569465-whatsapp-que-tus-contactos-ponen-rana-perfil.jpg?tf=3840x") ,
-    UserModel("3","Jose","Nestor@uca.com",25252525,"uca", "https://cdn.autobild.es/sites/navi.axelspringer.es/public/media/image/2016/09/569465-whatsapp-que-tus-contactos-ponen-rana-perfil.jpg?tf=3840x"),
-    UserModel("4","Jose","Nestor@uca.com",25252525,"uca", "https://cdn.autobild.es/sites/navi.axelspringer.es/public/media/image/2016/09/569465-whatsapp-que-tus-contactos-ponen-rana-perfil.jpg?tf=3840x")
+    UserModel("1","Jose","guidos@uca.com",25252525, "uca", "https://img.freepik.com/foto-gratis/hombre-negocios-joven-feliz-que-camina-calle-su-tableta-digital-taza-cafe-disponible_23-2148176200.jpg?w=360") ,
+    UserModel("2","Denys","denys@uca.com",25252525,"uca", "https://thumbs.dreamstime.com/b/retrato-vertical-de-un-hombre-en-el-estudio-fondo-blanco-persona-motivada-para-alcanzar-las-metas-individuo-empollamiento-107064121.jpg") ,
+    UserModel("3","Lee","lee@uca.com",25252525,"uca", "https://img.freepik.com/foto-gratis/hombre-negocios-sonriente-trabajo_1098-286.jpg?w=2000"),
+    UserModel("4","Mauricio","mauri@uca.com",25252525,"uca", "https://img.freepik.com/foto-gratis/chico-alegre-disfrutando-cafe-al-aire-libre_1262-20005.jpg")
 )

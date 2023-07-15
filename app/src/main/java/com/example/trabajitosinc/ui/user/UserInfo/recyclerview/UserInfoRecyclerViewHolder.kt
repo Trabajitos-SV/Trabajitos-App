@@ -8,10 +8,10 @@ import com.example.trabajitosinc.databinding.ItemRepositoryViewBinding
 class UserInfoRecyclerViewHolder (private val binding : ItemRepositoryViewBinding) : RecyclerView.ViewHolder(binding.root) {
 
     fun bind(user: UserModel, clickListener: (UserModel) -> Unit) {
-        Glide
+        /*Glide
             .with(binding.root)
-            .load(user.image)
-            .into(binding.repositoryImageItem)
+            .load(user.image[2])
+            .into(binding.repositoryImageItem)*/
     //binding.repositoryImageItem.setImageResource(user.image)
     }
 }

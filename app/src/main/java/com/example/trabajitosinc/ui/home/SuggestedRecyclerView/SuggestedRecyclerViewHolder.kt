@@ -9,7 +9,6 @@ class SuggestedRecyclerViewHolder(private val binding: ItemSuggestedAssociatesBi
 
     fun bind (user  : UserModel, clickListener: (UserModel) -> Unit) {
         binding.userNameCard.text = user.name
-        binding.userLastnameCard.text = user.name
         //glide
         Glide
             .with(binding.root)
