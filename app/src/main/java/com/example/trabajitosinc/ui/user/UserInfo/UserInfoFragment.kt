@@ -7,6 +7,7 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.activityViewModels
 import androidx.lifecycle.ViewModel
+import androidx.lifecycle.lifecycleScope
 import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.LinearLayoutManager
@@ -14,8 +15,11 @@ import com.example.trabajitosinc.R
 import com.example.trabajitosinc.data.models.UserModel
 import com.example.trabajitosinc.databinding.FragmentUserInfoBinding
 import com.example.trabajitosinc.databinding.FragmentUserPageBinding
+import com.example.trabajitosinc.network.ApiResponse
 import com.example.trabajitosinc.ui.user.UserInfo.recyclerview.UserInfoRecyclerViewAdapter
+import com.example.trabajitosinc.ui.user.UserInfo.viewmodel.WhoAmIViewModel
 import com.example.trabajitosinc.ui.viewmodel.UserInfoViewModel
+import kotlinx.coroutines.launch
 
 
 class UserInfoFragment : Fragment() {
@@ -25,6 +29,9 @@ class UserInfoFragment : Fragment() {
 
     private val userInfoViewModel : UserInfoViewModel by activityViewModels {
         UserInfoViewModel.Factory
+    }
+    private val selectedWhoAmIViewModel: WhoAmIViewModel by activityViewModels {
+        WhoAmIViewModel.Factory
     }
 
     override fun onCreateView(
@@ -47,7 +54,21 @@ class UserInfoFragment : Fragment() {
 
         binding.viewmodel = userInfoViewModel
 
+        lifecycleScope.launch{
+            val response =
+                selectedWhoAmIViewModel.getMyInfoUser()
 
+            when(response){
+                is ApiResponse.Error -> TODO()
+                is ApiResponse.ErrorWithMessage -> TODO()
+                is ApiResponse.Success -> {
+                    binding.textView4.text = response.data.name
+                    binding.textView6.text = response.data.email
+                    binding.textView9.text = response.data.phone
+                    binding.textView11.text = "coming soon"
+                }
+            }
+        }
     }
 
 
