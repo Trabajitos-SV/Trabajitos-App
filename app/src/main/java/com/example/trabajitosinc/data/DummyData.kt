@@ -12,17 +12,17 @@ val categories = mutableListOf(
     CategoryModel("64a9bacbe6ae18d84f582692","Carpenter", R.drawable.carpentry_icon),
     CategoryModel("64a9bacbe6ae18d84f58268e","Electrician", R.drawable.electrician_icon),
     CategoryModel("64a9bacbe6ae18d84f582690","Plumber", R.drawable.plumbing_icon),
-    CategoryModel("64a9bacbe6ae18d84f582694", "Construction Worker", R.drawable.no_image),
-    CategoryModel("64a9bacbe6ae18d84f582696", "Painter", R.drawable.no_image),
-    CategoryModel("64a9bacbe6ae18d84f582698", "Gardener", R.drawable.no_image),
-    CategoryModel("64a9bacce6ae18d84f58269a", "Mechanic", R.drawable.no_image),
-    CategoryModel("64a9bacce6ae18d84f58269e", "Massage Therapist", R.drawable.no_image),
-    CategoryModel("64a9bacce6ae18d84f5826a0", "Hair Stylist", R.drawable.no_image),
-    CategoryModel("64a9bacce6ae18d84f5826a2", "Translator", R.drawable.no_image),
-    CategoryModel("64a9bacce6ae18d84f5826a4", "Photographer", R.drawable.no_image),
-    CategoryModel("64a9bacce6ae18d84f5826a6", "Personal Trainer", R.drawable.no_image),
-    CategoryModel("64a9bacce6ae18d84f5826a8", "Virtual Assistant", R.drawable.no_image),
-    CategoryModel("64a9bacce6ae18d84f5826aa", "Manicurist", R.drawable.no_image)
+    CategoryModel("64a9bacbe6ae18d84f582694", "Construction Worker", R.drawable.helmet),
+    CategoryModel("64a9bacbe6ae18d84f582696", "Painter", R.drawable.painter),
+    CategoryModel("64a9bacbe6ae18d84f582698", "Gardener", R.drawable.gardening),
+    CategoryModel("64a9bacce6ae18d84f58269a", "Mechanic", R.drawable.welding_icon),
+    CategoryModel("64a9bacce6ae18d84f58269e", "Massage Therapist", R.drawable.massage),
+    CategoryModel("64a9bacce6ae18d84f5826a0", "Hair Stylist", R.drawable.hairstyling),
+    CategoryModel("64a9bacce6ae18d84f5826a2", "Translator", R.drawable.languages),
+    CategoryModel("64a9bacce6ae18d84f5826a4", "Photographer", R.drawable.photographer),
+    CategoryModel("64a9bacce6ae18d84f5826a6", "Personal Trainer", R.drawable.trainer),
+    CategoryModel("64a9bacce6ae18d84f5826a8", "Virtual Assistant", R.drawable.webcam),
+    CategoryModel("64a9bacce6ae18d84f5826aa", "Manicurist", R.drawable.hand)
 )
 val porfolios = mutableListOf(
     PortfolioModel(
