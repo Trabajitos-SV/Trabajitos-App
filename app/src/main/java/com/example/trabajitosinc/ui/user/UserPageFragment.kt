@@ -13,6 +13,7 @@ import androidx.navigation.fragment.findNavController
 import com.example.trabajitosinc.R
 import com.example.trabajitosinc.databinding.FragmentUserPageBinding
 import com.example.trabajitosinc.network.ApiResponse
+import com.example.trabajitosinc.network.retrofit.RetrofitInstance
 import com.example.trabajitosinc.ui.LoginActivity
 import com.example.trabajitosinc.ui.user.UserInfo.viewmodel.WhoAmIViewModel
 import com.example.trabajitosinc.util.PreferenceHelper
@@ -81,6 +82,7 @@ class UserPageFragment : Fragment() {
     private fun clearSessioPrefferences(view: View) {
         val preferences = PreferenceHelper.defaultPrefs(requireContext())
         preferences["token"] = ""
+        RetrofitInstance.setToken("")
     }
 
 }

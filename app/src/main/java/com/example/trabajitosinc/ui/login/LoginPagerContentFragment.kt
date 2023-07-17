@@ -13,6 +13,7 @@ import androidx.navigation.fragment.findNavController
 import com.example.trabajitosinc.R
 import com.example.trabajitosinc.TrabajitosApplication
 import com.example.trabajitosinc.databinding.FragmentLoginPagerContentBinding
+import com.example.trabajitosinc.network.retrofit.RetrofitInstance
 import com.example.trabajitosinc.ui.LoginActivity
 import com.example.trabajitosinc.ui.MainActivity
 import com.example.trabajitosinc.ui.login.viewmodel.LoginViewModel
@@ -88,6 +89,7 @@ class LoginPagerContentFragment : Fragment() {
             is LoginUiStatus.Success -> {
                 loginViewModel.clearStatus()
                 loginViewModel.clearData()
+                RetrofitInstance.setToken(status.token)
                 app.saveAuthToken(status.token)
                 creteSessionPreferences(status.token)
                 goToHome()
