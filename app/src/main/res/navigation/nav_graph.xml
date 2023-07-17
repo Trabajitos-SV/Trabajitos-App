@@ -111,6 +111,9 @@
         <argument
             android:name="status"
             app:argType="string" />
+        <argument
+            android:name="hired"
+            app:argType="boolean" />
     </fragment>
     <fragment
         android:id="@+id/historyRecyclerViewContainer"

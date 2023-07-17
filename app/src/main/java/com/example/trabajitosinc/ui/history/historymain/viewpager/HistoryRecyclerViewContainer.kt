@@ -99,7 +99,8 @@ class HistoryRecyclerViewContainer : Fragment() {
         historyViewModel.setSelected(trabajito)
 
         val directions = HistoryFragmentDirections.actionNavigationHistoryToTrabajitoFragment(
-            trabajito.id_hired.name, trabajito.id_hired.email, trabajito.id_hired.phone, trabajito.dateInit, trabajito.dateFinish?: "Pending", trabajito.description, trabajito.status.name
+            trabajito.id_hired.name, trabajito.id_hired.email, trabajito.id_hired.phone, trabajito.dateInit,
+            trabajito.dateFinish?: "Pending", trabajito.description, trabajito.status.name, false
         )
         findNavController().navigate(directions)
     }
@@ -108,7 +109,8 @@ class HistoryRecyclerViewContainer : Fragment() {
         historyViewModel.setSelectedJob(job)
 
         val directions = HistoryFragmentDirections.actionNavigationHistoryToTrabajitoFragment(
-            job.id_solicitor.name, job.id_solicitor.email, job.id_solicitor.phone, job.dateInit, job.dateFinish?: "Pending", job.description, job.status.name
+            job.id_solicitor.name, job.id_solicitor.email, job.id_solicitor.phone, job.dateInit,
+            job.dateFinish?: "Pending", job.description, job.status.name, true
         )
         findNavController().navigate(directions)
     }

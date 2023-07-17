@@ -34,12 +34,12 @@ class TrabajitoFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        setInfo()
+        setInfo(view)
 
     }
 
     @RequiresApi(Build.VERSION_CODES.O)
-    private fun setInfo() {
+    private fun setInfo(view: View) {
         binding.workerNameTrabajito.text = args.name
         binding.workerLocationTrabajito.text = "Coming soon"
         binding.workerPhoneTrabajito.text = args.phone
@@ -51,18 +51,8 @@ class TrabajitoFragment : Fragment() {
         }
         binding.taskDescriptionTrabajito.text = args.description
         binding.billInfoTrabajito.text = "Pending"
-        setNulls()
-        binding.confirmButtonTrabajito.setOnClickListener{
-            if (validateEndDate()){
-                it.findNavController().popBackStack()
-            }
-        }
-        binding.endJobTrabajito.setOnClickListener{
-            if (validateBill()){
-                //it.findNavController().navigate(R.id.action_trabajitoFragment_to_trabajitoEndVerificationCode)
-                it.findNavController().navigate(R.id.action_trabajitoFragment_to_workerConfirmationNumberFragment)
-            }
-        }
+        setNulls(view)
+
     }
 
     private fun validateBill(): Boolean {
@@ -73,23 +63,48 @@ class TrabajitoFragment : Fragment() {
         return !binding.endDateText.text.isNullOrBlank()
     }
 
-    private fun setNulls() {
+    private fun setNulls(view: View) {
         when{
             args.status == "Completed" ->{
                 binding.confirmButtonTrabajito.visibility = View.GONE
                 binding.endJobTrabajito.visibility = View.GONE
+                binding.endDateText.visibility = View.GONE
+                binding.endDateInput.visibility = View.GONE
             }
-            args.status == "Pending" -> {
+            args.status == "Pending" && args.hired -> {
                 binding.endJobTrabajito.visibility = View.GONE
                 binding.billCardTrabajito.visibility = View.GONE
-                binding.endDateTrabajito.setText("Pending")
+                binding.endDateTrabajito.visibility = View.GONE
                 binding.endDateInput.visibility = View.VISIBLE
                 binding.endJobTrabajito.visibility = View.GONE
+                binding.confirmButtonTrabajito.setOnClickListener {
+                    requireView().findNavController().popBackStack()
+                }
             }
-            args.status == "On Progress" -> {
+            args.status == "On Progress" && args.hired -> {
                 binding.confirmButtonTrabajito.visibility = View.GONE
                 binding.BillingField.visibility = View.VISIBLE
                 binding.billInfoTrabajito.visibility = View.GONE
+                binding.endJobTrabajito.setOnClickListener {
+                    requireView().findNavController().navigate(R.id.action_trabajitoFragment_to_trabajitoEndVerificationCode)
+                }
+            }
+            args.status == "Pending" && !args.hired-> {
+                binding.endJobTrabajito.visibility = View.GONE
+                binding.billCardTrabajito.visibility = View.GONE
+                binding.endDateTrabajito.setText("Pending")
+                binding.endDateInput.visibility = View.GONE
+                binding.endDateText.visibility = View.GONE
+                binding.endJobTrabajito.visibility = View.GONE
+                binding.confirmButtonTrabajito.visibility = View.GONE
+            }
+            args.status == "On Progress" && !args.hired-> {
+                binding.confirmButtonTrabajito.visibility = View.GONE
+                binding.BillingField.visibility = View.GONE
+                binding.billInfoTrabajito.text = "Pending"
+                binding.endJobTrabajito.setOnClickListener {
+                    requireView().findNavController().navigate(R.id.action_trabajitoFragment_to_workerConfirmationNumberFragment)
+                }
             }
         }
     }
