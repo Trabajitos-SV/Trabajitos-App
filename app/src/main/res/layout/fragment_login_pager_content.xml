@@ -13,7 +13,7 @@
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        tools:context=".ui.LoginPagerContentFragment">
+        tools:context=".ui.login.LoginPagerContentFragment">
 
         <TextView
             android:id="@+id/text_welcome"
@@ -29,29 +29,32 @@
             app:layout_constraintTop_toTopOf="parent" />
 
         <com.google.android.material.textfield.TextInputLayout
-            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
             android:id="@+id/email_input"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
             android:layout_width="250dp"
             android:layout_height="wrap_content"
             android:layout_marginTop="24dp"
             android:hint="Email address"
-            app:endIconMode="custom"
-            app:endIconDrawable="@drawable/email_icon"
-            app:boxCornerRadiusTopEnd="12dp"
             app:boxCornerRadiusBottomEnd="12dp"
-            app:boxCornerRadiusTopStart="12dp"
             app:boxCornerRadiusBottomStart="12dp"
+            app:boxCornerRadiusTopEnd="12dp"
+            app:boxCornerRadiusTopStart="12dp"
+            app:boxStrokeColor="#2196F3"
+            app:endIconDrawable="@drawable/email_icon"
+            app:endIconMode="custom"
+            app:hintTextColor="#009688"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/text_welcome">
+            app:layout_constraintTop_toBottomOf="@id/text_welcome"
+            app:placeholderText="ex: abc@cdf.com">
 
 
             <com.google.android.material.textfield.TextInputEditText
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:textSize="14sp"
                 android:inputType="textEmailAddress"
-                android:text="@={viewmodel.email}" />
+                android:text="@={viewmodel.email}"
+                android:textSize="14sp" />
 
         </com.google.android.material.textfield.TextInputLayout>
 
@@ -67,8 +70,10 @@
             app:boxCornerRadiusBottomStart="12dp"
             app:boxCornerRadiusTopEnd="12dp"
             app:boxCornerRadiusTopStart="12dp"
+            app:boxStrokeColor="#2196F3"
             app:endIconDrawable="@drawable/locked_icon"
             app:endIconMode="password_toggle"
+            app:hintTextColor="#009688"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/email_input">

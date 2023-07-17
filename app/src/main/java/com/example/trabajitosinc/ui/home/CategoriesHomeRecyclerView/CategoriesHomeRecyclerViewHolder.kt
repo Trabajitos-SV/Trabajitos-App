@@ -14,7 +14,7 @@ class CategoriesHomeRecyclerViewHolder (private val binding : ItemCategoryHomeVi
 
 
         binding.categoryHomeItem.setOnClickListener{
-            clickListener(category)
+            Unit
         }
 
     }

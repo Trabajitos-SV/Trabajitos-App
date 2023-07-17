@@ -6,7 +6,6 @@ import androidx.lifecycle.ViewModelProvider.AndroidViewModelFactory.Companion.AP
 import androidx.lifecycle.viewModelScope
 import androidx.lifecycle.viewmodel.initializer
 import androidx.lifecycle.viewmodel.viewModelFactory
-import com.example.trabajitosinc.RetrofitApplication
 import com.example.trabajitosinc.TrabajitosApplication
 import com.example.trabajitosinc.network.ApiResponse
 import com.example.trabajitosinc.repository.CredentialsRepository

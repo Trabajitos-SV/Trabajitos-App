@@ -1,15 +1,15 @@
 package com.example.trabajitosinc.data.models
 
-data class PortfolioModel (
+import android.os.Parcelable
+import kotlinx.android.parcel.Parcelize
+
+@Parcelize
+data class PortfolioModel(
+    val id: String,
     val title: String,
     val description: String,
-    val images: String,
-    val user: List<UserModel>,
-    val category: List<CategoryModel>,
-    val review: Review
-)
-data class Review(
-    val description: String,
-    val qualification: Int,
-    val id_user: List<UserModel>,
-)
+    val images: List<String>,
+    val user: UserModel,
+    val category: String,
+    val review: List<ReviewsModel>
+):Parcelable

@@ -5,14 +5,14 @@
     <data>
         <variable
             name="viewmodel"
-            type="com.example.trabajitosinc.ui.viewmodel.CategoryViewModel" />
+            type="com.example.trabajitosinc.ui.category.categoriesmain.viewmodel.CategoryViewModel" />
     </data>
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="vertical"
         android:paddingTop="16dp"
-        tools:context=".ui.category.CategoriesFragment">
+        tools:context=".ui.category.categoriesmain.CategoriesFragment">
 
         <FrameLayout
             android:layout_width="200dp"
@@ -32,6 +32,6 @@
             android:id="@+id/categories_list_recycler_view"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:layout_gravity="center"/>
+            android:layout_gravity="center" />
     </LinearLayout>
 </layout>
