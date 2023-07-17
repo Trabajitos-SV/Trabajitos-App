@@ -90,16 +90,27 @@
         android:name="com.example.trabajitosinc.ui.history.trabajito.TrabajitoFragment"
         android:label="fragment_trabajito"
         tools:layout="@layout/fragment_trabajito" >
-        <argument
-            android:name="trabajito"
-            app:argType="com.example.trabajitosinc.data.models.TrabajitoModel"
-            app:nullable="false" />
         <action
             android:id="@+id/action_trabajitoFragment_to_trabajitoEndVerificationCode"
             app:destination="@id/trabajitoEndVerificationCode" />
         <action
             android:id="@+id/action_trabajitoFragment_to_workerConfirmationNumberFragment"
             app:destination="@id/workerConfirmationNumberFragment" />
+        <argument android:name="name"
+            app:argType="string" />
+        <argument android:name="email"
+            app:argType="string" />
+        <argument android:name="phone"
+            app:argType="string" />
+        <argument android:name="start_date"
+            app:argType="string" />
+        <argument android:name="end_date"
+            app:argType="string" />
+        <argument android:name="description"
+            app:argType="string" />
+        <argument
+            android:name="status"
+            app:argType="string" />
     </fragment>
     <fragment
         android:id="@+id/historyRecyclerViewContainer"

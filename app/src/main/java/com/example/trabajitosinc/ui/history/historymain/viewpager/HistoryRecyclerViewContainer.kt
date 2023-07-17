@@ -2,24 +2,23 @@ package com.example.trabajitosinc.ui.history.historymain.viewpager
 
 import android.content.Context
 import android.os.Bundle
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Toast
+import androidx.fragment.app.Fragment
 import androidx.fragment.app.activityViewModels
 import androidx.lifecycle.lifecycleScope
 import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
-import com.example.trabajitosinc.data.models.TrabajitoModel
 import com.example.trabajitosinc.databinding.FragmentHistoryRecyclerViewBinding
 import com.example.trabajitosinc.network.ApiResponse
 import com.example.trabajitosinc.network.dto.trabajitos.findJobs.tempJobModel
-import com.example.trabajitosinc.network.dto.trabajitos.findRequests.FindTrabajitosRequestsResponse
 import com.example.trabajitosinc.network.dto.trabajitos.findRequests.tempRequestModel
 import com.example.trabajitosinc.ui.history.historymain.HistoryFragmentDirections
-import com.example.trabajitosinc.ui.history.historymain.viewpager.recyclerview.TrabajitoRecyclerViewAdapter
 import com.example.trabajitosinc.ui.history.historymain.viewmodel.HistoryViewModel
 import com.example.trabajitosinc.ui.history.historymain.viewpager.recyclerview.JobRecyclerViewAdapter
+import com.example.trabajitosinc.ui.history.historymain.viewpager.recyclerview.TrabajitoRecyclerViewAdapter
 import kotlinx.coroutines.launch
 
 class HistoryRecyclerViewContainer : Fragment() {
@@ -59,11 +58,11 @@ class HistoryRecyclerViewContainer : Fragment() {
             when(getInt(ARG_OBJECT)) {
                 0 -> {
                     lifecycleScope.launch{
-                        val response = viewModel.getMyWorks()
 
-                        when(response){
-                            is ApiResponse.Error -> TODO()
-                            is ApiResponse.ErrorWithMessage -> TODO()
+                        when(val response = viewModel.getMyWorks()){
+                            is ApiResponse.Error -> Toast.makeText(context, "There was a problem", Toast.LENGTH_SHORT)
+                                .show()
+                            is ApiResponse.ErrorWithMessage -> Toast.makeText(context, "There was a problem", Toast.LENGTH_SHORT).show()
                             is ApiResponse.Success -> {
                                 myJobs.clear()
                                 myJobs.addAll(response.data.docs)
@@ -76,11 +75,10 @@ class HistoryRecyclerViewContainer : Fragment() {
                 }
                 1 -> {
                     lifecycleScope.launch{
-                        val response = viewModel.getMyRequests()
 
-                        when(response){
-                            is ApiResponse.Error -> TODO()
-                            is ApiResponse.ErrorWithMessage -> TODO()
+                        when(val response = viewModel.getMyRequests()){
+                            is ApiResponse.Error -> Toast.makeText(context, "There was a problem", Toast.LENGTH_SHORT).show()
+                            is ApiResponse.ErrorWithMessage -> Toast.makeText(context, "There was a problem", Toast.LENGTH_SHORT).show()
                             is ApiResponse.Success -> {
                                 trabajitos.clear()
                                 trabajitos.addAll(response.data.docs)
@@ -100,12 +98,19 @@ class HistoryRecyclerViewContainer : Fragment() {
     private fun showSelectedItem(trabajito: tempRequestModel){
         historyViewModel.setSelected(trabajito)
 
-        //val direction = HistoryFragmentDirections.actionNavigationHistoryToTrabajitoFragment(trabajito)
-        //findNavController().navigate(direction)
+        val directions = HistoryFragmentDirections.actionNavigationHistoryToTrabajitoFragment(
+            trabajito.id_hired.name, trabajito.id_hired.email, trabajito.id_hired.phone, trabajito.dateInit, trabajito.dateFinish?: "Pending", trabajito.description, trabajito.status.name
+        )
+        findNavController().navigate(directions)
     }
 
     private fun showSelectedJob(job : tempJobModel){
         historyViewModel.setSelectedJob(job)
+
+        val directions = HistoryFragmentDirections.actionNavigationHistoryToTrabajitoFragment(
+            job.id_solicitor.name, job.id_solicitor.email, job.id_solicitor.phone, job.dateInit, job.dateFinish?: "Pending", job.description, job.status.name
+        )
+        findNavController().navigate(directions)
     }
 
     private fun displayTrrabajito(page: Int){
@@ -118,7 +123,7 @@ class HistoryRecyclerViewContainer : Fragment() {
         }
     }
 
-    fun setRecyclerView(context: Context,page: Int ){
+    private fun setRecyclerView(context: Context, page: Int ){
 
         binding.myTrabajitosList.layoutManager = LinearLayoutManager(context)
 
@@ -134,7 +139,7 @@ class HistoryRecyclerViewContainer : Fragment() {
         private const val ARG_OBJECT = "object"
     }
 
-    fun setRecyclerViewJobs(context: Context, page: Int){
+    private fun setRecyclerViewJobs(context: Context, page: Int){
         binding.myTrabajitosList.layoutManager = LinearLayoutManager(context)
 
         jobAdapter = JobRecyclerViewAdapter (context){
