@@ -5,9 +5,14 @@ import com.example.trabajitosinc.network.dto.trabajitos.findJobs.FindTrabajitosJ
 import com.example.trabajitosinc.network.dto.trabajitos.findJobs.tempJobModel
 import com.example.trabajitosinc.network.dto.trabajitos.findRequests.FindTrabajitosRequestsResponse
 import com.example.trabajitosinc.network.dto.trabajitos.findRequests.tempRequestModel
+import com.example.trabajitosinc.network.dto.trabajitos.startTrabajito.StartTrabajitoModel
+import retrofit2.http.Body
 import retrofit2.http.GET
+import retrofit2.http.PATCH
 import retrofit2.http.POST
 import retrofit2.http.Path
+import java.text.DateFormat
+import java.util.Date
 
 interface TrabajitosAPI {
     @POST("api/trabajito")
@@ -24,4 +29,7 @@ interface TrabajitosAPI {
 
     @GET("api/trabajito/jobs{identifier}")
     suspend fun getMyJobById(@Path("identifier") identifier: String): tempJobModel
+
+    @PATCH("start")
+    suspend fun startTrabajito(@Body id: String, @Body dateFinish: Date, @Body status: String): StartTrabajitoModel
 }
