@@ -6,13 +6,14 @@ import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.example.trabajitosinc.data.models.TrabajitoModel
 import com.example.trabajitosinc.databinding.ItemTrabajitoCardViewBinding
+import com.example.trabajitosinc.network.dto.trabajitos.findRequests.tempRequestModel
 
 class TrabajitoRecyclerViewAdapter(
     var context: Context,
-    private val clickListener: (TrabajitoModel)-> Unit
+    private val clickListener: (tempRequestModel)-> Unit
 ): RecyclerView.Adapter<TrabajitoRecyclerViewHolder>() {
 
-    private val trabajitos  = ArrayList<TrabajitoModel>()
+    private val trabajitos  = ArrayList<tempRequestModel>()
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): TrabajitoRecyclerViewHolder {
         val binding = ItemTrabajitoCardViewBinding.inflate(LayoutInflater.from(parent.context), parent, false)
@@ -28,7 +29,7 @@ class TrabajitoRecyclerViewAdapter(
         holder.bind(trabajito, clickListener)
     }
 
-    fun setData(trabajitosList: List<TrabajitoModel>){
+    fun setData(trabajitosList: List<tempRequestModel>){
         trabajitos.clear()
         trabajitos.addAll(trabajitosList)
     }

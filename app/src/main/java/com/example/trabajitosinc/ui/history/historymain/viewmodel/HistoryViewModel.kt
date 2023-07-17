@@ -9,6 +9,7 @@ import com.example.trabajitosinc.TrabajitosApplication
 import com.example.trabajitosinc.data.models.TrabajitoModel
 import com.example.trabajitosinc.network.ApiResponse
 import com.example.trabajitosinc.network.dto.trabajitos.findRequests.FindTrabajitosRequestsResponse
+import com.example.trabajitosinc.network.dto.trabajitos.findRequests.tempRequestModel
 import com.example.trabajitosinc.repositories.HistoryRepository
 import com.example.trabajitosinc.repositories.TrabajitosRepository
 
@@ -48,20 +49,19 @@ class HistoryViewModel(private val repository: HistoryRepository,
         TrabajitoStatus.value = ""
     }
 
-    fun setSelected(trabajito: TrabajitoModel){
+    fun setSelected(trabajito: tempRequestModel){
         clearData()
 
-        workerId.value = trabajito.workerId
-        requesterId.value = trabajito.requesterId
-        workerName.value = trabajito.workerName
-        workerName.value = trabajito.workerCategory
-        workerLocation.value = trabajito.workerLocation
-        phone.value = trabajito.phone
-        startDate.value = trabajito.startDate
-        endDate.value = trabajito.endDate
-        taskDescription.value = trabajito.taskDescription
-        bill.value = trabajito.bill
-        TrabajitoStatus.value = trabajito.TrabajitoStatus
+        workerId.value = trabajito.id_hired._id
+        requesterId.value = trabajito.id_solicitor
+        workerName.value = trabajito.id_hired.name
+        workerLocation.value = ""
+        phone.value = trabajito.id_hired.phone
+        startDate.value = trabajito.dateInit
+        endDate.value = trabajito.dateInit
+        taskDescription.value = trabajito.description
+        bill.value = "Pending"
+        TrabajitoStatus.value = trabajito.status.name
 
     }
 
