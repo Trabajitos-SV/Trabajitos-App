@@ -5,9 +5,11 @@ import com.example.trabajitosinc.network.dto.trabajitos.findJobs.FindTrabajitosJ
 import com.example.trabajitosinc.network.dto.trabajitos.findJobs.tempJobModel
 import com.example.trabajitosinc.network.dto.trabajitos.findRequests.FindTrabajitosRequestsResponse
 import com.example.trabajitosinc.network.dto.trabajitos.findRequests.tempRequestModel
+import com.example.trabajitosinc.network.dto.trabajitos.startTrabajito.StartTrabajitoModel
 import com.example.trabajitosinc.network.service.TrabajitosAPI
 import retrofit2.HttpException
 import java.io.IOException
+import java.util.Date
 
 class TrabajitosRepository (private val api: TrabajitosAPI) {
     //Get all requests
@@ -60,6 +62,20 @@ class TrabajitosRepository (private val api: TrabajitosAPI) {
             val response = api.getMyJobById(identifier)
             return ApiResponse.Success(response)
         }catch (e: HttpException){
+            if (e.code() == 404){
+                return ApiResponse.ErrorWithMessage("Trabajito not found")
+            }
+            return ApiResponse.Error(e)
+        }catch (e: IOException){
+            return ApiResponse.Error(e)
+        }
+    }
+
+    suspend fun startTrabajito(id: String, dateFinish: Date, status: String): ApiResponse<StartTrabajitoModel> {
+        try {
+            val response = api.startTrabajito(id, dateFinish, status)
+            return ApiResponse.Success(response)
+        } catch(e: HttpException){
             if (e.code() == 404){
                 return ApiResponse.ErrorWithMessage("Trabajito not found")
             }
