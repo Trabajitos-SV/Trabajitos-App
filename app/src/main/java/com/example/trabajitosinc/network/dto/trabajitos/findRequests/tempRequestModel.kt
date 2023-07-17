@@ -15,5 +15,6 @@ data class tempRequestModel(
     val id_hired: Solicitor_HiredModel,
     val status: StatusModel,
     val bill: List<BillModel>,
-    @SerializedName("__v") val version: Int
+    @SerializedName("__v") val version: Int,
+    val dateFinish: String?
 )

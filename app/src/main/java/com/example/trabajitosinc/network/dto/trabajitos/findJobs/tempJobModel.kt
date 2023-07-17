@@ -15,5 +15,6 @@ data class tempJobModel(
     val id_hired: String,
     val status: StatusModel,
     val bill: List<BillModel>,
-    @SerializedName("__v") val version: Int
+    @SerializedName("__v") val version: Int,
+    val dateFinish: String?
 )
