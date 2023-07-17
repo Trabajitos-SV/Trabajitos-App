@@ -5,6 +5,7 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Toast
 import androidx.fragment.app.activityViewModels
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.lifecycleScope
@@ -59,8 +60,8 @@ class UserInfoFragment : Fragment() {
                 selectedWhoAmIViewModel.getMyInfoUser()
 
             when(response){
-                is ApiResponse.Error -> TODO()
-                is ApiResponse.ErrorWithMessage -> TODO()
+                is ApiResponse.Error -> Toast.makeText(context, "There was a problem", Toast.LENGTH_SHORT).show()
+                is ApiResponse.ErrorWithMessage -> Toast.makeText(context, "There was a problem", Toast.LENGTH_SHORT).show()
                 is ApiResponse.Success -> {
                     binding.textView4.text = response.data.name
                     binding.textView6.text = response.data.email
