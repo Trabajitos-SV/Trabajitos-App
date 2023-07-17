@@ -7,155 +7,22 @@
 
     <fragment
         android:id="@+id/navigation_home"
-        android:name="com.example.trabajitosinc.ui.HomeFragment"
+        android:name="com.example.trabajitosinc.HomeFragment"
         android:label="fragment_home"
-        tools:layout="@layout/fragment_home" >
-        <action
-            android:id="@+id/action_navigation_home_to_navigation_categories"
-            app:destination="@id/navigation_categories" />
-    </fragment>
+        tools:layout="@layout/fragment_home" />
     <fragment
         android:id="@+id/navigation_history"
-        android:name="com.example.trabajitosinc.ui.history.historymain.HistoryFragment"
+        android:name="com.example.trabajitosinc.HistoryFragment"
         android:label="fragment_history"
-        tools:layout="@layout/fragment_history" >
-        <action
-            android:id="@+id/action_navigation_history_to_trabajitoFragment"
-            app:destination="@id/trabajitoFragment" />
-    </fragment>
+        tools:layout="@layout/fragment_history" />
     <fragment
         android:id="@+id/navigation_categories"
-        android:name="com.example.trabajitosinc.ui.category.categoriesmain.CategoriesFragment"
+        android:name="com.example.trabajitosinc.CategoriesFragment"
         android:label="fragment_categories"
-        tools:layout="@layout/fragment_categories" >
-        <action
-            android:id="@+id/action_navigation_categories_to_selectedCategoryFragment"
-            app:destination="@id/selectedCategoryFragment" />
-    </fragment>
+        tools:layout="@layout/fragment_categories" />
     <fragment
         android:id="@+id/navigation_user"
-        android:name="com.example.trabajitosinc.ui.user.UserPageFragment"
+        android:name="com.example.trabajitosinc.UserPageFragment"
         android:label="fragment_user_page"
-        tools:layout="@layout/fragment_user_page" >
-        <action
-            android:id="@+id/action_navigation_user_to_editProfileFragment"
-            app:destination="@id/editProfileFragment" />
-        <action
-            android:id="@+id/action_navigation_user_to_createPortfolioFragment"
-            app:destination="@id/createPortfolioFragment" />
-        <action
-            android:id="@+id/action_navigation_user_to_userInfoFragment"
-            app:destination="@id/userInfoFragment" />
-    </fragment>
-    <fragment
-        android:id="@+id/selectedCategoryFragment"
-        android:name="com.example.trabajitosinc.ui.category.selectedcategory.SelectedCategoryFragment"
-        android:label="fragment_selected_category"
-        tools:layout="@layout/fragment_selected_category" >
-        <argument
-            android:name="category"
-            app:argType="com.example.trabajitosinc.data.models.CategoryModel" />
-        <action
-            android:id="@+id/action_selectedCategoryFragment_to_selectedWorkerFragment"
-            app:destination="@id/selectedWorkerFragment" />
-    </fragment>
-    <fragment
-        android:id="@+id/editProfileFragment"
-        android:name="com.example.trabajitosinc.ui.user.EditProfileFragment"
-        android:label="fragment_edit_profile"
-        tools:layout="@layout/fragment_edit_profile" >
-        <action
-            android:id="@+id/action_editProfileFragment_to_navigation_user4"
-            app:destination="@id/navigation_user" />
-    </fragment>
-    <fragment
-        android:id="@+id/createPortfolioFragment"
-        android:name="com.example.trabajitosinc.ui.user.CreatePortfolio.CreatePortfolioFragment"
-        android:label="fragment_create_portfolio"
-        tools:layout="@layout/fragment_create_portfolio" >
-        <action
-            android:id="@+id/action_createPortfolioFragment_to_navigation_user"
-            app:destination="@id/navigation_user" />
-    </fragment>
-    <fragment
-        android:id="@+id/userInfoFragment"
-        android:name="com.example.trabajitosinc.ui.user.UserInfo.UserInfoFragment"
-        android:label="UserInfoFragment" >
-        <action
-            android:id="@+id/action_userInfoFragment_to_navigation_user"
-            app:destination="@id/navigation_user" />
-    </fragment>
-    <fragment
-        android:id="@+id/trabajitoFragment"
-        android:name="com.example.trabajitosinc.ui.history.trabajito.TrabajitoFragment"
-        android:label="fragment_trabajito"
-        tools:layout="@layout/fragment_trabajito" >
-        <argument
-            android:name="trabajito"
-            app:argType="com.example.trabajitosinc.data.models.TrabajitoModel"
-            app:nullable="false" />
-        <action
-            android:id="@+id/action_trabajitoFragment_to_trabajitoEndVerificationCode"
-            app:destination="@id/trabajitoEndVerificationCode" />
-        <action
-            android:id="@+id/action_trabajitoFragment_to_workerConfirmationNumberFragment"
-            app:destination="@id/workerConfirmationNumberFragment" />
-    </fragment>
-    <fragment
-        android:id="@+id/historyRecyclerViewContainer"
-        android:name="com.example.trabajitosinc.ui.history.historymain.viewpager.HistoryRecyclerViewContainer"
-        android:label="HistoryRecyclerViewContainer" />
-    <fragment
-        android:id="@+id/selectedWorkerFragment"
-        android:name="com.example.trabajitosinc.ui.category.selectedworker.SelectedWorkerFragment"
-        android:label="fragment_selected_worker"
-        tools:layout="@layout/fragment_selected_worker" >
-        <action
-            android:id="@+id/action_selectedWorkerFragment_to_scheduleAppointmentFragment"
-            app:destination="@id/scheduleAppointmentFragment" />
-        <argument
-            android:name="name"
-            app:argType="string" />
-        <argument
-            android:name="workerid"
-            app:argType="string" />
-        <argument
-            android:name="phone"
-            app:argType="string" />
-        <argument android:name="email"
-            app:argType="string" />
-        <argument
-            android:name="tittle"
-            app:argType="string" />
-        <argument
-            android:name="images"
-            app:argType="string[]" />
-        <argument
-            android:name="description"
-            app:argType="string" />
-    </fragment>
-    <fragment
-        android:id="@+id/scheduleAppointmentFragment"
-        android:name="com.example.trabajitosinc.ScheduleAppointmentFragment"
-        android:label="fragment_schedule_appointment"
-        tools:layout="@layout/fragment_schedule_appointment" />
-    <fragment
-        android:id="@+id/trabajitoEndVerificationCode"
-        android:name="com.example.trabajitosinc.ui.history.endtrabajito.endrequester.TrabajitoEndVerificationCode"
-        android:label="fragment_trabajito_end_verification_code"
-        tools:layout="@layout/fragment_trabajito_end_verification_code" />
-    <fragment
-        android:id="@+id/workerConfirmationNumberFragment"
-        android:name="com.example.trabajitosinc.ui.history.endtrabajito.endworker.WorkerConfirmationNumberFragment"
-        android:label="fragment_worker_confirmation_number"
-        tools:layout="@layout/fragment_worker_confirmation_number" >
-        <action
-            android:id="@+id/action_workerConfirmationNumberFragment_to_doneFragment"
-            app:destination="@id/doneFragment" />
-    </fragment>
-    <fragment
-        android:id="@+id/doneFragment"
-        android:name="com.example.trabajitosinc.ui.history.done.DoneFragment"
-        android:label="fragment_done"
-        tools:layout="@layout/fragment_done" />
+        tools:layout="@layout/fragment_user_page" />
 </navigation>
