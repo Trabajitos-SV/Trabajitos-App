@@ -7,5 +7,5 @@ data class WhoAmIResponse(
     val name: String,
     val phone: String,
     val email: String,
-    val municipality: String,
+    //val municipality: String,
 )

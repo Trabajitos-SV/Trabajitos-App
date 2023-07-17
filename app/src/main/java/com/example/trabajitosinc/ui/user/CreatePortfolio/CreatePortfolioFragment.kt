@@ -43,7 +43,7 @@ class CreatePortfolioFragment : Fragment() {
     ): View? {
         binding = FragmentCreatePortfolioBinding.inflate(inflater, container, false)
 
-        val items = listOf("Carpintero", "Futbolista", "Pintor", "Soldador")
+        val items = listOf("Carpintero", "Dentista", "Pintor", "Soldador")
         val adapter = ArrayAdapter(requireContext(), R.layout.list_item, items)
         binding.dropdownField.setAdapter(adapter)
 
