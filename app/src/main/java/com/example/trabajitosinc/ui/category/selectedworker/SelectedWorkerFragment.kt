@@ -58,11 +58,6 @@ class SelectedWorkerFragment : Fragment() {
             .load(args.images[0])
             .into(binding.mainImageWorker)
 
-        Glide
-            .with(this)
-            .load(args.images[0])
-            .into(binding.imageView2)
-
         binding.floatingActionButton.setOnClickListener {
             view.findNavController().navigate(R.id.action_selectedWorkerFragment_to_scheduleAppointmentFragment)
         }
