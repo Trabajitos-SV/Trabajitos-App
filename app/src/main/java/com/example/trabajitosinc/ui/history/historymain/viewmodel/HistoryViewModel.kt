@@ -8,6 +8,7 @@ import androidx.lifecycle.viewmodel.viewModelFactory
 import com.example.trabajitosinc.TrabajitosApplication
 import com.example.trabajitosinc.data.models.TrabajitoModel
 import com.example.trabajitosinc.network.ApiResponse
+import com.example.trabajitosinc.network.dto.trabajitos.findJobs.tempJobModel
 import com.example.trabajitosinc.network.dto.trabajitos.findRequests.FindTrabajitosRequestsResponse
 import com.example.trabajitosinc.network.dto.trabajitos.findRequests.tempRequestModel
 import com.example.trabajitosinc.repositories.HistoryRepository
@@ -16,20 +17,20 @@ import com.example.trabajitosinc.repositories.TrabajitosRepository
 class HistoryViewModel(private val repository: HistoryRepository,
                        private val repository2: TrabajitosRepository
 ): ViewModel() {
-    val trabajitos = MutableLiveData<ApiResponse<FindTrabajitosRequestsResponse>>()
+    private val trabajitos = MutableLiveData<ApiResponse<FindTrabajitosRequestsResponse>>()
 
-    val workerId = MutableLiveData("")
-    val requesterId = MutableLiveData("")
-    val workerName = MutableLiveData("")
-    val workerCategory = MutableLiveData("")
-    val workerLocation = MutableLiveData("")
+    private val workerId = MutableLiveData("")
+    private val requesterId = MutableLiveData("")
+    private val workerName = MutableLiveData("")
+    private val workerCategory = MutableLiveData("")
+    private val workerLocation = MutableLiveData("")
     val phone = MutableLiveData("")
-    val startDate = MutableLiveData("")
-    val endDate = MutableLiveData("")
-    val taskDescription = MutableLiveData("")
-    val bill = MutableLiveData("")
-    val TrabajitoStatus = MutableLiveData("")
-    val status = MutableLiveData("")
+    private val startDate = MutableLiveData("")
+    private val endDate = MutableLiveData("")
+    private val taskDescription = MutableLiveData("")
+    private val bill = MutableLiveData("")
+    private val TrabajitoStatus = MutableLiveData("")
+    private val status = MutableLiveData("")
 
     fun getTrabajitos() = repository.getTrabajitos()
 
@@ -65,7 +66,14 @@ class HistoryViewModel(private val repository: HistoryRepository,
 
     }
 
+    fun setSelectedJob(job: tempJobModel){
+        clearData()
+
+    }
+
     suspend fun getMyRequests() = repository2.getMyRequests()
+
+    suspend fun getMyWorks() = repository2.getMyJobs()
 
     companion object{
         val Factory = viewModelFactory {

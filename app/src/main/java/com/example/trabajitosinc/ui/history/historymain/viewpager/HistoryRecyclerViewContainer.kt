@@ -13,23 +13,27 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.trabajitosinc.data.models.TrabajitoModel
 import com.example.trabajitosinc.databinding.FragmentHistoryRecyclerViewBinding
 import com.example.trabajitosinc.network.ApiResponse
+import com.example.trabajitosinc.network.dto.trabajitos.findJobs.tempJobModel
 import com.example.trabajitosinc.network.dto.trabajitos.findRequests.FindTrabajitosRequestsResponse
 import com.example.trabajitosinc.network.dto.trabajitos.findRequests.tempRequestModel
 import com.example.trabajitosinc.ui.history.historymain.HistoryFragmentDirections
 import com.example.trabajitosinc.ui.history.historymain.viewpager.recyclerview.TrabajitoRecyclerViewAdapter
 import com.example.trabajitosinc.ui.history.historymain.viewmodel.HistoryViewModel
+import com.example.trabajitosinc.ui.history.historymain.viewpager.recyclerview.JobRecyclerViewAdapter
 import kotlinx.coroutines.launch
 
 class HistoryRecyclerViewContainer : Fragment() {
 
     private lateinit var binding: FragmentHistoryRecyclerViewBinding
     private lateinit var adapter: TrabajitoRecyclerViewAdapter
+    private lateinit var jobAdapter: JobRecyclerViewAdapter
 
     private val viewModel: HistoryViewModel by activityViewModels {
         HistoryViewModel.Factory
     }
 
     private var trabajitos : MutableList<tempRequestModel> = mutableListOf()
+    private var myJobs : MutableList<tempJobModel> = mutableListOf()
 
 
     override fun onCreateView(
@@ -55,15 +59,16 @@ class HistoryRecyclerViewContainer : Fragment() {
             when(getInt(ARG_OBJECT)) {
                 0 -> {
                     lifecycleScope.launch{
-                        val response = viewModel.getMyRequests()
+                        val response = viewModel.getMyWorks()
 
                         when(response){
                             is ApiResponse.Error -> TODO()
                             is ApiResponse.ErrorWithMessage -> TODO()
                             is ApiResponse.Success -> {
-                                trabajitos.clear()
-                                trabajitos.addAll(response.data.docs)
-                                setRecyclerView(requireContext(), 1)
+                                myJobs.clear()
+                                myJobs.addAll(response.data.docs)
+                                setRecyclerViewJobs(requireContext(), 0)
+
                             }
                         }
                     }
@@ -99,10 +104,14 @@ class HistoryRecyclerViewContainer : Fragment() {
         //findNavController().navigate(direction)
     }
 
+    private fun showSelectedJob(job : tempJobModel){
+        historyViewModel.setSelectedJob(job)
+    }
+
     private fun displayTrrabajito(page: Int){
-        if (page == 1){
-            adapter.setData(trabajitos)
-            adapter.notifyDataSetChanged()
+        if (page == 0){
+            jobAdapter.setData(myJobs)
+            jobAdapter.notifyDataSetChanged()
         }else{
             adapter.setData(trabajitos)
             adapter.notifyDataSetChanged()
@@ -123,6 +132,17 @@ class HistoryRecyclerViewContainer : Fragment() {
 
     companion object{
         private const val ARG_OBJECT = "object"
+    }
+
+    fun setRecyclerViewJobs(context: Context, page: Int){
+        binding.myTrabajitosList.layoutManager = LinearLayoutManager(context)
+
+        jobAdapter = JobRecyclerViewAdapter (context){
+            showSelectedJob(it)
+        }
+
+        binding.myTrabajitosList.adapter = jobAdapter
+        displayTrrabajito(page)
     }
 
 }
